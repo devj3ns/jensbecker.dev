@@ -1,7 +1,11 @@
 import "./globals.css";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { Montserrat } from "next/font/google";
 import Navbar from "./components/navbar/navbar";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
 
 export const metadata = {
   title: {
@@ -9,6 +13,9 @@ export const metadata = {
     template: "%s | Jens Becker",
   },
   description: "Software Developer",
+  icons: {
+    shortcut: "/images/favicon.ico",
+  },
 };
 
 const font = Montserrat({ subsets: ["latin"] });
@@ -28,7 +35,9 @@ export default function RootLayout({
         }}
       >
         <Navbar />
-        <div className="px-2 mx-auto my-10 max-w-7xl">{children}</div>
+        <div className="px-2 mx-auto my-10 mt-32 prose max-w-7xl">
+          {children}
+        </div>
       </body>
     </html>
   );

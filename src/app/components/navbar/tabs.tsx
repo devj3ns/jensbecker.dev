@@ -12,7 +12,7 @@ import classNames from "classnames";
 
 export type Tab = { label: string; id: string };
 
-export const CSSTabs = ({
+export const NavbarTabs = ({
   tabs,
   selectedTabIndex,
 }: {
@@ -97,13 +97,13 @@ export const CSSTabs = ({
           <Link key={i} href={{ pathname: item.id }}>
             <button
               className={classNames(
-                "text-md relative rounded-md flex items-center h-8 px-4 z-20 bg-transparent text-sm text-slate-600 cursor-pointer select-none transition-colors not-prose font-medium",
+                "text-md relative rounded-md flex items-center h-8 px-4 z-20 bg-transparent text-sm text-slate-600 cursor-pointer select-none transition-colors not-prose font-semibold",
                 {
                   "text-slate-800":
                     hoveredTabIndex === i || selectedTabIndex === i,
                 },
                 {
-                  "font-semibold": selectedTabIndex === i,
+                  "font-bold": selectedTabIndex === i,
                 }
               )}
               ref={(el) => (buttonRefs[i] = el)}

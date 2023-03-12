@@ -1,6 +1,7 @@
 "use client";
 
-import { CSSTabs } from "./tabs";
+import Link from "next/link";
+import { NavbarTabs } from "./tabs";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -10,16 +11,20 @@ export default function Navbar() {
       id: "/",
     },
     {
-      label: "Leistungen",
-      id: "/services",
+      label: "App Entwicklung",
+      id: "/appentwicklung",
     },
     {
-      label: "Projekte",
-      id: "/projects",
+      label: "Web Entwicklung",
+      id: "/webentwicklung",
+    },
+    {
+      label: "Referenzen",
+      id: "/referenzen",
     },
     {
       label: "Kontakt",
-      id: "/contact",
+      id: "/kontakt",
     },
   ];
   const initialTabId = "Startseite";
@@ -32,10 +37,12 @@ export default function Navbar() {
 
   return (
     <nav className="flex flex-row items-center content-center justify-between p-2 mx-auto max-w-7xl">
-      <h1 className="text-2xl font-semibold">Jens Becker</h1>
+      <Link href={{ pathname: "/" }}>
+        <h1 className="text-2xl font-bold">Jens Becker</h1>
+      </Link>
 
       <div className="flex flex-col items-center justify-center max-w-6xl space-y-24">
-        <CSSTabs tabs={tabs} selectedTabIndex={selectedTabIndex} />
+        <NavbarTabs tabs={tabs} selectedTabIndex={selectedTabIndex} />
       </div>
     </nav>
   );
