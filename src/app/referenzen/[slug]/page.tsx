@@ -40,7 +40,7 @@ export default async function PostPage({
   if (!project) notFound();
 
   return (
-    <div>
+    <>
       <div className="mb-8 text-center">
         <h1 className="mb-0 text-slate-700">{project.title}</h1>
         <p className="my-0 text-slate-500">{project.date}</p>
@@ -58,7 +58,7 @@ export default async function PostPage({
       </div>
 
       <MDX code={project.body.code} />
-    </div>
+    </>
   );
 }
 

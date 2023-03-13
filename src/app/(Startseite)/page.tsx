@@ -20,9 +20,17 @@ export default function Startseite() {
           width={225}
           height={225}
         />
-        <Balancer as="h1" className="text-blue-900">
+
+        {/* TODO: why does the Balancer add a gap on the left on mobile? */}
+        <div className="hidden md:block">
+          <Balancer as="h1" className="text-blue-900 ">
+            Individuelle Softwarelösungen für Dein Unternehmen
+          </Balancer>
+        </div>
+
+        <h1 className="block text-blue-900 md:hidden">
           Individuelle Softwarelösungen für Dein Unternehmen
-        </Balancer>
+        </h1>
 
         <Balancer>
           Als Inhaber-geführtes Softwareentwicklungsunternehmen entwickeln wir
@@ -35,15 +43,13 @@ export default function Startseite() {
         <h2 className="text-center">Unsere Leistungen</h2>
         <p>
           Wir haben uns auf die Entwicklung von maßgeschneiderter Software in
-          Form von App und Webanwendungen spezialisiert. Diese können vielfältig
-          eingesetzt werden. Zögere jedoch nicht uns zu kontaktieren, wenn du
-          nur eine Idee hast und noch nicht genau weißt, in welcher Form diese
-          umgesetzt werden kann.
+          Form von App- und Webanwendungen spezialisiert, welche vielfältig
+          eingesetzt werden können.
         </p>
         <div className="flex flex-col gap-10 mt-10 sm:flex-row">
           <div className="basis-6/12">
-            <div className="flex flex-row items-center gap-5">
-              <FontAwesomeIcon icon={faMobileScreen} size="2x" />
+            <div className="flex flex-row items-center gap-3">
+              <FontAwesomeIcon icon={faMobileScreen} size="lg" />
               <h3 className="m-0">App Entwicklung</h3>
             </div>
 
@@ -61,14 +67,14 @@ export default function Startseite() {
           </div>
 
           <div className="basis-6/12">
-            <div className="flex flex-row items-center gap-5">
-              <FontAwesomeIcon icon={faDisplay} size="2x" />
+            <div className="flex flex-row items-center gap-3">
+              <FontAwesomeIcon icon={faDisplay} size="lg" />
               <h3 className="m-0">Web Entwicklung</h3>
             </div>
 
             <p>
-              Agile und flexible Entwicklung modernen und anspruchsvoller Web
-              Projekte die in vielen Formen Anwendung finden können.
+              Flexible Entwicklung modernen und anspruchsvoller Web Projekte mit
+              dem React Framework Next.js.
             </p>
             <LinkButton
               icon={faChevronRight}

@@ -53,31 +53,30 @@ export default function Appentwicklung() {
 
       <section>
         <h2>Wir begleiten Dich von der Idee bis zum Release</h2>
-        <p>
-          <ol>
-            <li>
-              Wir besprechen Deine Idee und erarbeiten gemeinsam die
-              Anforderungen an die Webanwendung.
-            </li>
-            <li>
-              Wir entwickeln einen Prototypen, der die Funktionalität der App
-              zeigt.
-            </li>
-            <li>
-              Wir besprechen den Prototypen und erarbeiten gemeinsam die finale
-              Funktionalität.
-            </li>
-            <li>
-              Wir entwickeln die Webanwendung und sind im ständigen Kontakt zur
-              weiteren verbesserung des Produkts.
-            </li>
-            <li>Wir testen die App und bereiten sie für den Release vor.</li>
-            <li>
-              Wir veröffentlichen die App und stehen für Support und Wartung zur
-              Verfügung.
-            </li>
-          </ol>
-        </p>
+
+        <ol>
+          <li>
+            Wir besprechen Deine Idee und erarbeiten gemeinsam die Anforderungen
+            an die Webanwendung.
+          </li>
+          <li>
+            Wir entwickeln einen Prototypen, der die Funktionalität der App
+            zeigt.
+          </li>
+          <li>
+            Wir besprechen den Prototypen und erarbeiten gemeinsam die finale
+            Funktionalität.
+          </li>
+          <li>
+            Wir entwickeln die Webanwendung und sind im ständigen Kontakt zur
+            weiteren verbesserung des Produkts.
+          </li>
+          <li>Wir testen die App und bereiten sie für den Release vor.</li>
+          <li>
+            Wir veröffentlichen die App und stehen für Support und Wartung zur
+            Verfügung.
+          </li>
+        </ol>
       </section>
 
       <div className="my-16 text-center">
