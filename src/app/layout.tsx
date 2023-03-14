@@ -14,7 +14,9 @@ export const metadata = {
   },
   description: "Software Developer",
   icons: {
-    shortcut: "/images/favicon.ico",
+    shortcut: "/images/favicon/favicon.ico",
+    icon: "images/favicon/icon.png",
+    apple: "images/favicon/icon.png",
   },
 };
 
