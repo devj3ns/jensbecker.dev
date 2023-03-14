@@ -19,7 +19,7 @@ export default function Appentwicklung() {
         />
         <h1>Dein Partner für Appentwicklung</h1>
         <p>
-          Du möchtest dein Unternehmen um eine mobile App erweitern? Wir
+          Du möchtest Dein Unternehmen um eine mobile App erweitern? Wir
           unterstützen Dich von der Idee bis zum Release.
         </p>
       </section>
@@ -27,10 +27,9 @@ export default function Appentwicklung() {
       <section>
         <h2>Mobile Applikationen auf Deine Bedürfnisse zugeschnitten</h2>
         <p>
-          Wir als Agentur für individuelle-App-Entwicklung bieten Dir
-          maßgeschneiderte Lösungen für Deine Herausforderungen. Wir entwickeln
-          für Dich Deine individual App für verschiedene Bedürfnisse in
-          verschiedensten Bereichen.
+          Wir bieten Dir maßgeschneiderte Lösungen für Deine Herausforderungen.
+          Wir entwickeln für Dich Deine individuelle App für verschiedene
+          Bedürfnisse in verschiedensten Bereichen.
         </p>
 
         <LinkButton href="/referenzen" icon={faChevronRight} style="text">
@@ -40,7 +39,7 @@ export default function Appentwicklung() {
 
       <section>
         <h2>Eine App für alle Plattformen</h2>
-        Für die Entwicklung von Apps verwende ich ein weitverbreitetes
+        Für die Entwicklung von Apps verwende ich ein weitverbreitetes,
         plattformübergreifendes Framework namens{" "}
         <a href="https://flutter.dev">Flutter</a>.
         <br />
@@ -48,7 +47,7 @@ export default function Appentwicklung() {
         für Android als auch für iOS, was den Entwicklungsprozess erheblich
         beschleunigt und die Programmierkosten verringert. Zusätzlich kann die
         App auch als Web-App bereitgestellt werden. Somit hast Du die drei
-        gängisten Plattformen mit einer App abgedeckt.
+        gängigsten Plattformen mit einer App abgedeckt.
       </section>
 
       <section>
@@ -60,8 +59,7 @@ export default function Appentwicklung() {
             an die Webanwendung.
           </li>
           <li>
-            Wir entwickeln einen Prototypen, der die Funktionalität der App
-            zeigt.
+            Wir entwickeln einen Prototyp, der die Funktionalität der App zeigt.
           </li>
           <li>
             Wir besprechen den Prototypen und erarbeiten gemeinsam die finale
@@ -69,7 +67,7 @@ export default function Appentwicklung() {
           </li>
           <li>
             Wir entwickeln die Webanwendung und sind im ständigen Kontakt zur
-            weiteren verbesserung des Produkts.
+            weiteren Verbesserung des Produkts.
           </li>
           <li>Wir testen die App und bereiten sie für den Release vor.</li>
           <li>

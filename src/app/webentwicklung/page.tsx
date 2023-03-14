@@ -28,13 +28,13 @@ export default function Webentwicklung() {
         <h2>Vielfältige Einsatzmöglichkeiten</h2>
         <p>
           Webanwendungen können vielfältig eingesetzt werden, vom internen Tool
-          bis hin zum Kundendashboard. Wir entwickeln für Dich Deine
-          individuelle Webanwednung für verschiedene Bedürfnisse.
+          hin zum Kunden-Dashboard. Wir entwickeln für Dich Deine individuelle
+          Webanwendung für verschiedene Bedürfnisse.
         </p>
         Beispiele für Webanwendungen:
         <ul>
           <li>Automatisierungslösungen</li>
-          <li>Kundendashboard</li>
+          <li>Kunden-Dashboard</li>
           <li>Webshop</li>
           <li>Buchungsplattform</li>
           <li>und vieles mehr</li>
@@ -78,13 +78,13 @@ export default function Webentwicklung() {
 
       <section>
         <h2>Wir begleiten Dich von der Idee bis zum Release</h2>
-        <p>
+        <ol>
           <li>
             Wir besprechen Deine Idee und erarbeiten gemeinsam die Anforderungen
             an die Webanwendung.
           </li>
           <li>
-            Wir entwickeln einen Prototypen, der die Funktionalität der
+            Wir entwickeln einen Prototyp, der die Funktionalität der
             Webanwendung zeigt.
           </li>
           <li>
@@ -93,7 +93,7 @@ export default function Webentwicklung() {
           </li>
           <li>
             Wir entwickeln die Webanwendung und sind im ständigen Kontakt zur
-            weiteren verbesserung des Produkts.
+            weiteren Verbesserung des Produkts.
           </li>
           <li>
             Wir testen die Webanwendung und bereiten sie für den Release vor.
@@ -102,7 +102,7 @@ export default function Webentwicklung() {
             Wir veröffentlichen die Webanwendung und stehen für Support und
             Wartung zur Verfügung.
           </li>
-        </p>
+        </ol>
       </section>
 
       <div className="my-16 text-center">

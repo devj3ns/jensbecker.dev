@@ -34,7 +34,7 @@ export default function Startseite() {
 
         <Balancer>
           Als Inhaber-geführtes Softwareentwicklungsunternehmen entwickeln wir
-          zukunftsorientierte Indivialsoftware, um Dein Unternehmen
+          zukunftsorientierte Individualsoftware, um Dein Unternehmen
           voranzubringen.
         </Balancer>
       </div>
@@ -103,7 +103,7 @@ export default function Startseite() {
             <ul>
               <li>ausgebildeter Softwareentwickler</li>
               <li>Schwerpunkt Web & App</li>
-              <li>Selbständige seit mehreren Jahren</li>
+              <li>Selbständig seit mehreren Jahren</li>
               <li>Studiert Informatik an der Hochschule Trier</li>
             </ul>
           </div>
