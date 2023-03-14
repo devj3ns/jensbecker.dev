@@ -22,6 +22,7 @@
     "daisyui": "^2.51.3",
     "eslint": "8.36.0",
     "eslint-config-next": "^13.2.4",
+    "hamburger-react": "^2.5.0",
     "next": "13.2.4",
     "next-contentlayer": "^0.3.0",
     "nodemailer": "^6.9.1",

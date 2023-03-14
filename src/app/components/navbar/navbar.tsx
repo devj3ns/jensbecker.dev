@@ -1,11 +1,13 @@
 "use client";
+
+import { useEffect, useState } from "react";
+
+import { Button } from "../button";
+import { Sling as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { NavbarTabs } from "./tabs";
+import classNames from "classnames";
 import { usePathname } from "next/navigation";
-import { Button } from "../button";
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 
 export default function Navbar() {
@@ -35,16 +37,58 @@ export default function Navbar() {
 
   const pathname = usePathname();
   const router = useRouter();
+  const [modalOpened, setModalOpened] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [scrollY, setScrollY] = useState(0);
+  const [width, setWidth] = useState(0);
 
   const selectedTabIndex = tabs.findIndex(
     (tab) => tab.id === pathname ?? initialTabId
   );
 
-  const [modalOpened, setModalOpened] = useState(false);
+  const navbarScrollDelay = 30;
+  const isMediumScreen = width > 768;
+
+  const handleScroll = () => {
+    const lastScrollY = scrollY;
+    setScrollY(window.pageYOffset);
+
+    if (Math.abs(window.pageYOffset - lastScrollY) >= navbarScrollDelay) {
+      return;
+    }
+
+    // Close modal if user scrolls down
+    if (window.pageYOffset > navbarScrollDelay) {
+      modalOpened && setModalOpened(false);
+    }
+
+    setShowNav(window.pageYOffset < lastScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  const handleWindowResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   return (
-    <div>
-      <nav className="flex flex-row items-center content-center justify-between p-2 mx-auto max-w-7xl">
+    <div
+      className={classNames(
+        "w-full fixed transition-all",
+        showNav || isMediumScreen ? "translate-y-0" : "-translate-y-[100%]",
+        scrollY > navbarScrollDelay || modalOpened ? "bg-white" : "",
+        scrollY > 0 ? "shadow-md" : ""
+      )}
+    >
+      <nav className="flex flex-row items-center content-center justify-between px-5 py-3 mx-auto max-w-7xl">
         <Link href={{ pathname: "/" }}>
           <h1 className="text-2xl font-bold">Jens Becker</h1>
         </Link>
@@ -56,16 +100,21 @@ export default function Navbar() {
         </div>
 
         <div className="block md:hidden">
-          <FontAwesomeIcon
-            icon={modalOpened ? faTimes : faBars}
-            onClick={() => setModalOpened(!modalOpened)}
-            size="xl"
+          <Hamburger
+            toggled={modalOpened}
+            toggle={setModalOpened}
+            rounded
+            size={26}
           />
         </div>
       </nav>
 
       {modalOpened && (
-        <div className="absolute flex flex-col w-full gap-3 transition-all bg-white shadow-lg">
+        <div
+          className={
+            "absolute flex flex-col w-full gap-3 bg-white shadow-md pb-4"
+          }
+        >
           {tabs.map((tab, i) => {
             return (
               <Button
