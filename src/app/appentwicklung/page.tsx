@@ -17,7 +17,7 @@ export default function Appentwicklung() {
           width={225}
           height={225}
         />
-        <h1>Dein Ansprechpartner für Appentwicklung</h1>
+        <h1>Dein Partner für Appentwicklung</h1>
         <p>
           Du möchtest dein Unternehmen um eine mobile App erweitern? Wir
           unterstützen Dich von der Idee bis zum Release.

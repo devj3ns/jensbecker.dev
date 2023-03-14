@@ -17,7 +17,7 @@ export default function Webentwicklung() {
           width={225}
           height={225}
         />
-        <h1>Dein Ansprechpartner für Webentwicklung</h1>
+        <h1>Dein Partner für Webentwicklung</h1>
         <p>
           Du möchtest Dein Unternehmen um eine Webanwendung erweitern? Wir
           unterstützen Dich von der Idee bis zum Release.
