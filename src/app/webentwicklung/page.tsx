@@ -12,10 +12,12 @@ export default function Webentwicklung() {
       <section className="mb-32 text-center">
         <Image
           className="mx-auto"
-          src="/images/web.png"
-          alt="Portrait of Jens Becker"
-          width={225}
-          height={225}
+          src="/images/webdev.webp"
+          alt="Grafische Darstellung der Webentwicklung"
+          width={512}
+          height={512}
+          style={{ height: 125, width: "auto" }}
+          priority
         />
         <h1>Dein Partner für Webentwicklung</h1>
         <p>

@@ -15,10 +15,12 @@ export default function Startseite() {
       <div className="text-center md:mx-32">
         <Image
           className="mx-auto"
-          src="/images/startseite.jpg"
-          alt="Portrait of Jens Becker"
-          width={225}
-          height={225}
+          src="/images/softwaredev.webp"
+          alt="Grafische Darstellung der Softwareentwicklung"
+          width={512}
+          height={512}
+          style={{ height: 125, width: "auto" }}
+          priority
         />
 
         {/* TODO: why does the Balancer add a gap on the left on mobile? */}
@@ -95,8 +97,9 @@ export default function Startseite() {
             className="shadow-md rounded-3xl"
             src="/images/portrait.jpg"
             alt="Portrait of Jens Becker"
-            width={225}
-            height={225}
+            width={512}
+            height={512}
+            style={{ height: 225, width: "auto" }}
           />
           <div className="my-10">
             <span className="font-bold">Jens Becker</span>

@@ -12,10 +12,12 @@ export default function Appentwicklung() {
       <section className="mb-32 text-center">
         <Image
           className="mx-auto"
-          src="/images/appdev.jpg"
-          alt="Portrait of Jens Becker"
-          width={225}
-          height={225}
+          src="/images/appdev.webp"
+          alt="Grafische Darstellung der Appentwicklung"
+          width={512}
+          height={512}
+          style={{ height: 125, width: "auto" }}
+          priority
         />
         <h1>Dein Partner für Appentwicklung</h1>
         <p>
