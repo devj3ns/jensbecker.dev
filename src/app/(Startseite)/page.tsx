@@ -10,6 +10,18 @@ import Image from "next/image";
 import { LinkButton } from "../components/button";
 
 export default function Startseite() {
+  const bubble1 = {
+    color: "rgba(245, 208, 39, 0.2)",
+    size: "30%",
+    position: "85% 35%",
+  };
+
+  const bubble2 = {
+    color: "rgba(39, 76, 180, 0.3)",
+    size: "20%",
+    position: "top left",
+  };
+
   return (
     <div className="flex flex-col items-center justify-center gap-16">
       <div className="text-center md:mx-32">
@@ -21,6 +33,20 @@ export default function Startseite() {
           height={512}
           style={{ height: 125, width: "auto" }}
           priority
+        />
+
+        <div
+          style={{
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            position: "absolute",
+            zIndex: "-1",
+            background:
+              `radial-gradient(circle at ${bubble1.position}, ${bubble1.color}, rgba(255, 255, 255, 0) ${bubble1.size}), ` +
+              `radial-gradient(circle at ${bubble2.position}, ${bubble2.color}, rgba(255, 255, 255, 0) ${bubble2.size})`,
+          }}
         />
 
         {/* TODO: why does the Balancer add a gap on the left on mobile? */}

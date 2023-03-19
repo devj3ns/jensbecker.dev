@@ -1,5 +1,6 @@
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
+import Link from "next/link";
 import { LinkButton } from "../components/button";
 import { allProjects } from "contentlayer/generated";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -30,14 +31,16 @@ export default function Referenzen() {
               className="flex flex-col items-center gap-8 sm:even:flex-row-reverse sm:odd:flex-row odd:text-right even:text-left"
             >
               <div className="w-full sm:basis-7/12">
-                <Image
-                  src={`/images/projects/${slug}.png`}
-                  alt="Bild des Projekts"
-                  width={1920}
-                  height={1080}
-                  quality={100}
-                  className="rounded-xl"
-                />
+                <Link href={`/referenzen/${slug}`}>
+                  <Image
+                    src={`/images/projects/${slug}.png`}
+                    alt="Bild des Projekts"
+                    width={1920}
+                    height={1080}
+                    quality={100}
+                    className="rounded-xl"
+                  />
+                </Link>
               </div>
 
               <div className="flex flex-col gap-5 sm:basis-5/12">
