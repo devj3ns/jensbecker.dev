@@ -1,3 +1,19 @@
-# jensbecker.dev
+# v3.jensbecker.dev
 
-Website built with next.js and hosted on vercel.
+Website for my software development company.
+
+## Techstack: 
+
+🔹Next.js
+
+🔹TypeScript
+
+🔹Tailwind
+
+🔹ContentLayer
+
+Hosted on vercel 🔺
+
+
+
+
