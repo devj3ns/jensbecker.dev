@@ -1,10 +1,12 @@
 import {
+  faBuilding,
   faChevronRight,
   faDisplay,
   faMobileScreen,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Balancer from "react-wrap-balancer";
+import { Card } from "../components/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { LinkButton } from "../components/button";
@@ -74,8 +76,8 @@ export default function Startseite() {
           Form von App- und Webanwendungen spezialisiert, welche vielfältig
           eingesetzt werden können.
         </p>
-        <div className="flex flex-col gap-10 mt-10 sm:flex-row">
-          <div className="basis-6/12">
+        <div className="grid gap-5 md:grid-cols-2 ">
+          <Card>
             <div className="flex flex-row items-center gap-3">
               <FontAwesomeIcon icon={faMobileScreen} size="lg" />
               <h3 className="m-0">App Entwicklung</h3>
@@ -92,9 +94,9 @@ export default function Startseite() {
             >
               App Entwicklung entdecken
             </LinkButton>
-          </div>
+          </Card>
 
-          <div className="basis-6/12">
+          <Card>
             <div className="flex flex-row items-center gap-3">
               <FontAwesomeIcon icon={faDisplay} size="lg" />
               <h3 className="m-0">Web Entwicklung</h3>
@@ -111,7 +113,7 @@ export default function Startseite() {
             >
               Web Entwicklung entdecken
             </LinkButton>
-          </div>
+          </Card>
         </div>
       </section>
 
@@ -132,7 +134,7 @@ export default function Startseite() {
             <ul>
               <li>ausgebildeter Softwareentwickler</li>
               <li>Schwerpunkt Web & App</li>
-              <li>Selbständig seit mehreren Jahren</li>
+              <li>Erfahrung durch diverse Projekte</li>
               <li>Studiert Informatik an der Hochschule Trier</li>
             </ul>
           </div>
@@ -142,29 +144,78 @@ export default function Startseite() {
       <section>
         <h2 className="text-center">Das sagen Kunden</h2>
 
-        <div className="flex flex-col gap-10 mt-10 sm:flex-row">
-          <div>
-            <span className="font-bold">Kunde A</span>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet.
-            </p>
-          </div>
-          <div>
-            <span className="font-bold">Kunde B</span>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet.
-            </p>
-          </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          <Testimonial
+            name="Moritz Liederbach"
+            companyName="The Lighthaus"
+            companyUrl="https://thelighthaus.de"
+            imageName="moritz-liederbach.webp"
+          >
+            Es macht einfach nur unglaublich viel Freude, mit Jens zusammen
+            zuarbeiten. Mit seiner Hilfe konnten wir neue Funktionen auf unserer
+            Website integrieren und wichtige Prozesse perfekt optimieren.
+          </Testimonial>
+          <Testimonial
+            name="Kati Rucker"
+            companyName="The Lighthaus"
+            companyUrl="https://thelighthaus.de"
+            imageName="kati-rucker.webp"
+          >
+            Trotz der teilweisen hohen Komplexität unserer Anforderungen hat
+            Jens immer sofort eine Lösung und arbeitet sich in die verschiedenen
+            Thematiken ein. Dabei sieht er nicht einfach nur einzelne
+            Anforderung, sondern betrachtet alle Facetten und bringt dabei
+            eigenständig Idee und mögliche weitere Ansätze ein.
+          </Testimonial>
+          <Testimonial
+            name="René Schäfer"
+            companyName="nestwärme E.V."
+            companyUrl="https://nestwaerme.de"
+            imageName="rene-schaefer.webp"
+          >
+            Dank der Nestwärme KiTa App sind jetzt alle relevanten Informationen
+            wie Elternbriefe oder Termine jederzeit in App abrufbar. Endlich
+            Schluss mit der Zettelwirtschaft.
+          </Testimonial>
         </div>
       </section>
     </div>
+  );
+}
+
+function Testimonial({
+  name,
+  companyName,
+  companyUrl,
+  imageName,
+  children,
+}: {
+  name: string;
+  companyName: string;
+  companyUrl: string;
+  imageName: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Card>
+      <div className="flex flex-row gap-5">
+        <Image
+          src={"/images/testimonials/" + imageName}
+          className="m-0 rounded-full"
+          width={100}
+          height={100}
+          alt={"Portrait of " + name}
+        />
+        <div>
+          <div className="mt-5 font-bold">{name}</div>
+          <div className="flex flex-row items-center gap-3 text-sm text-gray-500 not-prose">
+            <FontAwesomeIcon icon={faBuilding} />
+            <a href={companyUrl}>{companyName}</a>
+          </div>
+        </div>
+      </div>
+
+      <p>{children}</p>
+    </Card>
   );
 }
