@@ -33,7 +33,15 @@ export default function Appentwicklung() {
           Wir entwickeln für Dich Deine individuelle App für verschiedene
           Bedürfnisse in verschiedensten Bereichen.
         </p>
-
+        Beispiele für Apps:
+        <ul>
+          <li>KiTa Elternkommunikation</li>
+          <li>Marketing Automatisierung</li>
+          <li>Projektmanagement</li>
+          <li>Firmen Chatplattform</li>
+          <li>Personalmanagement</li>
+          <li>Zeiterfassung</li>
+        </ul>
         <LinkButton href="/referenzen" icon={faChevronRight} style="text">
           Erforsche unsere Referenzen
         </LinkButton>
@@ -45,37 +53,29 @@ export default function Appentwicklung() {
         plattformübergreifendes Framework namens{" "}
         <a href="https://flutter.dev">Flutter</a>.
         <br />
-        Der Vorteil daran ist, dass ich dieselbe Codebasis verwenden kann sowohl
-        für Android als auch für iOS, was den Entwicklungsprozess erheblich
+        Der Vorteil daran ist, dass dieselbe Codebasis sowohl für die Android
+        als auch die iOS App benutzt werden kann, was den Entwicklungsprozess
         beschleunigt und die Programmierkosten verringert. Zusätzlich kann die
         App auch als Web-App bereitgestellt werden. Somit hast Du die drei
         gängigsten Plattformen mit einer App abgedeckt.
       </section>
 
       <section>
-        <h2>Wir begleiten Dich von der Idee bis zum Release</h2>
+        <h2>Wir begleiten Dich von der Idee bis zum App-Release</h2>
 
         <ol>
+          <li>Besprechung Deiner Ideen, Anforderungen und Wünschen</li>
           <li>
-            Wir besprechen Deine Idee und erarbeiten gemeinsam die Anforderungen
-            an die Webanwendung.
+            Entwicklung eines Prototyps, der die Funktionalität der App zeigt
           </li>
           <li>
-            Wir entwickeln einen Prototyp, der die Funktionalität der App zeigt.
+            Besprechung des Prototyps und Erarbeitung der finalen
+            Funktionalitäten
           </li>
-          <li>
-            Wir besprechen den Prototypen und erarbeiten gemeinsam die finale
-            Funktionalität.
-          </li>
-          <li>
-            Wir entwickeln die Webanwendung und sind im ständigen Kontakt zur
-            weiteren Verbesserung des Produkts.
-          </li>
-          <li>Wir testen die App und bereiten sie für den Release vor.</li>
-          <li>
-            Wir veröffentlichen die App und stehen für Support und Wartung zur
-            Verfügung.
-          </li>
+          <li>kontinuierlicher Kontakt während der Entwicklung des Produkts</li>
+          <li>Testphase der App und Vorbereitung für den Release</li>
+          <li>Veröffentlichung/Release der App</li>
+          <li>Nachhaltiger Support und Wartung stehen jederzeit bereit</li>
         </ol>
       </section>
 

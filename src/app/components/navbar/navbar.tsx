@@ -49,6 +49,11 @@ export default function Navbar() {
   const navbarScrollDelay = 30;
   const isMediumScreen = width > 768;
 
+  useEffect(() => {
+    // Show navbar on page change
+    setShowNav(true);
+  }, [pathname]);
+
   const handleScroll = () => {
     const lastScrollY = scrollY;
     setScrollY(window.pageYOffset);
@@ -82,7 +87,7 @@ export default function Navbar() {
   return (
     <div
       className={classNames(
-        "w-full fixed transition-all",
+        "w-full fixed transition-all z-10",
         showNav || isMediumScreen ? "translate-y-0" : "-translate-y-[100%]",
         scrollY > navbarScrollDelay || modalOpened ? "bg-white" : "",
         scrollY > 0 ? "shadow-md" : ""

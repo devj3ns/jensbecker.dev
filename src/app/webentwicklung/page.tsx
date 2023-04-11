@@ -35,11 +35,11 @@ export default function Webentwicklung() {
         </p>
         Beispiele für Webanwendungen:
         <ul>
-          <li>Automatisierungslösungen</li>
+          <li>Webinarbuchung Automatisierung</li>
           <li>Kunden-Dashboard</li>
           <li>Webshop</li>
           <li>Buchungsplattform</li>
-          <li>und vieles mehr</li>
+          <li>Videoplattform</li>
         </ul>
         <LinkButton
           href="/referenzen"
@@ -54,14 +54,9 @@ export default function Webentwicklung() {
       <section>
         <h2>Webanwendung vs. Website</h2>
         <p>
-          Wenn wir von Webanwendungen sprechen, meinen wir damit interaktive
-          Webseiten, die nicht nur statische Inhalte anzeigen, sondern auch mit
-          dem Nutzer interagieren können. <br />
-          Diese Webanwendung kann beispielsweise mit einem Server verbunden
-          sein, der im Hintergrund automatisiert Daten verarbeitet und auf der
-          Benutzeroberfläche (UI) der Website anzeigt. Beispiele für
-          Webanwendungen sind Webshops, Dashboards oder auch interne Tools zur
-          Automatisierung von Unternehmensprozessen.
+          Webanwendungen sind interaktive Websysteme, die nicht nur statische
+          Inhalte anzeigen, sondern mit dem Nutzer interagieren und im
+          Hintergrund Prozesse anstoßen oder verarbeitete Daten anzeigen.
         </p>
         <p>
           Auch wenn wir uns auf die Entwicklung von Webanwendungen spezialisiert
@@ -71,39 +66,37 @@ export default function Webentwicklung() {
       </section>
 
       <section>
-        <h2>Optimale Plattformabdeckung</h2>
-        <p>
-          Webanwendungen haben den Vorteil, dass sie auf allen Plattformen
-          problemlos aufrufbar sind, ohne dass eine App installiert werden muss.
-        </p>
+        <h2>Vorteile von Webanwendungen</h2>
+        Webanwendungen haben im Vergleich zu Apps bestimmte Vorteile bieten, die
+        nicht zu unterschätzen sind:
+        <ul>
+          <li>Plattformunabhängig</li>
+          <li>keine Installation notwendig</li>
+          <li>einfache Wartung und Aktualisierung</li>
+          <li>keine App Store Gebühren</li>
+          <li>hohe Flexibilität</li>
+        </ul>
+        Noch unsicher, ob eine App oder Webanwendung die richtige Wahl ist? Kein
+        Problem, wir beraten Dich gerne.
       </section>
 
       <section>
-        <h2>Wir begleiten Dich von der Idee bis zum Release</h2>
+        <h2>Wir begleiten Dich von der Idee bis zum Web-Release</h2>
+
         <ol>
+          <li>Besprechung Deiner Ideen, Anforderungen und Wünschen</li>
           <li>
-            Wir besprechen Deine Idee und erarbeiten gemeinsam die Anforderungen
-            an die Webanwendung.
+            Entwicklung eines Prototyps, der die Funktionalität der Webanwendung
+            zeigt
           </li>
           <li>
-            Wir entwickeln einen Prototyp, der die Funktionalität der
-            Webanwendung zeigt.
+            Besprechung des Prototyps und Erarbeitung der finalen
+            Funktionalitäten
           </li>
-          <li>
-            Wir besprechen den Prototypen und erarbeiten gemeinsam die finale
-            Funktionalität.
-          </li>
-          <li>
-            Wir entwickeln die Webanwendung und sind im ständigen Kontakt zur
-            weiteren Verbesserung des Produkts.
-          </li>
-          <li>
-            Wir testen die Webanwendung und bereiten sie für den Release vor.
-          </li>
-          <li>
-            Wir veröffentlichen die Webanwendung und stehen für Support und
-            Wartung zur Verfügung.
-          </li>
+          <li>kontinuierlicher Kontakt während der Entwicklung des Produkts</li>
+          <li>Testphase der Webanwendung und Vorbereitung für den Release</li>
+          <li>Veröffentlichung/Release der Webanwendung</li>
+          <li>Nachhaltiger Support und Wartung stehen jederzeit bereit</li>
         </ol>
       </section>
 

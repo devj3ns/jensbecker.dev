@@ -14,8 +14,8 @@ export function ContactInformation() {
     <div className="flex gap-5 rounded-lg bg-primary">
       <div className="relative flex-none w-48 h-48">
         <Image
-          src="/images/portrait.jpg"
-          alt="Portrait of Jens Becker"
+          src="/images/portrait.webp"
+          alt="Portrait von Jens Becker"
           fill
           className="m-0 rounded-tl-lg rounded-bl-lg"
         />

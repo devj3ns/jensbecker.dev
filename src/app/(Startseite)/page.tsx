@@ -122,20 +122,20 @@ export default function Startseite() {
 
         <div className="flex flex-col items-center md:gap-10 md:flex-row">
           <Image
-            className="shadow-md rounded-3xl"
-            src="/images/portrait.jpg"
-            alt="Portrait of Jens Becker"
-            width={512}
-            height={512}
+            className="rounded-full shadow-md"
+            src="/images/portrait.webp"
+            alt="Portrait von Jens Becker"
+            width={225}
+            height={225}
             style={{ height: 225, width: "auto" }}
           />
           <div className="my-10">
             <span className="font-bold">Jens Becker</span>
             <ul>
               <li>ausgebildeter Softwareentwickler</li>
-              <li>Schwerpunkt Web & App</li>
+              <li>Schwerpunkt Web- & Appanwendungen</li>
               <li>Erfahrung durch diverse Projekte</li>
-              <li>Studiert Informatik an der Hochschule Trier</li>
+              <li>Informatikstudium an der Hochschule Trier</li>
             </ul>
           </div>
         </div>
