@@ -13,18 +13,6 @@ import Image from "next/image";
 import { LinkButton } from "../components/button";
 
 export default function Startseite() {
-  const bubble1 = {
-    color: "rgba(245, 208, 39, 0.1)",
-    size: "30%",
-    position: "85% 35%",
-  };
-
-  const bubble2 = {
-    color: "rgba(39, 76, 180, 0.1)",
-    size: "20%",
-    position: "top left",
-  };
-
   return (
     <div className="flex flex-col items-center justify-center gap-16">
       <div className="text-center md:mx-32">
@@ -38,27 +26,14 @@ export default function Startseite() {
           priority
         />
 
-        <div
-          style={{
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            position: "absolute",
-            background:
-              `radial-gradient(circle at ${bubble1.position}, ${bubble1.color}, rgba(255, 255, 255, 0) ${bubble1.size}), ` +
-              `radial-gradient(circle at ${bubble2.position}, ${bubble2.color}, rgba(255, 255, 255, 0) ${bubble2.size})`,
-          }}
-        />
-
-        {/* TODO: why does the Balancer add a gap on the left on mobile? */}
+        {/* Because Balancer left alignes on small screens, only use it on larger screens: */}
         <div className="hidden md:block">
-          <Balancer as="h1" className="text-blue-900 ">
+          <Balancer as="h1" className="text-primary">
             Individuelle Softwarelösungen für Dein Unternehmen
           </Balancer>
         </div>
 
-        <h1 className="block text-blue-900 md:hidden">
+        <h1 className="block md:hidden text-primary">
           Individuelle Softwarelösungen für Dein Unternehmen
         </h1>
 
@@ -70,7 +45,7 @@ export default function Startseite() {
       </div>
 
       <section>
-        <h2 className="text-center">Unsere Leistungen</h2>
+        <h2 className="text-center">Leistungen</h2>
         <p>
           Wir haben uns auf die Entwicklung von maßgeschneiderter Software in
           Form von App- und Webanwendungen spezialisiert, welche vielfältig
@@ -92,7 +67,7 @@ export default function Startseite() {
               href="/appentwicklung"
               style="text-primary"
             >
-              App Entwicklung entdecken
+              Mehr Entdecken
             </LinkButton>
           </Card>
 
@@ -111,7 +86,7 @@ export default function Startseite() {
               href="/webentwicklung"
               style="text-primary"
             >
-              Web Entwicklung entdecken
+              Mehr Entdecken
             </LinkButton>
           </Card>
         </div>
@@ -132,7 +107,7 @@ export default function Startseite() {
             />
           </HoverEffect>
           <div className="my-10">
-            <span className="font-bold">Jens Becker</span>
+            <span className="text-lg font-bold">Jens Becker</span>
             <ul>
               <li>ausgebildeter Softwareentwickler</li>
               <li>Schwerpunkt Web- & Appanwendungen</li>
@@ -211,16 +186,17 @@ function Testimonial({
 }) {
   return (
     <Card>
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row items-center gap-5 md:flex-col lg:flex-row">
         <Image
           src={"/images/testimonials/" + imageName}
-          className="m-0 rounded-full"
+          className="m-0 rounded-full aspect-square"
           width={100}
           height={100}
           alt={"Portrait of " + name}
         />
+
         <div>
-          <div className="mt-5 font-bold">{name}</div>
+          <div className="font-bold">{name}</div>
           <div className="not-prose">
             <a
               href={companyUrl}
