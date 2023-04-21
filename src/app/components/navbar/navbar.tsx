@@ -126,7 +126,10 @@ export default function Navbar() {
                 key={tab.id}
                 style="text"
                 onClick={() => {
-                  router.push(tab.id);
+                  // TODO: fix this type error, so that there is no conversion needed
+                  router.push(
+                    tab.id as __next_route_internal_types__.RouteImpl<string>
+                  );
                   setModalOpened(false);
                 }}
                 className={selectedTabIndex == i ? "text-primary" : ""}
