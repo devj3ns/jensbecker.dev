@@ -1,4 +1,5 @@
 import Balancer from "react-wrap-balancer";
+import { HoverEffect } from "../components/hoverEffect";
 import Image from "next/image";
 import Link from "next/link";
 import { LinkButton } from "../components/button";
@@ -46,9 +47,9 @@ export default function Referenzen() {
               <div className="flex flex-col gap-5 sm:basis-5/12">
                 <h2 className="my-0">{title}</h2>
 
-                <div className="p-5 text-white rounded-md shadow-md bg-primary">
+                <HoverEffect className="p-5 text-white bg-gray-500 rounded-md shadow-md">
                   {description}
-                </div>
+                </HoverEffect>
 
                 <div>
                   {tags.map((tag) => (

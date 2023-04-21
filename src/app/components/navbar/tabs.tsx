@@ -97,10 +97,9 @@ export const NavbarTabs = ({
           <Link key={i} href={{ pathname: item.id }}>
             <button
               className={classNames(
-                "text-md relative rounded-md flex items-center h-8 px-4 z-20 bg-transparent text-sm text-slate-600 cursor-pointer select-none transition-colors not-prose font-semibold",
+                "text-md relative rounded-md flex items-center h-8 px-4 z-20 bg-transparent text-sm text-gray-800 cursor-pointer select-none transition-colors not-prose font-semibold",
                 {
-                  "text-slate-800":
-                    hoveredTabIndex === i || selectedTabIndex === i,
+                  "text-gray-900": selectedTabIndex === i,
                 },
                 {
                   "font-bold": selectedTabIndex === i,
@@ -116,7 +115,7 @@ export const NavbarTabs = ({
         );
       })}
       <div
-        className="absolute z-10 top-0 left-0 rounded-md bg-gray-200 transition-[width]"
+        className="absolute z-10 top-0 left-0 rounded-md bg-neutral-200 transition-[width]"
         style={hoverStyles}
       />
       <div

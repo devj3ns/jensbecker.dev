@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Link from "next/link";
+import classNames from "classnames";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 export function LinkButton({
@@ -16,20 +17,20 @@ export function LinkButton({
   icon?: IconProp;
   style?: "primary" | "text" | "text-primary";
 }) {
+  style = style || "primary";
+
   return (
     <Link
       href={{ pathname: href }}
-      className={
-        "gap-5 btn " +
-        " " +
-        className +
-        " " +
-        ((style ?? "primary") == "primary"
-          ? "btn-primary text-slate-50"
+      className={classNames(
+        "gap-5 btn",
+        className,
+        style == "primary"
+          ? "btn-primary text-gray-50"
           : style == "text"
           ? "btn-ghost"
-          : "btn-ghost text-primary")
-      }
+          : "btn-ghost text-primary"
+      )}
     >
       {children}
       {icon && <FontAwesomeIcon icon={icon} />}
@@ -38,7 +39,7 @@ export function LinkButton({
 }
 
 export function Button({
-  className,
+  className = "",
   children,
   onClick,
   icon,
@@ -59,13 +60,11 @@ export function Button({
   return (
     <button
       type={type ?? "button"}
-      className={
-        "gap-5 btn " +
-        " " +
-        className +
-        " " +
-        (style == "primary" ? "btn-primary text-slate-50" : "btn-ghost")
-      }
+      className={classNames(
+        "gap-5 btn",
+        className,
+        style == "primary" ? "btn-primary text-slate-50" : "btn-ghost"
+      )}
       onClick={onClick}
     >
       {children}

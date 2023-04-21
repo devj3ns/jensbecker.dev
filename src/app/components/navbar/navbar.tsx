@@ -89,7 +89,7 @@ export default function Navbar() {
       className={classNames(
         "w-full fixed transition-all z-10",
         showNav || isMediumScreen ? "translate-y-0" : "-translate-y-[100%]",
-        scrollY > navbarScrollDelay || modalOpened ? "bg-white" : "",
+        scrollY > navbarScrollDelay || modalOpened ? "bg-neutral-100" : "",
         scrollY > 0 ? "shadow-md" : ""
       )}
     >
@@ -117,7 +117,7 @@ export default function Navbar() {
       {modalOpened && (
         <div
           className={
-            "absolute flex flex-col w-full gap-3 bg-white shadow-md pb-4"
+            "absolute flex flex-col w-full gap-3 bg-neutral-100 shadow-md pb-4"
           }
         >
           {tabs.map((tab, i) => {

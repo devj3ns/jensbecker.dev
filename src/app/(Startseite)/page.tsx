@@ -8,18 +8,19 @@ import {
 import Balancer from "react-wrap-balancer";
 import { Card } from "../components/card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { HoverEffect } from "../components/hoverEffect";
 import Image from "next/image";
 import { LinkButton } from "../components/button";
 
 export default function Startseite() {
   const bubble1 = {
-    color: "rgba(245, 208, 39, 0.2)",
+    color: "rgba(245, 208, 39, 0.1)",
     size: "30%",
     position: "85% 35%",
   };
 
   const bubble2 = {
-    color: "rgba(39, 76, 180, 0.3)",
+    color: "rgba(39, 76, 180, 0.1)",
     size: "20%",
     position: "top left",
   };
@@ -44,7 +45,6 @@ export default function Startseite() {
             bottom: 0,
             left: 0,
             position: "absolute",
-            zIndex: "-1",
             background:
               `radial-gradient(circle at ${bubble1.position}, ${bubble1.color}, rgba(255, 255, 255, 0) ${bubble1.size}), ` +
               `radial-gradient(circle at ${bubble2.position}, ${bubble2.color}, rgba(255, 255, 255, 0) ${bubble2.size})`,
@@ -121,14 +121,16 @@ export default function Startseite() {
         <h2 className="text-center">Kundennah und persönlich</h2>
 
         <div className="flex flex-col items-center md:gap-10 md:flex-row">
-          <Image
-            className="rounded-full shadow-md"
-            src="/images/portrait.webp"
-            alt="Portrait von Jens Becker"
-            width={225}
-            height={225}
-            style={{ height: 225, width: "auto" }}
-          />
+          <HoverEffect className="rounded-full">
+            <Image
+              className="m-0 rounded-full shadow-md"
+              src="/images/portrait.webp"
+              alt="Portrait von Jens Becker"
+              width={225}
+              height={225}
+              style={{ height: 225, width: "auto" }}
+            />
+          </HoverEffect>
           <div className="my-10">
             <span className="font-bold">Jens Becker</span>
             <ul>
@@ -208,9 +210,14 @@ function Testimonial({
         />
         <div>
           <div className="mt-5 font-bold">{name}</div>
-          <div className="flex flex-row items-center gap-3 text-sm text-gray-500 not-prose">
-            <FontAwesomeIcon icon={faBuilding} />
-            <a href={companyUrl}>{companyName}</a>
+          <div className="not-prose">
+            <a
+              href={companyUrl}
+              className="flex flex-row items-center gap-2 text-sm text-gray-500"
+            >
+              <FontAwesomeIcon icon={faBuilding} />
+              {companyName}
+            </a>
           </div>
         </div>
       </div>

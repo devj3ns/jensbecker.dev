@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export function ContactInformation() {
   return (
-    <div className="flex gap-5 rounded-lg bg-primary">
+    <div className="flex gap-5 bg-gray-500 rounded-lg">
       <div className="relative flex-none w-48 h-48">
         <Image
           src="/images/portrait.webp"
