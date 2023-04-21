@@ -3,7 +3,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { Montserrat } from "next/font/google";
 import Navbar from "./components/navbar/navbar";
-import classnames from "classnames";
 import { config } from "@fortawesome/fontawesome-svg-core";
 
 config.autoAddCss = false;
@@ -29,9 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de">
+    <html lang="de" className={font.className}>
       <body
-        className={classnames(font.className, "bg-neutral-100 min-h-screen")}
+        className="min-h-screen bg-neutral-100"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(15 23 42 / 0.02)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e\")",
