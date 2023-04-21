@@ -148,16 +148,6 @@ export default function Startseite() {
 
         <div className="grid gap-5 md:grid-cols-3">
           <Testimonial
-            name="Moritz Liederbach"
-            companyName="The Lighthaus"
-            companyUrl="https://thelighthaus.de"
-            imageName="moritz-liederbach.webp"
-          >
-            Es macht einfach nur unglaublich viel Freude, mit Jens zusammen
-            zuarbeiten. Mit seiner Hilfe konnten wir neue Funktionen auf unserer
-            Website integrieren und wichtige Prozesse perfekt optimieren.
-          </Testimonial>
-          <Testimonial
             name="Kati Rucker"
             companyName="The Lighthaus"
             companyUrl="https://thelighthaus.de"
@@ -170,6 +160,27 @@ export default function Startseite() {
             eigenständig Idee und mögliche weitere Ansätze ein.
           </Testimonial>
           <Testimonial
+            name="Moritz Liederbach"
+            companyName="The Lighthaus"
+            companyUrl="https://thelighthaus.de"
+            imageName="moritz-liederbach.webp"
+          >
+            Es macht einfach nur unglaublich viel Freude, mit Jens zusammen
+            zuarbeiten. Mit seiner Hilfe konnten wir neue Funktionen auf unserer
+            Website integrieren und wichtige Prozesse perfekt optimieren.
+          </Testimonial>
+          <Testimonial
+            name="Sandra Küfner"
+            companyName="Kreativeria"
+            companyUrl="https://kreativeria.com/"
+            imageName="sandra-kuefner.webp"
+          >
+            Die Zusammenarbeit mit Jens war angenehm und unkompliziert. Er hat
+            tolle Ideen und versucht alles umzusetzen, was man selbst an
+            Vorschlägen mitbringt. Unsere Zusammenarbeit hat mir sehr viel Spaß
+            gemacht und ich liebe meine neue Website!
+          </Testimonial>
+          {/*<Testimonial
             name="René Schäfer"
             companyName="nestwärme E.V."
             companyUrl="https://nestwaerme.de"
@@ -178,7 +189,7 @@ export default function Startseite() {
             Dank der Nestwärme KiTa App sind jetzt alle relevanten Informationen
             wie Elternbriefe oder Termine jederzeit in App abrufbar. Endlich
             Schluss mit der Zettelwirtschaft.
-          </Testimonial>
+          </Testimonial>*/}
         </div>
       </section>
     </div>
