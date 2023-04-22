@@ -9,32 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
-    "@fortawesome/free-brands-svg-icons": "^6.3.0",
-    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@mantine/form": "^6.0.1",
-    "@types/node": "18.15.0",
-    "@types/react": "18.0.28",
+    "@mantine/form": "^6.0.8",
+    "@types/node": "18.15.13",
+    "@types/react": "18.0.38",
     "@types/react-dom": "18.0.11",
     "classnames": "^2.3.2",
-    "contentlayer": "^0.3.0",
-    "eslint": "8.36.0",
-    "eslint-config-next": "^13.2.4",
+    "contentlayer": "^0.3.1",
+    "eslint": "8.39.0",
+    "eslint-config-next": "^13.3.1",
     "hamburger-react": "^2.5.0",
-    "next": "^13.3.0",
-    "next-contentlayer": "^0.3.0",
+    "next": "^13.3.1",
+    "next-contentlayer": "^0.3.1",
     "nodemailer": "^6.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-wrap-balancer": "^0.4.0",
-    "typescript": "4.9.5"
+    "typescript": "5.0.4"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
     "@types/nodemailer": "^6.4.7",
     "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.1"
   }
 }
