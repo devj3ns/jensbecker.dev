@@ -1,7 +1,11 @@
 export const metadata = {
   title: "Impressum",
+  description: "",
   robots: {
     index: false,
+    googleBot: {
+      index: false,
+    },
   },
 };
 

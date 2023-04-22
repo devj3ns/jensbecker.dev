@@ -19,6 +19,9 @@ export async function generateMetadata({
 
   if (!project) return;
 
+  const url = "https://jensbecker.dev";
+  const ogImage = `${url}/images/projects/${project.slug}.png`;
+
   return {
     title: project.title,
     description: project.description,
@@ -26,6 +29,21 @@ export async function generateMetadata({
       type: "article",
       title: project.title,
       description: project.description,
+      publishedTime: project.publishedAt,
+      url: `https://jensbecker.dev/referenzen/${project.slug}`,
+      images: [
+        {
+          url: ogImage,
+          width: 1920,
+          height: 1080,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: [ogImage],
     },
   };
 }

@@ -7,6 +7,8 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata = {
   title: "Referenzen",
+  description:
+    "Überzeuge Dich von unseren vielfältigen Referenzen: Eine Auswahl der zuletzt für diverse Unternehmen umgesetzten Projekte.",
 };
 
 export default function Referenzen() {

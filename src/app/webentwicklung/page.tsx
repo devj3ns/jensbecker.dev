@@ -4,6 +4,8 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata = {
   title: "Webentwicklung",
+  description:
+    "Wir entwickeln für Dich Deine individuelle Web-App und unterstützen Dich von der Idee bis zum Release.",
 };
 
 export default function Webentwicklung() {

@@ -1,9 +1,11 @@
-export const metadata = {
-  title: "Kontakt",
-};
-
 import { ContactForm } from "./components/ContactForm";
 import { ContactInformation } from "./components/ContactInformation";
+
+export const metadata = {
+  title: "Kontakt",
+  description:
+    "Du benötigst Unterstützung beim Realisieren Deines Software Projekts? Wir helfen dabei, Deine Vision zu verwirklichen. Hinterlasse gerne eine Nachrich",
+};
 
 export default function Contact() {
   return (

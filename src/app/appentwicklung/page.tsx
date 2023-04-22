@@ -4,6 +4,8 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata = {
   title: "Appentwicklung",
+  description:
+    "Wir entwickeln für Dich Deine individuelle mobile App und unterstützen Dich von der Idee bis zum Release.",
 };
 
 export default function Appentwicklung() {

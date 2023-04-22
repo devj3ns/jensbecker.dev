@@ -9,16 +9,52 @@ import localFont from "next/font/local";
 
 config.autoAddCss = false;
 
+const shortTitle = "Jens Becker";
+const title = "Jens Becker - Individuelle Softwarelösungen";
+const description =
+  "Als Inhaber-geführtes Softwareentwicklungsunternehmen entwickeln wir zukunftsorientierte Individualsoftware mit Fokus auf App- & Webentwicklung, um Dein Unternehmen voranzubringen.";
+const url = "https://jensbecker.dev";
+
 export const metadata = {
   title: {
-    default: "Jens Becker",
-    template: "%s | Jens Becker",
+    default: title,
+    template: `%s | ${shortTitle}`,
   },
-  description: "Software Developer",
+  description: description,
   icons: {
-    shortcut: "/images/favicon/favicon.ico",
-    icon: "images/favicon/icon.png",
-    apple: "images/favicon/icon.png",
+    shortcut: "/favicon.ico",
+    icon: "images/icon.png",
+    apple: "images/icon.png",
+  },
+  openGraph: {
+    title: title,
+    description: description,
+    url: url,
+    siteName: shortTitle,
+    images: [
+      {
+        url: `${url}/images/og.jpg`,
+        width: 1920,
+        height: 1080,
+      },
+    ],
+    locale: "de-DE",
+    type: "website",
+  },
+  twitter: {
+    title: shortTitle,
+    card: "summary_large_image",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
