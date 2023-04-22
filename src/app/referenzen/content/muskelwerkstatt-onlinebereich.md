@@ -1,6 +1,7 @@
 ---
 title: "Muskelwerkstatt Mehr Performance Onlinebereich"
-date: "2020 Q2 "
+date: "2020 Q2"
+publishedAt: "06-22-2020"
 description: "Eine Online-Plattform mit vielen Funktionen, die die Trainierenden mit nützlichen und individuellen Inhalten unterstützt."
 tags: ["Django", "Phyton", "Bootstrap"]
 ---

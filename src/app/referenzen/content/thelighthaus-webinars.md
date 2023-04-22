@@ -1,6 +1,7 @@
 ---
 title: "The Lighthaus Webinarsystem"
 date: "2023 Q1"
+publishedAt: "01-22-2023"
 description: "Ein Webinar-Buchungssystem, zum erstellen und verwalten von Webinaren. Das System sendet Teilnehmern nach Zahlungseingang automatisch eine E-Mail mit den Zoom Zugangsdaten."
 tags: ["Next.js", "Typescript", "Supabase"]
 ---

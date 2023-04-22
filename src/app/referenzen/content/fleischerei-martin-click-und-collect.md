@@ -1,6 +1,7 @@
 ---
 title: "Fleischerei Martin Click & Collect"
 date: "2020 Q4"
+publishedAt: "12-22-2020"
 description: "Eine Click & Collect Bestellseite, um Kunden eine Möglichkeit zum einfachen und unkomplizierten Bestellen zu bieten."
 tags: ["Django", "Phyton", "Bootstrap"]
 ---
