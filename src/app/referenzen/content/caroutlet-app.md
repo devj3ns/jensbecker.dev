@@ -1,7 +1,7 @@
 ---
 title: "CAROUTLET App"
 date: "2022 Q1"
-publishedAt: "04-22-2022"
+publishedAt: "2022-04-22"
 description: "Android und iOS App, die Kunden eine Übersicht aktueller Fahrzeuge von CAROUTLET bietet. Zusätzlich können die Kunden wählen, ob sie sofort oder täglich per Push-Benachrichtigung über neue Angebote informiert werden möchten."
 tags: ["Flutter", "Dart", "Firebase"]
 ---

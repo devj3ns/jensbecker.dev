@@ -1,7 +1,7 @@
 ---
 title: "The Lighthaus Verfügbarkeit"
 date: "2022 Q4"
-publishedAt: "12-22-2022"
+publishedAt: "2022-12-22"
 description: "Ein Website auf der Kunden von The Lighthaus die nächsten freien Coaching Termine in einem Kalender sehen und buchen können."
 tags: ["Next.js", "Typescript", "Supabase"]
 ---

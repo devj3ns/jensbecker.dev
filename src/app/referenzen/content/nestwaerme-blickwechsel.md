@@ -1,7 +1,7 @@
 ---
 title: "Nestwärme Blickwechsel Buchungsassistent"
 date: "2021 Q1"
-publishedAt: "01-22-2021"
+publishedAt: "2021-01-22"
 description: "Eine Buchungsassistent-Website für das Projekt Blickwechsel von nestwärme e.V. um ein Coaching online buchen zu können."
 tags: ["Django", "Phyton", "Bootstrap"]
 ---
