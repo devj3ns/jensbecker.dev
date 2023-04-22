@@ -11,11 +11,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HoverEffect } from "../components/hoverEffect";
 import Image from "next/image";
 import { LinkButton } from "../components/button";
+import classNames from "classnames";
 
 export default function Startseite() {
   return (
-    <div className="flex flex-col items-center justify-center gap-16">
-      <div className="text-center md:mx-32">
+    <div className="flex flex-col items-center justify-center gap-10">
+      <div className="mb-20 text-center md:mx-32">
         <Image
           className="mx-auto"
           src="/images/softwaredev.webp"
@@ -44,8 +45,7 @@ export default function Startseite() {
         </Balancer>
       </div>
 
-      <section>
-        <h2 className="text-center">Leistungen</h2>
+      <Section title="Leistungen" grayBackground>
         <p>
           Wir haben uns auf die Entwicklung von maßgeschneiderter Software in
           Form von App- und Webanwendungen spezialisiert, welche vielfältig
@@ -90,12 +90,10 @@ export default function Startseite() {
             </LinkButton>
           </Card>
         </div>
-      </section>
+      </Section>
 
-      <section>
-        <h2 className="text-center">Kundennah und persönlich</h2>
-
-        <div className="flex flex-col items-center md:gap-10 md:flex-row">
+      <Section title={"Kundennah und persönlich"}>
+        <div className="flex flex-col items-center mt-10 md:gap-10 md:flex-row">
           <HoverEffect className="rounded-full">
             <Image
               className="m-0 rounded-full shadow-md"
@@ -106,9 +104,9 @@ export default function Startseite() {
               style={{ height: 225, width: "auto" }}
             />
           </HoverEffect>
-          <div className="my-10">
+          <div className="mt-10">
             <span className="text-lg font-bold">Jens Becker</span>
-            <ul>
+            <ul className="my-0">
               <li>ausgebildeter Softwareentwickler</li>
               <li>Schwerpunkt Web- & Appanwendungen</li>
               <li>Erfahrung durch diverse Projekte</li>
@@ -116,11 +114,9 @@ export default function Startseite() {
             </ul>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section>
-        <h2 className="text-center">Das sagen Kunden</h2>
-
+      <Section title={"Das sagen Kunden"} grayBackground>
         <div className="grid gap-5 md:grid-cols-3">
           <Testimonial
             name="Kati Rucker"
@@ -166,8 +162,34 @@ export default function Startseite() {
             Schluss mit der Zettelwirtschaft.
           </Testimonial>*/}
         </div>
-      </section>
+      </Section>
     </div>
+  );
+}
+
+function Section({
+  title,
+  grayBackground,
+  children,
+}: {
+  title: string;
+  grayBackground?: boolean;
+  children: React.ReactNode;
+}) {
+  const boxedWidthClasses = "px-5 mx-auto max-w-7xl md:px-5";
+
+  return (
+    <section
+      className={classNames(
+        "pt-10 pb-12",
+        grayBackground && "bg-neutral-200/40 w-screen"
+      )}
+    >
+      <div className={classNames(grayBackground && boxedWidthClasses)}>
+        <h2 className="mt-0 text-center">{title}</h2>
+        {children}
+      </div>
+    </section>
   );
 }
 

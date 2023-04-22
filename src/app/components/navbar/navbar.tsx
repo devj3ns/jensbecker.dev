@@ -10,7 +10,11 @@ import classNames from "classnames";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 
-export default function Navbar() {
+export default function Navbar({
+  boxedWidthClasses,
+}: {
+  boxedWidthClasses: string;
+}) {
   const tabs = [
     {
       label: "Startseite",
@@ -93,7 +97,12 @@ export default function Navbar() {
         scrollY > 0 ? "shadow-md" : ""
       )}
     >
-      <nav className="flex flex-row items-center content-center justify-between px-5 py-3 mx-auto max-w-7xl">
+      <nav
+        className={classNames(
+          "flex flex-row items-center justify-between py-3",
+          boxedWidthClasses
+        )}
+      >
         <Link href={{ pathname: "/" }}>
           <h1 className="text-2xl font-bold">Jens Becker</h1>
         </Link>

@@ -66,7 +66,7 @@ function MDX({ code }: { code: string }) {
   const Component = useMDXComponent(code);
 
   return (
-    <article className="pt-2 prose prose-quoteless prose-neutral dark:prose-invert max-w-none">
+    <article>
       <Component />
     </article>
   );

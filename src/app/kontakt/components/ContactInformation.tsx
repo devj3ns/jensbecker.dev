@@ -6,22 +6,25 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { HoverEffect } from "@/app/components/hoverEffect";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import Image from "next/image";
 
 export function ContactInformation() {
   return (
-    <div className="flex gap-5 bg-gray-500 rounded-lg">
-      <div className="relative flex-none w-48 h-48">
+    <div className="flex flex-col items-center justify-center gap-10 text-center md:flex-row md:text-left">
+      <HoverEffect className="rounded-full">
         <Image
+          className="m-0 rounded-full shadow-md"
           src="/images/portrait.webp"
           alt="Portrait von Jens Becker"
-          fill
-          className="m-0 rounded-tl-lg rounded-bl-lg"
+          width={225}
+          height={225}
+          style={{ height: 180, width: "auto" }}
         />
-      </div>
-
-      <div className="flex flex-col justify-center gap-5 text-white not-prose">
+      </HoverEffect>
+      <div className="flex flex-col gap-3 not-prose">
+        <span className="text-lg font-bold">Jens Becker</span>
         <a href="tel:+49 1522 8461402">+49 1522 8461402</a>
 
         <a href="mailto:info@jensbecker.dev">info@jensbecker.dev</a>
@@ -43,7 +46,7 @@ export function ContactInformation() {
 function SocialIcon({ href, icon }: { href: string; icon: IconProp }) {
   return (
     <a href={href}>
-      <FontAwesomeIcon icon={icon} style={{ fontSize: 25 }} color="white" />
+      <FontAwesomeIcon icon={icon} style={{ fontSize: 25 }} />
     </a>
   );
 }

@@ -11,9 +11,6 @@ module.exports = {
         DEFAULT: {
           css: {
             color: "#333",
-            a: {
-              color: "inherit",
-            },
           },
         },
       },

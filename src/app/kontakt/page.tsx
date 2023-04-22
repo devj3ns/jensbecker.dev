@@ -11,8 +11,9 @@ export default function Contact() {
       <h1 className="mb-0 text-center">Kontakt</h1>
       <p className="mb-10 text-center">
         Du benötigst Unterstützung beim Realisieren Deines Software Projekts?
-        Wir helfen dabei, Deine Vision zu verwirklichen. Hinterlasse uns gerne
-        eine Nachricht.
+        <br />
+        Wir helfen dabei, Deine Vision zu verwirklichen. Hinterlasse gerne eine
+        Nachricht.
       </p>
 
       <div className="flex flex-col gap-10">

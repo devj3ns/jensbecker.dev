@@ -97,7 +97,7 @@ export const NavbarTabs = ({
           <Link key={i} href={{ pathname: item.id }}>
             <button
               className={classNames(
-                "text-md relative rounded-md flex items-center h-8 px-4 z-20 bg-transparent text-sm text-gray-800 cursor-pointer select-none transition-colors not-prose font-semibold",
+                "text-md relative rounded-md flex items-center h-8 px-4 z-20 bg-transparent text-sm text-gray-800 cursor-pointer select-none transition-colors font-semibold",
                 {
                   "text-gray-900": selectedTabIndex === i,
                 },
