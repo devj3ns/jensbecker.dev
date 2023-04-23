@@ -92,7 +92,7 @@ export default function Startseite() {
         </div>
       </Section>
 
-      <Section title={"Kundennah und persönlich"}>
+      <Section title="Über den Geschäftsführer">
         <div className="flex flex-col items-center mt-10 md:gap-10 md:flex-row">
           <HoverEffect className="rounded-full">
             <Image
@@ -104,12 +104,12 @@ export default function Startseite() {
               style={{ height: 225, width: "auto" }}
             />
           </HoverEffect>
-          <div className="mt-10">
+          <div>
             <span className="text-lg font-bold">Jens Becker</span>
             <ul className="my-0">
-              <li>ausgebildeter Softwareentwickler</li>
-              <li>Schwerpunkt Web- & Appanwendungen</li>
-              <li>Erfahrung durch diverse Projekte</li>
+              <li>erfahrener Softwareentwickler</li>
+              <li>Schwerpunkt App- & Webentwicklung</li>
+              <li>Diverse Projekte für Firmen umgesetzt</li>
               <li>Informatikstudium an der Hochschule Trier</li>
             </ul>
           </div>
