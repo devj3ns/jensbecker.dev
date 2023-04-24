@@ -1,3 +1,4 @@
+import { DOMAIN_URL } from "@/shared/constants";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { allProjects } from "contentlayer/generated";
@@ -19,8 +20,7 @@ export async function generateMetadata({
 
   if (!project) return;
 
-  const url = "https://jensbecker.dev";
-  const ogImage = `${url}/images/projects/${project.slug}.png`;
+  const ogImage = `${DOMAIN_URL}/images/projects/${project.slug}.png`;
 
   return {
     title: project.title,
@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: project.title,
       description: project.description,
       publishedTime: project.publishedAt,
-      url: `https://jensbecker.dev/referenzen/${project.slug}`,
+      url: `${DOMAIN_URL}/referenzen/${project.slug}`,
       images: [
         {
           url: ogImage,

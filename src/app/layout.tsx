@@ -1,6 +1,13 @@
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
+import {
+  DOMAIN_URL,
+  SEO_DESCRIPTION,
+  SEO_SHORT_TITLE,
+  SEO_TITLE,
+} from "@/shared/constants";
+
 import { Footer } from "./components/footer";
 import Navbar from "./components/navbar/navbar";
 import classNames from "classnames";
@@ -9,31 +16,25 @@ import localFont from "next/font/local";
 
 config.autoAddCss = false;
 
-const shortTitle = "Jens Becker";
-const title = "Jens Becker - Individuelle Softwarelösungen";
-const description =
-  "Als Inhaber-geführtes Softwareentwicklungsunternehmen entwickeln wir zukunftsorientierte Individualsoftware mit Fokus auf App- & Webentwicklung, um Dein Unternehmen voranzubringen.";
-const url = "https://jensbecker.dev";
-
 export const metadata = {
   title: {
-    default: title,
-    template: `%s | ${shortTitle}`,
+    default: SEO_TITLE,
+    template: `%s | ${SEO_SHORT_TITLE}`,
   },
-  description: description,
+  description: SEO_DESCRIPTION,
   icons: {
     shortcut: "/favicon.ico",
     icon: "images/icon.png",
     apple: "images/icon.png",
   },
   openGraph: {
-    title: title,
-    description: description,
-    url: url,
-    siteName: shortTitle,
+    title: SEO_TITLE,
+    description: SEO_DESCRIPTION,
+    url: DOMAIN_URL,
+    siteName: SEO_SHORT_TITLE,
     images: [
       {
-        url: `${url}/images/og.jpg`,
+        url: `${DOMAIN_URL}/images/og.png`,
         width: 1920,
         height: 1080,
       },
@@ -42,7 +43,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    title: shortTitle,
+    title: SEO_SHORT_TITLE,
     card: "summary_large_image",
   },
   robots: {

@@ -1,3 +1,5 @@
+import { DOMAIN_URL } from "@/shared/constants";
+
 export default function robots() {
   return {
     rules: [
@@ -5,7 +7,7 @@ export default function robots() {
         userAgent: "*",
       },
     ],
-    sitemap: "https://jensbecker.dev/sitemap.xml",
-    host: "https://jensbecker.dev",
+    sitemap: `${DOMAIN_URL}/sitemap.xml`,
+    host: DOMAIN_URL,
   };
 }

@@ -10,7 +10,7 @@ export function Footer({ boxedWidthClasses }: { boxedWidthClasses: string }) {
       )}
     >
       <div className="font-semibold text-gray-700">
-        Jens Becker &copy; {new Date().getFullYear()}
+        JB Software &copy; {new Date().getFullYear()}
       </div>
       <div className="flex flex-col items-center md:gap-3 md:flex-row">
         <LinkButton style="text" href="/impressum">

@@ -1,7 +1,7 @@
+import { GITHUB_LINK, LINKEDIN_LINK, WHATSAPP_LINK } from "@/shared/constants";
 import {
   faGithub,
   faLinkedinIn,
-  faTwitter,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -30,13 +30,9 @@ export function ContactInformation() {
         <a href="mailto:info@jensbecker.dev">info@jensbecker.dev</a>
 
         <div className="flex gap-5">
-          <SocialIcon href="https://wa.me/+4915228461402" icon={faWhatsapp} />
-          <SocialIcon href="https://github.com/devj3ns" icon={faGithub} />
-          <SocialIcon href="https://twitter.com/devj3ns" icon={faTwitter} />
-          <SocialIcon
-            href="https://www.linkedin.com/in/jens-becker-6a9065178/"
-            icon={faLinkedinIn}
-          />
+          <SocialIcon href={WHATSAPP_LINK} icon={faWhatsapp} />
+          <SocialIcon href={GITHUB_LINK} icon={faGithub} />
+          <SocialIcon href={LINKEDIN_LINK} icon={faLinkedinIn} />
         </div>
       </div>
     </div>

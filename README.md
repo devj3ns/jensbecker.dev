@@ -1,8 +1,8 @@
-# v3.jensbecker.dev
+# [jb-software.dev](https://jb-software.dev)
 
 Website for my software development company.
 
-## Techstack: 
+## Techstack
 
 🔹Next.js
 
@@ -13,7 +13,3 @@ Website for my software development company.
 🔹ContentLayer
 
 Hosted on vercel 🔺
-
-
-
-

@@ -104,7 +104,7 @@ export default function Navbar({
         )}
       >
         <Link href={{ pathname: "/" }}>
-          <h1 className="text-2xl font-bold">Jens Becker</h1>
+          <h1 className="text-2xl font-bold">JB Software</h1>
         </Link>
 
         <div className="hidden md:block">
