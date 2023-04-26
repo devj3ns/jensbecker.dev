@@ -29,9 +29,13 @@ Hosted on vercel 🔺
 We welcome contributions from the community! If you would like to contribute to our projects, please follow these guidelines:
 
 🔹Fork this repository
+
 🔹Create a new branch for your feature or bug fix
+
 🔹Make your changes and commit them with descriptive commit messages
+
 🔹Push your changes to your fork
+
 🔹Submit a pull request to this repository with a detailed description of your changes
 
 # Contact Us
