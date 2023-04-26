@@ -1,8 +1,10 @@
 import {
+  faBarsStaggered,
   faBuilding,
   faChevronRight,
   faDisplay,
   faMobileScreen,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 import Balancer from "react-wrap-balancer";
@@ -43,6 +45,20 @@ export default function Startseite() {
           zukunftsorientierte Individualsoftware, um Dein Unternehmen
           voranzubringen.
         </Balancer>
+
+        <div className="flex flex-row justify-center gap-3 mt-5 md:gap-5">
+          <LinkButton
+            href="/referenzen"
+            icon={faBarsStaggered}
+            style="light-primary"
+          >
+            Referenzen
+          </LinkButton>
+
+          <LinkButton href="/kontakt" icon={faUser} style="light-primary">
+            Kontakt
+          </LinkButton>
+        </div>
       </div>
 
       <Section title="Leistungen" grayBackground>
