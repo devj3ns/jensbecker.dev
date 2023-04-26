@@ -13,8 +13,8 @@ export const metadata = {
 
 export default function Referenzen() {
   return (
-    <main>
-      <section className="mb-32 text-center">
+    <>
+      <section className="text-center">
         <Balancer as="h1" className="mb-0">
           Überzeuge Dich von unseren Referenzen
         </Balancer>
@@ -24,15 +24,15 @@ export default function Referenzen() {
         </p>
       </section>
 
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col gap-12 my-16">
         {allProjects
           .sort((a, b) => (a.date < b.date ? 1 : -1))
           .map(({ title, description, tags, slug }) => (
             <div
               key={slug}
-              className="flex flex-col items-center gap-8 sm:even:flex-row-reverse sm:odd:flex-row odd:text-right even:text-left"
+              className="flex flex-col items-center gap-5 md:gap-8 sm:even:flex-row-reverse sm:odd:flex-row sm:odd:text-right sm:even:text-left"
             >
-              <div className="w-full sm:basis-7/12">
+              <div className="w-full mb-0 sm:basis-7/12">
                 <Link href={`/referenzen/${slug}`}>
                   <Image
                     src={`/images/projects/${slug}.png`}
@@ -40,7 +40,7 @@ export default function Referenzen() {
                     width={1920}
                     height={1080}
                     quality={100}
-                    className="rounded-xl"
+                    className="my-0 rounded-xl"
                   />
                 </Link>
               </div>
@@ -63,7 +63,7 @@ export default function Referenzen() {
                 <div>
                   <LinkButton
                     href={`/referenzen/${slug}`}
-                    style="text"
+                    style="light"
                     icon={faChevronRight}
                   >
                     Mehr erfahren
@@ -74,12 +74,12 @@ export default function Referenzen() {
           ))}
       </div>
 
-      <section className="my-24 text-center">
+      <section className="mb-16 text-center">
         <p className="mb-5 text-2xl font-bold">Interesse geweckt?</p>
         <LinkButton href={`/kontakt`} icon={faChevronRight}>
           Eigenes Projekt anfragen
         </LinkButton>
       </section>
-    </main>
+    </>
   );
 }
