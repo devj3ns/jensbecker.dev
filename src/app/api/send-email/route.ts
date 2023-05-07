@@ -12,7 +12,7 @@ export async function POST(request: Request) {
       RegExp(/^\S+@\S+\.\S+$/).test(body.email)
     ) {
       const transporter = nodemailer.createTransport({
-        host: "smtp.ionos.de",
+        host: "smtp.gmail.com",
         port: 465,
         secure: true,
         auth: {
@@ -22,8 +22,8 @@ export async function POST(request: Request) {
       });
 
       await transporter.sendMail({
-        from: "info@jensbecker.dev",
-        to: "info@jensbecker.dev",
+        from: "info@jb-software.dev",
+        to: "info@jb-software.dev",
         subject: `Neue Kontaktformular Nachricht`,
         html: `
               <p><strong>Name: </strong> ${body.name}</p>

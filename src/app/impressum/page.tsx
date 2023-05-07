@@ -27,7 +27,7 @@ export default function Contact() {
       <p>
         Telefon: +49 1522 8461402
         <br />
-        E-Mail: info@jensbecker.dev
+        E-Mail: info@jb-software.dev
       </p>
 
       <h2>EU-Streitschlichtung</h2>

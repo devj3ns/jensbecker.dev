@@ -27,7 +27,7 @@ export function ContactInformation() {
         <span className="text-lg font-bold">Jens Becker</span>
         <a href="tel:+49 1522 8461402">+49 1522 8461402</a>
 
-        <a href="mailto:info@jensbecker.dev">info@jensbecker.dev</a>
+        <a href="mailto:info@jb-software.dev">info@jb-software.dev</a>
 
         <div className="flex gap-5">
           <SocialIcon href={WHATSAPP_LINK} icon={faWhatsapp} />

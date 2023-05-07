@@ -42,5 +42,5 @@ We welcome contributions from the community! If you would like to contribute to 
 
 Get in touch with us to learn more about our services and how we can help your business succeed.
 
-Email: info@jensbecker.dev
+Email: info@jb-software.dev
 Phone: +49 1522 8461402
