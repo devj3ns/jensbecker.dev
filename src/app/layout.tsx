@@ -23,7 +23,7 @@ export const metadata = {
   },
   description: SEO_DESCRIPTION,
   icons: {
-    shortcut: "/favicon.ico",
+    shortcut: "images/favicon.ico",
     icon: "images/icon.png",
     apple: "images/icon.png",
   },
