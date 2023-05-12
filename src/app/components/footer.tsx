@@ -1,4 +1,5 @@
 import { LinkButton } from "./button";
+import { SITE_SHORT_TITLE } from "@/shared/constants";
 import classNames from "classnames";
 
 export function Footer({ boxedWidthClasses }: { boxedWidthClasses: string }) {
@@ -10,7 +11,7 @@ export function Footer({ boxedWidthClasses }: { boxedWidthClasses: string }) {
       )}
     >
       <div className="font-semibold text-gray-700">
-        JB Software &copy; {new Date().getFullYear()}
+        {SITE_SHORT_TITLE} &copy; {new Date().getFullYear()}
       </div>
       <div className="flex flex-col items-center md:gap-3 md:flex-row">
         <LinkButton style="text" href="/impressum">

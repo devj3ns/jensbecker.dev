@@ -6,6 +6,7 @@ import { Button } from "../button";
 import { Sling as Hamburger } from "hamburger-react";
 import Link from "next/link";
 import { NavbarTabs } from "./tabs";
+import { SITE_SHORT_TITLE } from "@/shared/constants";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
@@ -104,7 +105,7 @@ export default function Navbar({
         )}
       >
         <Link href={{ pathname: "/" }}>
-          <h1 className="text-2xl font-bold">JB Software</h1>
+          <h1 className="text-2xl font-bold">{SITE_SHORT_TITLE}</h1>
         </Link>
 
         <div className="hidden md:block">
