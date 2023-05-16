@@ -35,8 +35,8 @@ export const metadata = {
     images: [
       {
         url: `${DOMAIN_URL}/images/og.png`,
-        width: 1920,
-        height: 1080,
+        width: 1200,
+        height: 630,
       },
     ],
     locale: "de-DE",

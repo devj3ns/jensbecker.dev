@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 
 import { Button } from "../button";
 import { Sling as Hamburger } from "hamburger-react";
+import Image from "next/image";
 import Link from "next/link";
 import { NavbarTabs } from "./tabs";
-import { SITE_SHORT_TITLE } from "@/shared/constants";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
@@ -105,7 +105,14 @@ export default function Navbar({
         )}
       >
         <Link href={{ pathname: "/" }}>
-          <h1 className="text-2xl font-bold">{SITE_SHORT_TITLE}</h1>
+          <Image
+            src="/images/logo.webp"
+            alt="JHB Software Logo"
+            width={170}
+            height={40}
+            quality={100}
+            priority
+          />
         </Link>
 
         <div className="hidden md:block">
