@@ -27,7 +27,7 @@ export default function Referenzen() {
       <div className="flex flex-col gap-12 my-16">
         {allProjects
           .sort((a, b) => (a.date < b.date ? 1 : -1))
-          .map(({ title, description, tags, slug }) => (
+          .map(({ title, description, tags, slug }, index) => (
             <div
               key={slug}
               className="flex flex-col items-center gap-5 md:gap-8 sm:even:flex-row-reverse sm:odd:flex-row sm:odd:text-right sm:even:text-left"
@@ -40,6 +40,7 @@ export default function Referenzen() {
                     width={1920}
                     height={1080}
                     quality={100}
+                    priority={index == 0}
                     className="my-0 rounded-xl"
                   />
                 </Link>
