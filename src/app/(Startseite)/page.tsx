@@ -1,6 +1,5 @@
 import {
   faBarsStaggered,
-  faBuilding,
   faChevronRight,
   faDisplay,
   faMobileScreen,
@@ -13,6 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { HoverEffect } from "../components/hoverEffect";
 import Image from "next/image";
 import { LinkButton } from "../components/button";
+import Testimonials from "../components/Testimonials";
 import classNames from "classnames";
 
 export default function Startseite() {
@@ -133,51 +133,7 @@ export default function Startseite() {
       </Section>
 
       <Section title={"Das sagen Kunden"} grayBackground>
-        <div className="grid gap-5 md:grid-cols-3">
-          <Testimonial
-            name="Kati Rucker"
-            companyName="The Lighthaus"
-            companyUrl="https://thelighthaus.de"
-            imageName="kati-rucker.webp"
-          >
-            Trotz der teilweisen hohen Komplexität unserer Anforderungen hat
-            Jens immer sofort eine Lösung und arbeitet sich in die verschiedenen
-            Thematiken ein. Dabei sieht er nicht einfach nur einzelne
-            Anforderung, sondern betrachtet alle Facetten und bringt dabei
-            eigenständig Idee und mögliche weitere Ansätze ein.
-          </Testimonial>
-          <Testimonial
-            name="Moritz Liederbach"
-            companyName="The Lighthaus"
-            companyUrl="https://thelighthaus.de"
-            imageName="moritz-liederbach.webp"
-          >
-            Es macht einfach nur unglaublich viel Freude, mit Jens zusammen
-            zuarbeiten. Mit seiner Hilfe konnten wir neue Funktionen auf unserer
-            Website integrieren und wichtige Prozesse perfekt optimieren.
-          </Testimonial>
-          <Testimonial
-            name="Sandra Küfner"
-            companyName="Kreativeria"
-            companyUrl="https://kreativeria.com/"
-            imageName="sandra-kuefner.webp"
-          >
-            Die Zusammenarbeit mit Jens war angenehm und unkompliziert. Er hat
-            tolle Ideen und versucht alles umzusetzen, was man selbst an
-            Vorschlägen mitbringt. Unsere Zusammenarbeit hat mir sehr viel Spaß
-            gemacht und ich liebe meine neue Website!
-          </Testimonial>
-          {/*<Testimonial
-            name="René Schäfer"
-            companyName="nestwärme E.V."
-            companyUrl="https://nestwaerme.de"
-            imageName="rene-schaefer.webp"
-          >
-            Dank der Nestwärme KiTa App sind jetzt alle relevanten Informationen
-            wie Elternbriefe oder Termine jederzeit in App abrufbar. Endlich
-            Schluss mit der Zettelwirtschaft.
-          </Testimonial>*/}
-        </div>
+        <Testimonials />
       </Section>
     </div>
   );
@@ -206,48 +162,5 @@ function Section({
         {children}
       </div>
     </section>
-  );
-}
-
-function Testimonial({
-  name,
-  companyName,
-  companyUrl,
-  imageName,
-  children,
-}: {
-  name: string;
-  companyName: string;
-  companyUrl: string;
-  imageName: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Card>
-      <div className="flex flex-row items-center gap-5 md:flex-col lg:flex-row">
-        <Image
-          src={"/images/testimonials/" + imageName}
-          className="m-0 rounded-full aspect-square"
-          width={100}
-          height={100}
-          alt={"Portrait of " + name}
-        />
-
-        <div>
-          <div className="font-bold">{name}</div>
-          <div className="not-prose">
-            <a
-              href={companyUrl}
-              className="flex flex-row items-center gap-2 text-sm text-gray-500"
-            >
-              <FontAwesomeIcon icon={faBuilding} />
-              {companyName}
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <p>{children}</p>
-    </Card>
   );
 }
