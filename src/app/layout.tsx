@@ -18,6 +18,7 @@ import localFont from "next/font/local";
 config.autoAddCss = false;
 
 export const metadata = {
+  metadataBase: new URL(DOMAIN_URL),
   title: {
     default: SEO_TITLE,
     template: `%s | ${SEO_SHORT_TITLE}`,
@@ -35,7 +36,7 @@ export const metadata = {
     siteName: SEO_SHORT_TITLE,
     images: [
       {
-        url: `${DOMAIN_URL}/images/og.png`,
+        url: `/images/og.png`,
         width: 1200,
         height: 630,
       },
