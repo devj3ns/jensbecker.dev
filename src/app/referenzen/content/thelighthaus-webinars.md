@@ -6,7 +6,7 @@ description: "Ein Webinar-Buchungssystem, zum erstellen und verwalten von Webina
 tags: ["Next.js", "Typescript", "Supabase"]
 ---
 
-Die Firma [The Lighthaus](https://thelighthaus.de/) bietet regelmäßig verschiedene Webinare und Ausbildungsklassen an. Dazu benötigte sie ein System, welches den Teilnehmern von Webinaren nach Zahlungseingang automatisch die Zoom-Links zu den Meetings sendet und zusätzlich am Abend vorher eine Erinnerungsmail verschickt.
+Die Firma [The Lighthaus](https://www.thelighthaus.de/) bietet regelmäßig verschiedene Webinare und Ausbildungsklassen an. Dazu benötigte sie ein System, welches den Teilnehmern von Webinaren nach Zahlungseingang automatisch die Zoom-Links zu den Meetings sendet und zusätzlich am Abend vorher eine Erinnerungsmail verschickt.
 
 Gerne habe ich für The Lighthaus dieses maßgeschneiderte System entwickelt. Es ist mit [Copecart](https://copecart.com/) und [Zoom](https://zoom.us/) verknüpft, sodass es vollautomatisch arbeitet.
 

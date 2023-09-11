@@ -6,7 +6,7 @@ description: "Ein Website auf der Kunden von The Lighthaus die nächsten freien 
 tags: ["Next.js", "Typescript", "Supabase"]
 ---
 
-Die Firma [The Lighthaus](https://thelighthaus.de/) bietet Coachings von verschiedenen Coaches an. Dazu benötigte sie eine Möglichkeit, den Kunden auf ihrer Website anzuzeigen, wann die verschiedenen Coaches die nächsten freien Termine haben.
+Die Firma [The Lighthaus](https://www.thelighthaus.de/) bietet Coachings von verschiedenen Coaches an. Dazu benötigte sie eine Möglichkeit, den Kunden auf ihrer Website anzuzeigen, wann die verschiedenen Coaches die nächsten freien Termine haben.
 
 Diese berechnet die von mir entwickelte Software anhand der Kalendereinträge der Coaches und den Arbeitszeiten, die die Coaches in einem Formular eintragen können.
 

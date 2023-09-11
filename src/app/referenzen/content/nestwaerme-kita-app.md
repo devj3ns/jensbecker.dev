@@ -16,4 +16,4 @@ Die App bietet die folgenden Funktionen:
 - **Kalender:** Auf der Kalenderseite können alle anstehenden Termine eingesehen werden. Zudem kann ähnlich wie bei den Nachrichten eine Rückmeldung (Teilnahme/Absage) gesendet werden.
 - **Kind abmelden:** Auf der Seite ‘Mein Kind’ können Eltern ihr Kind für den heutigen oder den nächsten Tag abmelden. Auch Verspätungen können hier angegeben werden.
 
-Ich habe die App Anfang 2021 mit [Flutter](https://flutter.dev) entwickelt. [Nils Lauterbach](https://www.nils-lauterbach.de) hat mit der Planung und Konzeption geholfen.
+Ich habe die App Anfang 2021 mit [Flutter](https://flutter.dev) entwickelt. [Nils Lauterbach](https://nils-lauterbach.de/) hat mit der Planung und Konzeption geholfen.

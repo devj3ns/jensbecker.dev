@@ -13,4 +13,4 @@ So bekommt man zum Beispiel für sein Thema alle passenden Termine angezeigt und
 
 Die Coaches können ihre verfügbaren Zeiträume auf einer separaten Seite angeben und werden dann benachrichtigt, sobald sich jemand für ein Coaching bei Ihnen angemeldet hat.
 
-Ich habe die Website Anfang 2021 mit [Django](https://www.djangoproject.com/) entwickelt. [Nils Lauterbach](https://www.nils-lauterbach.de) hat mit der Konzeptionierung und Planung geholfen.
+Ich habe die Website Anfang 2021 mit [Django](https://www.djangoproject.com/) entwickelt. [Nils Lauterbach](https://nils-lauterbach.de/) hat mit der Konzeptionierung und Planung geholfen.

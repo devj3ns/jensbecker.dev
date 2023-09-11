@@ -6,7 +6,7 @@ description: "Android und iOS App, die Kunden eine Übersicht aktueller Fahrzeug
 tags: ["Flutter", "Dart", "Firebase"]
 ---
 
-Die Firma [CAROUTLET](https://caroutlet.ch/) verkauft auf ihrer Website getestete Outlet Fahrzeuge. Um sicherzustellen, dass Kunden keine Angebote verpassen, wollte die Firma eine App, die aktuelle Angebote anzeigt und ermöglicht, den Benutzern eine Push-Benachrichtigung zu senden, wenn neue Fahrzeuge verfügbar sind.
+Die Firma [CAROUTLET](https://www.caroutlet.ch/) verkauft auf ihrer Website getestete Outlet Fahrzeuge. Um sicherzustellen, dass Kunden keine Angebote verpassen, wollte die Firma eine App, die aktuelle Angebote anzeigt und ermöglicht, den Benutzern eine Push-Benachrichtigung zu senden, wenn neue Fahrzeuge verfügbar sind.
 
 Die Nutzer haben die Möglichkeit, die Häufigkeit der Push-Benachrichtigungen zu personalisieren:
 

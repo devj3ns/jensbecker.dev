@@ -19,4 +19,4 @@ Der Onlinebereich bietet die folgenden Funktionen:
 - **Videos** mit Trainingsübungen usw. suchen und ansehen können.
 - Über einen **Chat** mit Sascha Telen in Kontakt treten.
 
-Ich habe die Web-App Ende 2020 mit [Django](https://www.djangoproject.com/) entwickelt. [Nils Lauterbach](https://www.nils-lauterbach.de) hat mit der Planung und Konzeption geholfen.
+Ich habe die Web-App Ende 2020 mit [Django](https://www.djangoproject.com/) entwickelt. [Nils Lauterbach](https://nils-lauterbach.de/) hat mit der Planung und Konzeption geholfen.
