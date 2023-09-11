@@ -29,16 +29,9 @@ export default function Startseite() {
           priority
         />
 
-        {/* Because Balancer left alignes on small screens, only use it on larger screens: */}
-        <div className="hidden md:block">
-          <Balancer as="h1" className="text-primary">
-            Individuelle Softwarelösungen für Dein Unternehmen
-          </Balancer>
-        </div>
-
-        <h1 className="block md:hidden text-primary">
+        <Balancer as="h1" className="text-primary">
           Individuelle Softwarelösungen für Dein Unternehmen
-        </h1>
+        </Balancer>
 
         <Balancer>
           Als Inhaber-geführtes Softwareentwicklungsunternehmen entwickeln wir

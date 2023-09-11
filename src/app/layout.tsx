@@ -10,6 +10,7 @@ import {
 
 import { Footer } from "./components/footer";
 import Navbar from "./components/navbar/navbar";
+import { Provider } from "react-wrap-balancer";
 import classNames from "classnames";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import localFont from "next/font/local";
@@ -78,9 +79,11 @@ export default function RootLayout({
         }}
       >
         <Navbar boxedWidthClasses={boxedWidthClasses} />
-        <main className={classNames(boxedWidthClasses, "prose mt-24")}>
-          {children}
-        </main>
+        <Provider>
+          <main className={classNames(boxedWidthClasses, "prose mt-24")}>
+            {children}
+          </main>
+        </Provider>
         <Footer boxedWidthClasses={boxedWidthClasses} />
       </body>
     </html>
