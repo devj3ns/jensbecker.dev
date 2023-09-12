@@ -22,12 +22,16 @@ export default function Navbar({
       id: "/",
     },
     {
-      label: "App Entwicklung",
-      id: "/appentwicklung",
+      label: "Mobile Apps",
+      id: "/leistungen/mobile-apps",
     },
     {
-      label: "Web Entwicklung",
-      id: "/webentwicklung",
+      label: "Websites & SEO",
+      id: "/leistungen/websites-seo",
+    },
+    {
+      label: "Webanwendungen",
+      id: "/leistungen/webanwendungen",
     },
     {
       label: "Referenzen",
@@ -52,27 +56,28 @@ export default function Navbar({
   );
 
   const navbarScrollDelay = 30;
-  const isMediumScreen = width > 768;
+  const isMediumScreen = width > 768; // 768px = TailwindCSS md breakpoint
 
   useEffect(() => {
-    // Show navbar on page change
+    // Show navbar on page change and update scrollY
     setShowNav(true);
+    setScrollY(window.scrollY);
   }, [pathname]);
 
   const handleScroll = () => {
     const lastScrollY = scrollY;
-    setScrollY(window.pageYOffset);
+    setScrollY(window.scrollY);
 
-    if (Math.abs(window.pageYOffset - lastScrollY) >= navbarScrollDelay) {
+    if (Math.abs(window.scrollY - lastScrollY) >= navbarScrollDelay) {
       return;
     }
 
     // Close modal if user scrolls down
-    if (window.pageYOffset > navbarScrollDelay) {
+    if (window.scrollY > navbarScrollDelay) {
       modalOpened && setModalOpened(false);
     }
 
-    setShowNav(window.pageYOffset < lastScrollY);
+    setShowNav(window.scrollY < lastScrollY);
   };
 
   useEffect(() => {
@@ -94,8 +99,9 @@ export default function Navbar({
       className={classNames(
         "w-full fixed transition-all z-10",
         showNav || isMediumScreen ? "translate-y-0" : "-translate-y-[100%]",
-        scrollY > navbarScrollDelay || modalOpened ? "bg-neutral-100" : "",
-        scrollY > 0 ? "shadow-md" : ""
+        scrollY > navbarScrollDelay || modalOpened
+          ? "bg-neutral-100 shadow-md"
+          : ""
       )}
     >
       <nav

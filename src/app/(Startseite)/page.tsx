@@ -54,26 +54,26 @@ export default function Startseite() {
         </div>
       </div>
 
-      <Section title="Leistungen" grayBackground>
+      <Section title="Leistungen" id="leistungen" grayBackground>
         <p>
           Wir haben uns auf die Entwicklung von maßgeschneiderter Software in
-          Form von App- und Webanwendungen spezialisiert, welche vielfältig
-          eingesetzt werden können.
+          Form von mobilen Apps, Websites und Webanwendungen spezialisiert.
         </p>
-        <div className="grid gap-5 md:grid-cols-2 ">
+        <div className="grid gap-5 md:grid-cols-3">
           <Card>
             <div className="flex flex-row items-center gap-3">
               <FontAwesomeIcon icon={faMobileScreen} size="lg" />
-              <h3 className="m-0">App Entwicklung</h3>
+              <h3 className="m-0">Mobile Apps</h3>
             </div>
 
             <p>
-              Entwicklung moderner Apps für iOS und Android mit dem
-              Cross-Plattform Framework Flutter.
+              Entwickelung einer individuellen mobilen App zur Erweiterung
+              Deines Unternehmens. Wir begleiten Dich von der Idee bis zum
+              Release und darüber hinaus.
             </p>
             <LinkButton
               icon={faChevronRight}
-              href="/appentwicklung"
+              href="leistungen/mobile-apps"
               style="text-primary"
             >
               Mehr Entdecken
@@ -83,16 +83,37 @@ export default function Startseite() {
           <Card>
             <div className="flex flex-row items-center gap-3">
               <FontAwesomeIcon icon={faDisplay} size="lg" />
-              <h3 className="m-0">Web Entwicklung</h3>
+              <h3 className="m-0">Websites & SEO</h3>
             </div>
 
             <p>
-              Flexible Entwicklung modernen und anspruchsvoller Web Projekte mit
-              dem React Framework Next.js.
+              Entwicklung einer attraktiven Website inklusive
+              Suchmaschinenoptimierung (SEO), um Dein Unternehmen Online zu
+              präsentieren und Kunden zu erreichen.
             </p>
             <LinkButton
               icon={faChevronRight}
-              href="/webentwicklung"
+              href="leistungen/websites-seo"
+              style="text-primary"
+            >
+              Mehr Entdecken
+            </LinkButton>
+          </Card>
+
+          <Card>
+            <div className="flex flex-row items-center gap-3">
+              <FontAwesomeIcon icon={faDisplay} size="lg" />
+              <h3 className="m-0">Webanwendungen</h3>
+            </div>
+
+            <p>
+              Flexible Entwicklung einer maßgeschneiderten Webanwendung.
+              Individuelle Websysteme zum Automatisieren oder vereinfachen von
+              Unternehmensprozessen.
+            </p>
+            <LinkButton
+              icon={faChevronRight}
+              href="leistungen/webanwendungen"
               style="text-primary"
             >
               Mehr Entdecken
@@ -134,10 +155,12 @@ export default function Startseite() {
 
 function Section({
   title,
+  id,
   grayBackground,
   children,
 }: {
   title: string;
+  id?: string;
   grayBackground?: boolean;
   children: React.ReactNode;
 }) {
@@ -149,6 +172,7 @@ function Section({
         "pt-10 pb-12",
         grayBackground && "bg-neutral-200/40 w-screen"
       )}
+      id={id}
     >
       <div className={classNames(grayBackground && boxedWidthClasses)}>
         <h2 className="mt-0 text-center">{title}</h2>

@@ -7,22 +7,29 @@ const nextConfig = {
     scrollRestoration: true,
   },
   redirects: async () => {
-    // Redirects to make sure that urls from the old site (now at https://v2.jensbecker.dev)
-    // which are still indexed by Google are redirected to the new site correctly.
     return [
-      {
-        source: "/services/app-development",
-        destination: "/appentwicklung",
-        permanent: true,
-      },
-      {
-        source: "/services/web-development",
-        destination: "/webentwicklung",
-        permanent: true,
-      },
+      // Abwärtskompatibilität für alte Links zu den Projekten
       {
         source: "/projects/:path*",
         destination: "/referenzen/:path*",
+        permanent: true,
+      },
+      // Abwärtskompatibilität für alte Links älterer Versionen der Website
+      {
+        source: "/appentwicklung",
+        destination: "/leistungen/mobile-apps",
+        permanent: true,
+      },
+      // Abwärtskompatibilität für alte Links älterer Versionen der Website
+      {
+        source: "/webentwicklung",
+        destination: "leistungen/webanwendungen",
+        permanent: true,
+      },
+      // Vermeidung einer 404-Seite
+      {
+        source: "/leistungen",
+        destination: "/#leistungen",
         permanent: true,
       },
     ];

@@ -9,8 +9,9 @@ export default async function sitemap() {
   }));
 
   const routes = [
-    "appentwicklung",
-    "webentwicklung",
+    "leistungen/mobile-apps",
+    "leistungen/websites-seo",
+    "leistungen/webanwendungen",
     "referenzen",
     "kontakt",
   ].map((route) => ({

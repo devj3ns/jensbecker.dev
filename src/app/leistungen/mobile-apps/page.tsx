@@ -1,14 +1,16 @@
 import Image from "next/image";
-import { LinkButton } from "../components/button";
+import { LinkButton } from "../../components/button";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata = {
-  title: "Appentwicklung",
-  description:
-    "Wir entwickeln für Dich Deine individuelle mobile App und unterstützen Dich von der Idee bis zum Release.",
+  title: "Entwicklung mobiler Apps",
+  description: `Entwickelung einer individuellen mobilen App zur Erweiterung Deines Unternehmens. 
+                Wir begleiten Dich von der Idee bis zum Release und darüber hinaus.`, // 149 of 160 characters
 };
 
-export default function Appentwicklung() {
+// TODO: Beispielprojekt/Referenz einbinden
+
+export default function MobileApps() {
   return (
     <main>
       <section className="mb-32 text-center">
@@ -21,15 +23,17 @@ export default function Appentwicklung() {
           style={{ height: 125, width: "auto" }}
           priority
         />
-        <h1>Dein Partner für Appentwicklung</h1>
+        <h1>Entwicklung mobiler Apps</h1>
         <p>
-          Du möchtest Dein Unternehmen um eine mobile App erweitern? Wir
-          unterstützen Dich von der Idee bis zum Release.
+          Du möchtest Dein Unternehmen um eine individuelle mobile App
+          erweitern? <br />
+          Wir entwickeln deine App für alle gängigen Plattformen und begleiten
+          Dich von der Idee bis zum Release und darüber hinaus.
         </p>
       </section>
 
       <section>
-        <h2>Mobile Applikationen auf Deine Bedürfnisse zugeschnitten</h2>
+        <h2>Maßgeschneiderte Lösungen</h2>
         <p>
           Wir bieten Dir maßgeschneiderte Lösungen für Deine Herausforderungen.
           Wir entwickeln für Dich Deine individuelle App für verschiedene
@@ -38,7 +42,6 @@ export default function Appentwicklung() {
         Beispiele für Apps:
         <ul>
           <li>KiTa Elternkommunikation</li>
-          <li>Marketing Automatisierung</li>
           <li>Projektmanagement</li>
           <li>Firmen Chatplattform</li>
           <li>Personalmanagement</li>
@@ -51,19 +54,18 @@ export default function Appentwicklung() {
 
       <section>
         <h2>Eine App für alle Plattformen</h2>
-        Für die Entwicklung von Apps verwende ich ein weitverbreitetes,
+        Für die Entwicklung von Apps verwenden wir ein weitverbreitetes,
         plattformübergreifendes Framework namens{" "}
-        <a href="https://flutter.dev">Flutter</a>.
-        <br />
-        Der Vorteil daran ist, dass dieselbe Codebasis sowohl für die Android
-        als auch die iOS App benutzt werden kann, was den Entwicklungsprozess
-        beschleunigt und die Programmierkosten verringert. Zusätzlich kann die
-        App auch als Web-App bereitgestellt werden. Somit hast Du die drei
-        gängigsten Plattformen mit einer App abgedeckt.
+        <a href="https://flutter.dev">Flutter</a>. Der Vorteil daran ist, dass
+        dieselbe Codebasis sowohl für die Android als auch die iOS-App benutzt
+        werden kann, was den Entwicklungsprozess beschleunigt und die
+        Programmierkosten verringert. Zusätzlich kann die App auch fürs Web
+        bereitgestellt werden. Somit sind die drei gängigsten Plattformen mit
+        einer App abgedeckt.
       </section>
 
       <section>
-        <h2>Wir begleiten Dich von der Idee bis zum App-Release</h2>
+        <h2>Persönliche Begleitung von der Idee bis zum Release</h2>
 
         <ol>
           <li>Besprechung Deiner Ideen, Anforderungen und Wünschen</li>
