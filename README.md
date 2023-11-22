@@ -14,19 +14,7 @@ The following tech stack was used to build this website:
 
 🔹ContentLayer
 
-Hosted on vercel 🔺
-
-## Contributing
-
-We welcome contributions of any kind! If you would like to contribute to this project, please follow these steps:
-
-1. Fork this repository
-
-2. Create a new branch for your feature or bug fix
-
-3. Make your changes and commit them with descriptive commit messages
-
-4. Submit a pull request to this repository with a detailed description of your changes
+Hosted on Vercel 🔺
 
 ## Contact
 
