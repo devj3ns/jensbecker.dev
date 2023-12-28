@@ -13,18 +13,35 @@ export const Project = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
-    date: {
-      type: "string",
+    startDate: {
+      type: "date",
       required: true,
     },
-    publishedAt: {
-      type: "string",
+    endDate: {
+      type: "date",
+      required: false,
+    },
+    articlePublishedAt: {
+      type: "date",
+      required: true,
+    },
+    articleUpdatedAt: {
+      type: "date",
       required: true,
     },
     tags: {
       type: "list",
       of: { type: "string" },
       required: true,
+    },
+    techstack: {
+      type: "list",
+      of: { type: "string" },
+      required: true,
+    },
+    link: {
+      type: "string",
+      required: false,
     },
   },
   computedFields: {

@@ -1,9 +1,11 @@
 ---
 title: "Nestwärme KiTa App"
-date: "2021 Q2"
-publishedAt: "2021-04-22"
+startDate: "2021-04-22"
+articlePublishedAt: "2021-04-22"
+articleUpdatedAt: "2021-04-22"
 description: "Eine Kindergarten Kommunikationsplattform mit vielen Funktionen, um Eltern und Erziehern zu helfen, einfach und in Echtzeit in Verbindung zu bleiben."
-tags: ["Flutter", "Dart", "Firebase"]
+techstack: ["Flutter", "Dart", "Firebase"]
+tags: ["App"]
 ---
 
 Der Verein [nestwärme e.V.](https://nestwaerme.de/) hat in Trier eine [inklusive Kindergrippe](https://nestwaerme.de/familien/inklusive-kinderkrippe/) und suchte nach einem Weg, die Eltern unkompliziert und in Echtzeit digital zu erreichen und informieren. So ist die Nestwärme KiTa App entstanden.

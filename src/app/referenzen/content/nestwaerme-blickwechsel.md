@@ -1,9 +1,11 @@
 ---
 title: "Nestwärme Blickwechsel Buchungsassistent"
-date: "2021 Q1"
-publishedAt: "2021-01-22"
+startDate: "2021-01-22"
+articlePublishedAt: "2021-01-22"
+articleUpdatedAt: "2021-01-22"
 description: "Eine Buchungsassistent-Website für das Projekt Blickwechsel von nestwärme e.V. um ein Coaching online buchen zu können."
-tags: ["Django", "Phyton", "Bootstrap"]
+techstack: ["Django", "Phyton", "Bootstrap"]
+tags: ["Webapp"]
 ---
 
 Der Verein [nestwärme e.V.](https://nestwaerme.de/) bietet mit seinem Projekt [Blickwechsel](https://mein-blickwechsel.de/), emotionale Unterstützung und Hilfe zur Selbsthilfe an – diskret und behutsam.

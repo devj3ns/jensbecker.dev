@@ -1,9 +1,12 @@
 ---
 title: "The Lighthaus Verfügbarkeit"
-date: "2022 Q4"
-publishedAt: "2022-12-22"
+startDate: "2022-06-10"
+endDate: "2022-08-22"
+articlePublishedAt: "2022-08-22"
+articleUpdatedAt: "2022-08-22"
 description: "Ein Website auf der Kunden von The Lighthaus die nächsten freien Coaching Termine in einem Kalender sehen und buchen können."
-tags: ["Next.js", "Typescript", "Supabase"]
+techstack: ["Next.js", "Typescript", "Supabase"]
+tags: ["Webapp"]
 ---
 
 Die Firma [The Lighthaus](https://www.thelighthaus.de/) bietet Coachings von verschiedenen Coaches an. Dazu benötigte sie eine Möglichkeit, den Kunden auf ihrer Website anzuzeigen, wann die verschiedenen Coaches die nächsten freien Termine haben.

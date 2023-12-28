@@ -4,7 +4,7 @@ import { allProjects } from "contentlayer/generated";
 export default async function sitemap() {
   const projects = allProjects.map((project) => ({
     url: `${DOMAIN_URL}/referenzen/${project.slug}`,
-    lastModified: project.publishedAt,
+    lastModified: project.articleUpdatedAt,
     priority: 0.8,
   }));
 

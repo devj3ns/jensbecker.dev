@@ -1,9 +1,11 @@
 ---
 title: "Muskelwerkstatt Mehr Performance Onlinebereich"
-date: "2020 Q2"
-publishedAt: "2020-06-22"
+startDate: "2020-06-22"
+articlePublishedAt: "2020-06-22"
+articleUpdatedAt: "2020-06-22"
 description: "Eine Online-Plattform mit vielen Funktionen, die die Trainierenden mit nützlichen und individuellen Inhalten unterstützt."
-tags: ["Django", "Phyton", "Bootstrap"]
+techstack: ["Django", "Phyton", "Bootstrap"]
+tags: ["Webapp"]
 ---
 
 In der [Muskelwerkstatt Trier](https://muskelwerkstatt.com/) arbeitet Sascha Telen mit seinen Muskelarbeitern an deren Körper, Fitness und Leistungsfähigkeit.
@@ -19,4 +21,4 @@ Der Onlinebereich bietet die folgenden Funktionen:
 - **Videos** mit Trainingsübungen usw. suchen und ansehen können.
 - Über einen **Chat** mit Sascha Telen in Kontakt treten.
 
-Ich habe die Web-App Ende 2020 mit [Django](https://www.djangoproject.com/) entwickelt. [Nils Lauterbach](https://nils-lauterbach.de/) hat mit der Planung und Konzeption geholfen.
+Ich habe die Web-App Mitte 2020 mit [Django](https://www.djangoproject.com/) entwickelt. [Nils Lauterbach](https://nils-lauterbach.de/) hat mit der Planung und Konzeption geholfen.

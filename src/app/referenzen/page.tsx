@@ -1,9 +1,9 @@
-import Balancer from "react-wrap-balancer";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { allProjects } from "contentlayer/generated";
 import Image from "next/image";
 import Link from "next/link";
+import Balancer from "react-wrap-balancer";
 import { LinkButton } from "../components/button";
-import { allProjects } from "contentlayer/generated";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata = {
   title: "Referenzen",
@@ -26,7 +26,7 @@ export default function Referenzen() {
 
       <div className="flex flex-col gap-12 my-16">
         {allProjects
-          .sort((a, b) => (a.date < b.date ? 1 : -1))
+          .sort((a, b) => (a.startDate < b.startDate ? 1 : -1))
           .map(({ title, description, tags, slug }, index) => (
             <div
               key={slug}

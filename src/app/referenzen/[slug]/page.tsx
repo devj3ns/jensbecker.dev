@@ -1,8 +1,8 @@
-import Image from "next/image";
-import type { Metadata } from "next";
 import { allProjects } from "contentlayer/generated";
-import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return allProjects.map((project) => ({
@@ -28,7 +28,8 @@ export async function generateMetadata({
       type: "article",
       title: project.title,
       description: project.description,
-      publishedTime: project.publishedAt,
+      publishedTime: project.articlePublishedAt,
+      modifiedTime: project.articleUpdatedAt,
       url: `/referenzen/${project.slug}`,
       images: [
         {
@@ -60,7 +61,12 @@ export default async function PostPage({
     <>
       <div className="mb-8 text-center">
         <h1 className="mb-0 text-slate-700">{project.title}</h1>
-        <p className="my-0 text-slate-500">{project.date}</p>
+        <p className="my-0 text-slate-500">
+          {new Date(project.startDate).toLocaleDateString("de-DE", {
+            year: "numeric",
+            month: "long",
+          })}
+        </p>
       </div>
 
       <div className="my-3 md:mx-44">
