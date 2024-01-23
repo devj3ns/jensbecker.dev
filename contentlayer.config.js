@@ -1,5 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import { tags } from "./contentlayerTypes.ts";
+import { tags } from "./src/contentlayerTypes.ts";
 
 export const Project = defineDocumentType(() => ({
   name: "Project",
