@@ -42,12 +42,14 @@ export function LinkButton({
   className,
   children,
   href,
+  searchParams,
   icon,
   style,
 }: {
   children: React.ReactNode;
   className?: string;
   href: string;
+  searchParams?: string;
   icon?: IconProp;
   style?: ButtonStyle;
 }) {
@@ -55,7 +57,7 @@ export function LinkButton({
 
   return (
     <Link
-      href={{ pathname: href }}
+      href={!href.startsWith("?") ? { pathname: href } : { search: href }}
       className={classNames(buttonStyles(style), className)}
     >
       {children}

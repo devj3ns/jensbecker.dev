@@ -6,11 +6,11 @@ articlePublishedAt: "2023-11-22"
 articleUpdatedAt: "2023-11-22"
 description: "Erstellung einer Website für Nazdar Ali-Osmans Änderungs-Atelier in Welschbillig, um ihre vielfältigen Schneiderdienstleistungen online zu präsentieren und den Kundenkontakt zu erleichtern."
 techstack: ["WordPress", "Elementor"]
-tags: ["Website", "SEO"]
+tags: [","]
 link: "https://nazdar.de"
 ---
 
-Nazdar Ali-Osman ist eine Schneiderin aus Welschbillig, die sich auf Änderungen und Maßanfertigungen von Kleidern, Kostümen, Möbel und Autositzbezügen, Anzüge und Kochschürzen spezialisiert hat. Seit 2015 betreibt sie ihr eigenes Atelier in Welschbillig, wo sie ihre umfangreiche Erfahrung und Leidenschaft für die Schneiderkunst anbietet.
+Nazdar Ali-Osman ist eine Schneiderin aus Welschbillig, die sich auf Änderungen und Maßanfertigungen von Kle"idern, Kostümen, Möbel und Autositzbezügen, Anzüge und Kochschürzen spezialisiert hat. Seit 2015 betreibt sie ihr eigenes Atelier in Welschbillig, wo sie ihre umfangreiche Erfahrung und Leidenschaft für die Schneiderkunst anbietet.
 
 Um ihre Dienstleistungen einem breiteren Publikum zugänglich zu machen, war die Entwicklung eines Corporate Designs, eines Google-Eintrags und einer Website erforderlich. Das Projekt wurde in Kooperation mit drei Intermedia-Design-Studenten der Hochschule Trier realisiert: Julian Held, Wladikov Makaradjia und Dastan Mohamed.
 

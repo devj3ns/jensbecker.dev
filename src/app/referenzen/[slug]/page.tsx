@@ -62,13 +62,15 @@ export default async function PostPage({
       <div className="mb-8 text-center">
         <h1 className="mb-0 text-slate-700">{project.title}</h1>
         <p className="my-0 text-slate-500">
-          {new Date(project.startDate).toLocaleDateString("de-DE", {
-            year: "numeric",
-            month: "long",
-          })}
+          {new Date(project.endDate ?? project.startDate).toLocaleDateString(
+            "de-DE",
+            {
+              year: "numeric",
+              month: "long",
+            }
+          )}
         </p>
       </div>
-
       <div className="my-3 md:mx-44">
         <Image
           src={`/images/projects/${project.slug}.png`}
@@ -79,7 +81,8 @@ export default async function PostPage({
           className="rounded-xl"
         />
       </div>
-
+      {project.tags.join(", ")}
+      Techstack: {project.techstack.join(", ")}
       <MDX code={project.body.code} />
     </>
   );

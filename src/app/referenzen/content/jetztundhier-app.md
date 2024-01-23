@@ -5,7 +5,7 @@ articlePublishedAt: "2023-11-22"
 articleUpdatedAt: "2023-11-22"
 description: "Achtsamkeits & Meditations App für Android und iOS. Die App hat das Ziel durch Meditationen Achtsamkeit in den Alltag zu etablieren."
 techstack: ["Flutter", "Dart", "Firebase", "Node.js", "TypeScript"]
-tags: ["App", "Backend"]
+tags: ["app", "Backend"]
 link: "https://jetztundhier.app"
 ---
 

@@ -6,7 +6,7 @@ articlePublishedAt: "2023-11-22"
 articleUpdatedAt: "2023-11-22"
 description: "Erstellung einer zweisprachigen Website zur Präsentation von Sylvia Zimmerers Dienstleistungen im Bereich des Coachings und Mentorings."
 techstack: ["WordPress", "Elementor", "TranslatePress"]
-tags: ["Website", "SEO"]
+tags: ["Website", "seo", "bla"]
 link: "https://mighty-way.com"
 ---
 
@@ -17,3 +17,5 @@ Im Sommer 2023 entschied sich Frau Zimmerer, ihre Firma Mighty Way einem breiter
 Ein wichtiger Aspekt des Projekts war die Realisierung einer zweisprachigen Website, um sowohl deutschsprachige als auch internationale Klienten anzusprechen. Frau Zimmerer bietet Online-Sitzungen an und hat daher ein globales Publikum. Die Website wurde mit WordPress und dem Page Builder Elementor gestaltet. Für die Mehrsprachigkeit der Website kam das Plugin TranslatePress zum Einsatz.
 
 Die suchmaschinenoptimierte Website wurde im August 2023 veröffentlicht und bietet potenziellen Klienten eine einfache Möglichkeit, mehr über Sylvia Zimmerers einzigartige Angebote zu erfahren, diese zu Buchen und mit ihr in Kontakt zu treten, egal wo auf der Welt sie sich befinden.
+sss
+ss

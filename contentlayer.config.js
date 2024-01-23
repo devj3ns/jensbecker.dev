@@ -1,4 +1,5 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import { tags } from "./contentlayerTypes.ts";
 
 export const Project = defineDocumentType(() => ({
   name: "Project",
@@ -31,7 +32,11 @@ export const Project = defineDocumentType(() => ({
     },
     tags: {
       type: "list",
-      of: { type: "string" },
+      of: {
+        type: "enum",
+        options: tags,
+        required: true,
+      },
       required: true,
     },
     techstack: {
