@@ -1,6 +1,5 @@
 import path from "path";
 
-import { payloadCloud } from "@payloadcms/plugin-cloud";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
 import {
@@ -32,7 +31,6 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),
   },
   plugins: [
-    payloadCloud(),
     seoPlugin({
       collections: ["projects"],
     }),
