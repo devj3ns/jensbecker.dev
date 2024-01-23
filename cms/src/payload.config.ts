@@ -35,6 +35,15 @@ export default buildConfig({
       collections: ["projects"],
     }),
   ],
+  localization: {
+    locales: [
+      {
+        code: "de",
+        label: "Deutsch",
+      },
+    ],
+    defaultLocale: "de",
+  },
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI,
