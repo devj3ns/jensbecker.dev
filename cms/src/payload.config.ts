@@ -3,7 +3,10 @@ import path from "path";
 import { payloadCloud } from "@payloadcms/plugin-cloud";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { webpackBundler } from "@payloadcms/bundler-webpack";
-import { slateEditor } from "@payloadcms/richtext-slate";
+import {
+  HTMLConverterFeature,
+  lexicalEditor,
+} from "@payloadcms/richtext-lexical";
 import { buildConfig } from "payload/config";
 
 import Users from "./collections/Users";
@@ -13,7 +16,12 @@ export default buildConfig({
     user: Users.slug,
     bundler: webpackBundler(),
   },
-  editor: slateEditor({}),
+  editor: lexicalEditor({
+    features: ({ defaultFeatures }) => [
+      ...defaultFeatures,
+      HTMLConverterFeature({}),
+    ],
+  }),
   collections: [Users],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
