@@ -14,6 +14,9 @@ dependencies:
   '@payloadcms/plugin-cloud':
     specifier: ^3.0.0
     version: 3.0.0(payload@2.8.2)
+  '@payloadcms/plugin-seo':
+    specifier: ^2.2.0
+    version: 2.2.0(payload@2.8.2)(react@18.2.0)
   '@payloadcms/richtext-lexical':
     specifier: ^0.5.2
     version: 0.5.2(@lexical/clipboard@0.12.6)(payload@2.8.2)(typescript@4.9.5)(yjs@13.6.11)
@@ -2421,6 +2424,16 @@ packages:
     transitivePeerDependencies:
       - aws-crt
       - encoding
+    dev: false
+
+  /@payloadcms/plugin-seo@2.2.0(payload@2.8.2)(react@18.2.0):
+    resolution: {integrity: sha512-SekiWzl444AKGORJDufjKn7QK0W5fSn6d1mFqpJVPLFiNBWwbaUuR0N+rbtkEey5sUfFnaFKFA1lFDQYJqUClg==}
+    peerDependencies:
+      payload: ^2.7.0
+      react: ^18.0.0
+    dependencies:
+      payload: 2.8.2(esbuild@0.18.20)(typescript@4.9.5)(webpack@5.89.0)
+      react: 18.2.0
     dev: false
 
   /@payloadcms/richtext-lexical@0.5.2(@lexical/clipboard@0.12.6)(payload@2.8.2)(typescript@4.9.5)(yjs@13.6.11):

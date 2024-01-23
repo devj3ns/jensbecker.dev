@@ -7,6 +7,7 @@ import {
   HTMLConverterFeature,
   lexicalEditor,
 } from "@payloadcms/richtext-lexical";
+import seoPlugin from "@payloadcms/plugin-seo";
 import { buildConfig } from "payload/config";
 
 import Users from "./collections/Users";
@@ -30,7 +31,12 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),
   },
-  plugins: [payloadCloud()],
+  plugins: [
+    payloadCloud(),
+    seoPlugin({
+      collections: ["projects"],
+    }),
+  ],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI,
