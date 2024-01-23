@@ -10,6 +10,7 @@ import {
 import { buildConfig } from "payload/config";
 
 import Users from "./collections/Users";
+import Projects from "./collections/Projects";
 
 export default buildConfig({
   admin: {
@@ -22,7 +23,7 @@ export default buildConfig({
       HTMLConverterFeature({}),
     ],
   }),
-  collections: [Users],
+  collections: [Users, Projects],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
