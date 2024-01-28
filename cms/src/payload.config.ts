@@ -16,6 +16,13 @@ export default buildConfig({
   admin: {
     user: Users.slug,
     bundler: webpackBundler(),
+    autoLogin:
+      process.env.AUTO_LOGIN === "true"
+        ? {
+            email: process.env.AUTO_LOGIN_EMAIL,
+            password: process.env.AUTO_LOGIN_PASSWORD,
+          }
+        : false,
   },
   editor: lexicalEditor({
     features: ({ defaultFeatures }) => [
