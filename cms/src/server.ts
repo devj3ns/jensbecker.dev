@@ -9,8 +9,10 @@ app.get("/", (_, res) => {
   res.redirect("/admin");
 });
 
+// TODO: add /healthcheck route for railway
+
 const start = async () => {
-  const port = 3000;
+  const port = process.env.PORT || 3000;
 
   // Initialize Payload
   await payload.init({
