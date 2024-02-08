@@ -55,6 +55,5 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URI,
     },
-    push: false, // see https://github.com/payloadcms/payload/issues/4580
   }),
 });
