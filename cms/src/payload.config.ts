@@ -48,6 +48,10 @@ export default buildConfig({
         code: "de",
         label: "Deutsch",
       },
+      {
+        code: "en",
+        label: "Englisch",
+      },
     ],
     defaultLocale: "de",
   },
