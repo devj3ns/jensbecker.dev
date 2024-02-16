@@ -12,6 +12,7 @@ import { buildConfig } from "payload/config";
 import Users from "./collections/Users";
 import Projects from "./collections/Projects";
 import Testimonials from "./collections/Testimonials";
+import { Media } from "./collections/Media";
 
 export default buildConfig({
   admin: {
@@ -31,7 +32,7 @@ export default buildConfig({
       HTMLConverterFeature({}),
     ],
   }),
-  collections: [Users, Projects, Testimonials],
+  collections: [Users, Projects, Testimonials, Media],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
@@ -61,4 +62,9 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI,
     },
   }),
+  upload: {
+    limits: {
+      fileSize: 5000000, // 5MB, written in bytes
+    },
+  },
 });
