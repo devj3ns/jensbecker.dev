@@ -4,7 +4,7 @@ export const Media: CollectionConfig = {
   slug: "media",
   upload: {
     staticURL: "/media",
-    staticDir: "./media",
+    staticDir: process.env.RAILWAY_VOLUME_MOUNT_PATH,
     mimeTypes: ["image/*"],
   },
   fields: [
