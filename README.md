@@ -1,6 +1,6 @@
-# [jhb-software.dev](https://jhb-software.dev)
+# [jhb.software](https://jhb.software)
 
-Welcome to the official repository of JHB Software's website. We have built this website using modern web technologies and tools to provide an optimized and user-friendly experience.
+This is the official website of JHB Software. We are a software development company based in Germany specialized in building custom software solutions for businesses.
 
 ## Tech Stack
 
@@ -18,6 +18,6 @@ Hosted on Vercel 🔺
 
 ## Contact
 
-Get in touch with us to learn more about our services and how we can help your business succeed.
+Get in touch with us to learn more about our services and how we can help you to boost your business with tailor-made software.
 
-E-Mail: [info@jhb-software.dev](mailto:info@jhb-software.dev)
+E-Mail: [info@jhb.software](mailto:info@jhb.software)

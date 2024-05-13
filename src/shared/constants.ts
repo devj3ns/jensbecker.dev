@@ -1,4 +1,4 @@
-export const DOMAIN_NAME = "jhb-software.dev";
+export const DOMAIN_NAME = "jhb.software";
 export const DOMAIN_URL = `https://${DOMAIN_NAME}`;
 
 export const SITE_SHORT_TITLE = "JHB Software";

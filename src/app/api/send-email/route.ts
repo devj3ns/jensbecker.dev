@@ -22,8 +22,8 @@ export async function POST(request: Request) {
       });
 
       await transporter.sendMail({
-        from: "info@jhb-software.dev",
-        to: "info@jhb-software.dev",
+        from: "info@jhb.software",
+        to: "info@jhb.software",
         subject: `Neue Kontaktformular Nachricht`,
         html: `
               <p><strong>Name: </strong> ${body.name}</p>
