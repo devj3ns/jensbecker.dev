@@ -137,7 +137,7 @@ export default function Contact() {
         Website ist:
       </p>
       <p>
-        Jens Becker
+        Jens Horst Becker
         <br />
         Ehranger Str. 212
         <br />
@@ -148,7 +148,7 @@ export default function Contact() {
       <p>
         Telefon: +49 1522 8461402
         <br />
-        E-Mail: info@jensbecker.dev
+        E-Mail: info@jhb.software
       </p>
       <p>
         Verantwortliche Stelle ist die nat&uuml;rliche oder juristische Person,

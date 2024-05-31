@@ -122,7 +122,7 @@ export default function Startseite() {
         </div>
       </Section>
 
-      <Section title="Über den Geschäftsführer">
+      <Section title="Über den Inhaber">
         <div className="flex flex-col items-center mt-10 md:gap-10 md:flex-row">
           <HoverEffect className="rounded-full">
             <Image

@@ -16,7 +16,7 @@ export default function Contact() {
 
       <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
       <p>
-        Jens Becker
+        Jens Horst Becker
         <br />
         Ehranger Str. 212
         <br />
