@@ -4,8 +4,14 @@ import { slugField } from '../fields/slug'
 const Projects: CollectionConfig = {
   slug: 'projects',
   labels: {
-    singular: 'Projekt',
-    plural: 'Projekte',
+    singular: {
+      de: 'Projekt',
+      en: 'Project',
+    },
+    plural: {
+      de: 'Projekte',
+      en: 'Projects',
+    },
   },
   admin: {
     useAsTitle: 'title',
