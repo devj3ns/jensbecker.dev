@@ -1,4 +1,4 @@
-import { CollectionConfig } from 'payload/types'
+import { CollectionConfig } from 'payload'
 import { slugField } from '../fields/slug'
 
 const Page: CollectionConfig = {
