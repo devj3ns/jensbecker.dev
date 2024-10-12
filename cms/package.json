@@ -1,7 +1,7 @@
 {
   "name": "jhb-website",
   "version": "1.0.0",
-  "description": "A blank template to get started with Payload 3.0",
+  "description": "JHB Website CMS using Payload 3",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@payloadcms/next": "beta",
-    "@payloadcms/plugin-cloud": "beta",
     "@payloadcms/richtext-lexical": "beta",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
