@@ -1,4 +1,5 @@
 import { vercelPostgresAdapter } from '@payloadcms/db-vercel-postgres'
+import { seoPlugin } from '@payloadcms/plugin-seo'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { de } from '@payloadcms/translations/languages/de'
 import { en } from '@payloadcms/translations/languages/en'
@@ -52,6 +53,18 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
-    // storage-adapter-placeholder
+    seoPlugin({
+      collections: ['pages', 'projects'],
+      uploadsCollection: 'media',
+      generateTitle: ({ doc }) => `${doc.title} - JHB Software`,
+      fieldOverrides: {
+        title: {
+          required: true,
+        },
+        description: {
+          required: true,
+        },
+      },
+    }),
   ],
 })

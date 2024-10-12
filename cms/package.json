@@ -15,7 +15,9 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
+    "@payloadcms/db-vercel-postgres": "beta",
     "@payloadcms/next": "beta",
+    "@payloadcms/plugin-seo": "beta",
     "@payloadcms/richtext-lexical": "beta",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
@@ -23,8 +25,7 @@
     "payload": "beta",
     "react": "19.0.0-rc-3edc000d-20240926",
     "react-dom": "19.0.0-rc-3edc000d-20240926",
-    "sharp": "0.32.6",
-    "@payloadcms/db-vercel-postgres": "beta"
+    "sharp": "0.32.6"
   },
   "devDependencies": {
     "@types/node": "^22.5.4",
