@@ -8,6 +8,7 @@ import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
 import { Media } from './collections/Media'
+import Project from './collections/Project'
 import { Users } from './collections/Users'
 
 const filename = fileURLToPath(import.meta.url)
@@ -37,7 +38,7 @@ export default buildConfig({
     fallbackLanguage: 'de',
     supportedLanguages: { en, de },
   },
-  collections: [Users, Media],
+  collections: [Users, Project, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
