@@ -8,6 +8,7 @@ import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
 import { Media } from './collections/Media'
+import Page from './collections/Page'
 import Project from './collections/Project'
 import { Users } from './collections/Users'
 
@@ -38,7 +39,7 @@ export default buildConfig({
     fallbackLanguage: 'de',
     supportedLanguages: { en, de },
   },
-  collections: [Users, Project, Media],
+  collections: [Users, Page, Project, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
