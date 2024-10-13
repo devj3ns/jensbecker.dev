@@ -12,6 +12,8 @@ import { Media } from './collections/Media'
 import Page from './collections/Page'
 import Project from './collections/Project'
 import { Users } from './collections/Users'
+import alternatePaths from './fields/alternatePaths'
+import { getPageUrl } from './hooks/utils/getPageUrl'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -57,6 +59,9 @@ export default buildConfig({
       collections: ['pages', 'projects'],
       uploadsCollection: 'media',
       generateTitle: ({ doc }) => `${doc.title} - JHB Software`,
+      generateURL: ({ doc }) => getPageUrl({ path: doc.path }),
+      interfaceName: 'SeoMetadata',
+      fields: [alternatePaths()],
       fieldOverrides: {
         title: {
           required: true,

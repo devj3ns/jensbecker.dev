@@ -1,6 +1,9 @@
 import { CollectionConfig } from 'payload'
 import { slugField } from '../fields/slug'
 import { parentField } from '@/fields/parent'
+import pathField from '@/fields/path'
+import breadcrumbs from '@/fields/breadcrumbs'
+import { setVirtualFields } from '@/hooks/setVirtualFields'
 
 const Page: CollectionConfig = {
   slug: 'pages',
@@ -16,14 +19,19 @@ const Page: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'slug'],
+    defaultColumns: ['title', 'slug', 'path'],
   },
   versions: {
     drafts: true,
   },
+  hooks: {
+    beforeRead: [setVirtualFields({ parentCollection: 'pages', parentField: 'parent' })],
+  },
   fields: [
     slugField(),
     parentField(),
+    pathField(),
+    breadcrumbs(),
     {
       name: 'title',
       type: 'text',

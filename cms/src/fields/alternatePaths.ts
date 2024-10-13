@@ -1,0 +1,35 @@
+import { Field } from 'payload'
+
+/** Virtual field which holds the paths for the alternate languages. */
+function alternatePaths(): Field {
+  return {
+    name: 'alternatePaths',
+    type: 'array',
+    required: true,
+    localized: false,
+    virtual: true,
+    admin: {
+      readOnly: true,
+      hidden: true,
+    },
+    hooks: {
+      afterRead: [
+        // The alternate paths are generated in the getVirtualFields collection hook
+      ],
+    },
+    fields: [
+      {
+        name: 'hreflang',
+        type: 'text',
+        required: true,
+      },
+      {
+        name: 'path',
+        type: 'text',
+        required: true,
+      },
+    ],
+  }
+}
+
+export default alternatePaths

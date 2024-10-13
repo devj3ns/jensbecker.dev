@@ -6,6 +6,17 @@
  * and re-run `payload generate:types` to regenerate this file.
  */
 
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Breadcrumbs".
+ */
+export type Breadcrumbs = {
+  slug: string;
+  path: string;
+  label: string;
+  id?: string | null;
+}[];
+
 export interface Config {
   auth: {
     users: UserAuthOperations;
@@ -71,6 +82,8 @@ export interface Page {
   id: number;
   slug: string;
   parent?: (number | null) | Page;
+  path: string;
+  breadcrumbs: Breadcrumbs;
   title: string;
   body: {
     root: {
@@ -87,14 +100,24 @@ export interface Page {
     };
     [k: string]: unknown;
   };
-  meta: {
-    title: string;
-    description: string;
-    image?: (number | null) | Media;
-  };
+  meta: SeoMetadata;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SeoMetadata".
+ */
+export interface SeoMetadata {
+  title: string;
+  description: string;
+  image?: (number | null) | Media;
+  alternatePaths: {
+    hreflang: string;
+    path: string;
+    id?: string | null;
+  }[];
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -123,6 +146,8 @@ export interface Project {
   id: number;
   slug: string;
   parent?: (number | null) | Page;
+  path: string;
+  breadcrumbs: Breadcrumbs;
   title: string;
   body: {
     root: {
@@ -139,11 +164,7 @@ export interface Project {
     };
     [k: string]: unknown;
   };
-  meta: {
-    title: string;
-    description: string;
-    image?: (number | null) | Media;
-  };
+  meta: SeoMetadata;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
