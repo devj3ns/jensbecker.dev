@@ -38,7 +38,6 @@ export default buildConfig({
   },
   i18n: {
     fallbackLanguage: 'de',
-    // @ts-expect-error
     supportedLanguages: { en, de },
   },
   collections: [Users, Page, Project, Media],
