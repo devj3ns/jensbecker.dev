@@ -12,6 +12,7 @@ export interface Config {
   };
   collections: {
     users: User;
+    pages: Page;
     projects: Project;
     media: Media;
     'payload-locked-documents': PayloadLockedDocument;
@@ -64,11 +65,12 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "projects".
+ * via the `definition` "pages".
  */
-export interface Project {
+export interface Page {
   id: number;
   slug: string;
+  parent?: (number | null) | Page;
   title: string;
   body: {
     root: {
@@ -84,6 +86,11 @@ export interface Project {
       version: number;
     };
     [k: string]: unknown;
+  };
+  meta: {
+    title: string;
+    description: string;
+    image?: (number | null) | Media;
   };
   updatedAt: string;
   createdAt: string;
@@ -110,6 +117,39 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "projects".
+ */
+export interface Project {
+  id: number;
+  slug: string;
+  parent?: (number | null) | Page;
+  title: string;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  meta: {
+    title: string;
+    description: string;
+    image?: (number | null) | Media;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -118,6 +158,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'pages';
+        value: number | Page;
       } | null)
     | ({
         relationTo: 'projects';

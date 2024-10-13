@@ -1,5 +1,6 @@
 import { CollectionConfig } from 'payload'
 import { slugField } from '../fields/slug'
+import { parentField } from '@/fields/parent'
 
 const Page: CollectionConfig = {
   slug: 'pages',
@@ -22,6 +23,7 @@ const Page: CollectionConfig = {
   },
   fields: [
     slugField(),
+    parentField(),
     {
       name: 'title',
       type: 'text',
