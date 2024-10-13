@@ -20,6 +20,7 @@
     "@payloadcms/plugin-seo": "beta",
     "@payloadcms/richtext-lexical": "beta",
     "@payloadcms/translations": "beta",
+    "@payloadcms/ui": "beta",
     "cross-env": "^7.0.3",
     "graphql": "^16.8.1",
     "next": "15.0.0-canary.173",

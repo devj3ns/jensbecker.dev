@@ -4,6 +4,7 @@ import { parentField } from '@/fields/parent'
 import pathField from '@/fields/path'
 import breadcrumbs from '@/fields/breadcrumbs'
 import { setVirtualFields } from '@/hooks/setVirtualFields'
+import { previewButtonField } from '@/fields/preview'
 
 const Page: CollectionConfig = {
   slug: 'pages',
@@ -28,6 +29,7 @@ const Page: CollectionConfig = {
     beforeRead: [setVirtualFields({ parentCollection: 'pages', parentField: 'parent' })],
   },
   fields: [
+    previewButtonField(),
     slugField(),
     parentField(),
     pathField(),
