@@ -1,4 +1,4 @@
-import type { FieldHook } from 'payload/types'
+import type { FieldHook } from 'payload'
 
 const format = (val: string): string =>
   val
@@ -12,17 +12,7 @@ const format = (val: string): string =>
 
 const formatSlug =
   (fallback: string): FieldHook =>
-  ({
-    operation,
-    value,
-    originalDoc,
-    data,
-  }: {
-    operation: string
-    value: unknown
-    originalDoc: Record<string, unknown>
-    data: Record<string, unknown>
-  }) => {
+  ({ operation, value, originalDoc, data }) => {
     if (typeof value === 'string') {
       return format(value)
     }

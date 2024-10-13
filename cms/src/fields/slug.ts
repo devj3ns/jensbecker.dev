@@ -1,4 +1,4 @@
-import type { Field } from 'payload/types'
+import type { Field } from 'payload'
 
 import formatSlug from '../hooks/formatSlug'
 import deepMerge from '../utils/deepMerge'
