@@ -1,31 +1,42 @@
 import type { FieldHook } from 'payload'
 
-const format = (val: string): string =>
+const germanCharacterReplacements: Record<string, string> = {
+  ä: 'ae',
+  ö: 'oe',
+  ü: 'ue',
+  ß: 'ss',
+}
+
+export const formatSlug = (val: string): string =>
   val
     .toString() // Cast to string (optional)
-    .normalize('NFKD') // The normalize() using NFKD method returns the Unicode Normalization Form of a given string.
     .toLowerCase() // Convert the string to lowercase letters
-    .trim() // Remove whitespace from both sides of a string (optional)
-    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/[äöüß]/g, (match) => germanCharacterReplacements[match])
+    .normalize('NFKD') // The normalize() using NFKD method returns the Unicode Normalization Form of a given string.
+    .trim() // Remove whitespace from both sides of a string
+    .replace(/\s+/g, '-') // Replace spaces with hyphen
     .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/\-\-+/g, '-') // Replace multiple hyphens with single hyphen
+    .replace(/^\-+|\-+$/g, '') // Trim hyphens from start and end
 
-const formatSlug =
+const fallbackSlug =
   (fallback: string): FieldHook =>
   ({ operation, value, originalDoc, data }) => {
-    if (typeof value === 'string') {
-      return format(value)
+    const fallbackData = data?.[fallback] || originalDoc?.[fallback]
+
+    // field has value, use formatted value
+    if (typeof value === 'string' && value !== '') {
+      return formatSlug(value)
     }
 
-    if (operation === 'create') {
-      const fallbackData = data?.[fallback] || originalDoc?.[fallback]
-
+    // field has no value, use formatted fallback
+    if (operation === 'create' || operation === 'update') {
       if (fallbackData && typeof fallbackData === 'string') {
-        return format(fallbackData)
+        return formatSlug(fallbackData)
       }
     }
 
     return value
   }
 
-export default formatSlug
+export default fallbackSlug
