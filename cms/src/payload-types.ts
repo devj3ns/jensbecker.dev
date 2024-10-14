@@ -126,6 +126,8 @@ export interface SeoMetadata {
 export interface Media {
   id: number;
   alt: string;
+  cloudinaryPublicId?: string | null;
+  cloudinaryURL?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
