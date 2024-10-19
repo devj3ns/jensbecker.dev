@@ -97,7 +97,25 @@ export interface Page {
         }[]
       | null;
   };
-  body: {
+  sections?:
+    | {
+        title: string;
+        subTitle?: string | null;
+        blocks?: (RichTextBlock | ServicesBlock | TestimonialsBlock)[] | null;
+        id?: string | null;
+      }[]
+    | null;
+  meta: SeoMetadata;
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "RichTextBlock".
+ */
+export interface RichTextBlock {
+  text: {
     root: {
       type: string;
       children: {
@@ -112,10 +130,35 @@ export interface Page {
     };
     [k: string]: unknown;
   };
-  meta: SeoMetadata;
-  updatedAt: string;
-  createdAt: string;
-  _status?: ('draft' | 'published') | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'rich-text';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ServicesBlock".
+ */
+export interface ServicesBlock {
+  services?:
+    | {
+        title: string;
+        description: string;
+        page: number | Page;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'services';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "TestimonialsBlock".
+ */
+export interface TestimonialsBlock {
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'testimonials';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

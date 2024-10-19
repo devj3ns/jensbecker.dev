@@ -5,6 +5,9 @@ import pathField from '@/fields/path'
 import breadcrumbs from '@/fields/breadcrumbs'
 import { setVirtualFields } from '@/hooks/setVirtualFields'
 import { previewButtonField } from '@/fields/preview'
+import { RichTextBlock } from '@/blocks/RichTextBlock'
+import { ServicesBlock } from '@/blocks/ServicesBlock'
+import { TestimonialsBlock } from '@/blocks/TestimonialsBlock'
 
 const Page: CollectionConfig = {
   slug: 'pages',
@@ -42,20 +45,31 @@ const Page: CollectionConfig = {
     },
     {
       name: 'hero',
-      label: 'Hero Section',
       type: 'group',
+      label: {
+        de: 'Hero Abschnitt',
+        en: 'Hero Section',
+      },
       fields: [
         {
           name: 'title',
           type: 'text',
           required: true,
           localized: true,
+          label: {
+            de: 'Titel',
+            en: 'Title',
+          },
         },
         {
           name: 'subtitle',
           type: 'textarea',
           localized: true,
           required: true,
+          label: {
+            de: 'Untertitel',
+            en: 'Subtitle',
+          },
         },
         {
           name: 'links',
@@ -66,22 +80,62 @@ const Page: CollectionConfig = {
               type: 'text',
               required: true,
               localized: true,
+              label: {
+                de: 'Beschriftung',
+                en: 'Label',
+              },
             },
             {
               name: 'page',
               type: 'relationship',
               relationTo: 'pages',
               required: true,
+              label: {
+                de: 'Seite',
+                en: 'Page',
+              },
             },
           ],
         },
       ],
     },
     {
-      name: 'body',
-      type: 'richText',
-      required: true,
-      localized: true,
+      name: 'sections',
+      type: 'array',
+      label: {
+        de: 'Abschnitte',
+        en: 'Sections',
+      },
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          required: true,
+          localized: true,
+          label: {
+            de: 'Titel',
+            en: 'Title',
+          },
+        },
+        {
+          name: 'subTitle',
+          type: 'textarea',
+          localized: true,
+          label: {
+            de: 'Untertitel',
+            en: 'Subtitle',
+          },
+        },
+        {
+          name: 'blocks',
+          type: 'blocks',
+          blocks: [RichTextBlock, ServicesBlock, TestimonialsBlock],
+          label: {
+            de: 'Blöcke',
+            en: 'Blocks',
+          },
+        },
+      ],
     },
   ],
 }
