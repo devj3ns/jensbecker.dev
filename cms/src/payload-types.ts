@@ -86,6 +86,17 @@ export interface Page {
   path: string;
   breadcrumbs: Breadcrumbs;
   title: string;
+  hero: {
+    title: string;
+    subtitle: string;
+    links?:
+      | {
+          label: string;
+          page: number | Page;
+          id?: string | null;
+        }[]
+      | null;
+  };
   body: {
     root: {
       type: string;

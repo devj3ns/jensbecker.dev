@@ -41,6 +41,43 @@ const Page: CollectionConfig = {
       localized: true,
     },
     {
+      name: 'hero',
+      label: 'Hero Section',
+      type: 'group',
+      fields: [
+        {
+          name: 'title',
+          type: 'text',
+          required: true,
+          localized: true,
+        },
+        {
+          name: 'subtitle',
+          type: 'textarea',
+          localized: true,
+          required: true,
+        },
+        {
+          name: 'links',
+          type: 'array',
+          fields: [
+            {
+              name: 'label',
+              type: 'text',
+              required: true,
+              localized: true,
+            },
+            {
+              name: 'page',
+              type: 'relationship',
+              relationTo: 'pages',
+              required: true,
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'body',
       type: 'richText',
       required: true,
