@@ -13,6 +13,10 @@ export const Media: CollectionConfig = {
       en: 'Media',
     },
   },
+  admin: {
+    listSearchableFields: ['filename', 'alt'],
+  },
+  disableDuplicate: true,
   access: {
     read: () => true,
   },

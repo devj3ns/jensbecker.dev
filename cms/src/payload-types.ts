@@ -25,6 +25,7 @@ export interface Config {
     users: User;
     pages: Page;
     projects: Project;
+    testimonials: Testimonial;
     media: Media;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -150,7 +151,13 @@ export interface Project {
   parent?: (number | null) | Page;
   path: string;
   breadcrumbs: Breadcrumbs;
+  startDate: string;
+  endDate?: string | null;
+  featured: boolean;
   title: string;
+  excerpt: string;
+  tags: ('web-app' | 'website' | 'app' | 'seo')[];
+  image: number | Media;
   body: {
     root: {
       type: string;
@@ -173,6 +180,39 @@ export interface Project {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "testimonials".
+ */
+export interface Testimonial {
+  id: number;
+  title: string;
+  author: {
+    name: string;
+    company: string;
+    companyUrl: string;
+    image: number | Media;
+  };
+  project: number | Project;
+  text: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  updatedAt: string;
+  createdAt: string;
+  _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -189,6 +229,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'projects';
         value: number | Project;
+      } | null)
+    | ({
+        relationTo: 'testimonials';
+        value: number | Testimonial;
       } | null)
     | ({
         relationTo: 'media';

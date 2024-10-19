@@ -14,6 +14,7 @@ import Project from './collections/Project'
 import { Users } from './collections/Users'
 import alternatePaths from './fields/alternatePaths'
 import { getPageUrl } from './hooks/utils/getPageUrl'
+import Testimonials from './collections/Testimonials'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -42,7 +43,7 @@ export default buildConfig({
     fallbackLanguage: 'de',
     supportedLanguages: { en, de },
   },
-  collections: [Users, Page, Project, Media],
+  collections: [Users, Page, Project, Testimonials, Media],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

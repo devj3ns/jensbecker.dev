@@ -27,6 +27,7 @@ import { MetaTitleComponent as MetaTitleComponent_25 } from '@payloadcms/plugin-
 import { MetaDescriptionComponent as MetaDescriptionComponent_26 } from '@payloadcms/plugin-seo/client'
 import { MetaImageComponent as MetaImageComponent_27 } from '@payloadcms/plugin-seo/client'
 import { PreviewComponent as PreviewComponent_28 } from '@payloadcms/plugin-seo/client'
+import { default as default_29 } from 'src/fields/components/CopyAuthorNameToTitleField'
 
 export const importMap = {
   "/fields/components/PreviewButtonComponent#default": default_0,
@@ -57,5 +58,6 @@ export const importMap = {
   "@payloadcms/plugin-seo/client#MetaTitleComponent": MetaTitleComponent_25,
   "@payloadcms/plugin-seo/client#MetaDescriptionComponent": MetaDescriptionComponent_26,
   "@payloadcms/plugin-seo/client#MetaImageComponent": MetaImageComponent_27,
-  "@payloadcms/plugin-seo/client#PreviewComponent": PreviewComponent_28
+  "@payloadcms/plugin-seo/client#PreviewComponent": PreviewComponent_28,
+  "/fields/components/CopyAuthorNameToTitleField#default": default_29
 }
