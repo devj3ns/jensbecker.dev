@@ -60,7 +60,7 @@ export default buildConfig({
       collections: ['pages', 'projects'],
       uploadsCollection: 'media',
       generateTitle: ({ doc }) => `${doc.title} - JHB Software`,
-      generateURL: ({ doc }) => getPageUrl({ path: doc.path }),
+      generateURL: ({ doc }) => getPageUrl({ path: doc.path })!,
       interfaceName: 'SeoMetadata',
       fields: [alternatePaths()],
       fieldOverrides: {
