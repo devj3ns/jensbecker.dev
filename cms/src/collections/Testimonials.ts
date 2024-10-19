@@ -112,7 +112,7 @@ const Testimonials: CollectionConfig = {
     },
     {
       name: 'text',
-      type: 'richText',
+      type: 'textarea',
       required: true,
       localized: true,
     },

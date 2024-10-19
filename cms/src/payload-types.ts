@@ -246,21 +246,7 @@ export interface Testimonial {
     image: number | Media;
   };
   project: number | Project;
-  text: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
+  text: string;
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
