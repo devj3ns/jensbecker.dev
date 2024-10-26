@@ -8,6 +8,7 @@ import { previewButtonField } from '@/fields/preview'
 import { RichTextBlock } from '@/blocks/RichTextBlock'
 import { ServicesBlock } from '@/blocks/ServicesBlock'
 import { TestimonialsBlock } from '@/blocks/TestimonialsBlock'
+import { linkFields } from '@/fields/link'
 
 const Page: CollectionConfig = {
   slug: 'pages',
@@ -74,28 +75,7 @@ const Page: CollectionConfig = {
         {
           name: 'links',
           type: 'array',
-          fields: [
-            {
-              name: 'label',
-              type: 'text',
-              required: true,
-              localized: true,
-              label: {
-                de: 'Beschriftung',
-                en: 'Label',
-              },
-            },
-            {
-              name: 'page',
-              type: 'relationship',
-              relationTo: 'pages',
-              required: true,
-              label: {
-                de: 'Seite',
-                en: 'Page',
-              },
-            },
-          ],
+          fields: linkFields({ relationTo: ['pages'] }),
         },
       ],
     },
