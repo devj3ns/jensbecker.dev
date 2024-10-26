@@ -3,6 +3,10 @@ import { GlobalConfig } from 'payload'
 
 const Footer: GlobalConfig = {
   slug: 'footer',
+  label: {
+    de: 'Fußzeile',
+    en: 'Footer',
+  },
   access: {
     read: () => true,
   },

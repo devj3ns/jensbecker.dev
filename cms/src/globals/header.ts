@@ -3,6 +3,10 @@ import { GlobalConfig } from 'payload'
 
 const Header: GlobalConfig = {
   slug: 'header',
+  label: {
+    de: 'Kopfzeile',
+    en: 'Header',
+  },
   access: {
     read: () => true,
   },
