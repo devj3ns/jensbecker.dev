@@ -19,10 +19,16 @@ export const formatSlug = (val: string): string =>
     .replace(/\-\-+/g, '-') // Replace multiple hyphens with single hyphen
     .replace(/^\-+|\-+$/g, '') // Trim hyphens from start and end
 
-const fallbackSlug =
+/** Hook which sets the slug based on a fallback field if it is empty or the provided slug has an invalid format. */
+export const validateSlug =
   (fallback: string): FieldHook =>
   ({ operation, value, originalDoc, data }) => {
-    const fallbackData = data?.[fallback] || originalDoc?.[fallback]
+    if (operation === 'update' && !value) {
+      // The value could be undefined even though the document has a slug set, when
+      // other fields of the document are updated via the local API.
+      // To prevent unintended slug changes in this case, get the slug from the original document.
+      value = originalDoc.slug
+    }
 
     // field has value, use formatted value
     if (typeof value === 'string' && value !== '') {
@@ -31,12 +37,12 @@ const fallbackSlug =
 
     // field has no value, use formatted fallback
     if (operation === 'create' || operation === 'update') {
-      if (fallbackData && typeof fallbackData === 'string') {
-        return formatSlug(fallbackData)
+      const fallbackFieldValue = data?.[fallback] || originalDoc?.[fallback]
+
+      if (fallbackFieldValue && typeof fallbackFieldValue === 'string') {
+        return formatSlug(fallbackFieldValue)
       }
     }
 
     return value
   }
-
-export default fallbackSlug
