@@ -40,6 +40,10 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      titleSuffix: ` - ${process.env.PAYLOAD_PUBLIC_SITE_NAME} CMS`,
+      // TODO: add favicon
+    },
   },
   i18n: {
     fallbackLanguage: 'de',
@@ -62,16 +66,30 @@ export default buildConfig({
     seoPlugin({
       collections: ['pages', 'projects'],
       uploadsCollection: 'media',
-      generateTitle: ({ doc }) => `${doc.title} - JHB Software`,
+      generateTitle: ({ doc }) => `${doc.title} - ${process.env.PAYLOAD_PUBLIC_SITE_NAME}`,
       generateURL: ({ doc }) => getPageUrl({ path: doc.path })!,
       interfaceName: 'SeoMetadata',
       fields: [alternatePaths()],
       fieldOverrides: {
         title: {
           required: true,
+          label: {
+            de: 'Titel',
+            en: 'Title',
+          },
         },
         description: {
           required: true,
+          label: {
+            de: 'Beschreibung',
+            en: 'Description',
+          },
+        },
+        image: {
+          label: {
+            de: 'Bild',
+            en: 'Image',
+          },
         },
       },
     }),
