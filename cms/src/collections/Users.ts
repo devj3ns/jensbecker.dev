@@ -17,7 +17,52 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    // Email field is added by default
+    {
+      name: 'firstName',
+      required: true,
+      type: 'text',
+      label: {
+        de: 'Vorname',
+        en: 'First Name',
+      },
+    },
+    {
+      name: 'lastName',
+      required: true,
+      type: 'text',
+      label: {
+        de: 'Nachname',
+        en: 'Last Name',
+      },
+    },
+    {
+      name: 'role',
+      required: true,
+      type: 'select',
+      options: [
+        {
+          value: 'admin',
+          label: {
+            de: 'Administrator',
+            en: 'Admin',
+          },
+        },
+        {
+          value: 'editor',
+          label: {
+            de: 'Bearbeiter',
+            en: 'Editor',
+          },
+        },
+      ],
+      defaultValue: 'editor',
+      // Save this field to JWT so it can be used from `req.user`
+      saveToJWT: true,
+      label: {
+        de: 'Rolle',
+        en: 'Role',
+      },
+    },
   ],
 }
