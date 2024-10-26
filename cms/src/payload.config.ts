@@ -44,6 +44,7 @@ export default buildConfig({
       titleSuffix: ` - ${process.env.PAYLOAD_PUBLIC_SITE_NAME} CMS`,
       // TODO: add favicon
     },
+    avatar: 'default',
   },
   i18n: {
     fallbackLanguage: 'de',
