@@ -14,7 +14,7 @@ function alternatePaths(): Field {
     },
     hooks: {
       afterRead: [
-        // The alternate paths are generated in the getVirtualFields collection hook
+        // The alternate paths are generated in the setVirtualFields collection hook
       ],
     },
     fields: [

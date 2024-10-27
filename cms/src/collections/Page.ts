@@ -3,13 +3,13 @@ import { slugField } from '../fields/slug'
 import { parentField } from '@/fields/parent'
 import pathField from '@/fields/path'
 import breadcrumbs from '@/fields/breadcrumbs'
-import { setVirtualFields } from '@/hooks/setVirtualFields'
 import { previewButtonField } from '@/fields/preview'
 import { RichTextBlock } from '@/blocks/RichTextBlock'
 import { ServicesBlock } from '@/blocks/ServicesBlock'
 import { TestimonialsBlock } from '@/blocks/TestimonialsBlock'
 import { linkFields } from '@/fields/link'
 import { CollectionGroups } from '@/shared/CollectionGroups'
+import { setVirtualFieldsAfterChange, setVirtualFieldsBeforeRead } from '@/hooks/setVirtualFields'
 
 const Page: CollectionConfig = {
   slug: 'pages',
@@ -32,7 +32,10 @@ const Page: CollectionConfig = {
     drafts: true,
   },
   hooks: {
-    beforeRead: [setVirtualFields({ parentCollection: 'pages', parentField: 'parent' })],
+    beforeRead: [setVirtualFieldsBeforeRead({ parentCollection: 'pages', parentField: 'parent' })],
+    afterChange: [
+      setVirtualFieldsAfterChange({ parentCollection: 'pages', parentField: 'parent' }),
+    ],
   },
   fields: [
     previewButtonField(),

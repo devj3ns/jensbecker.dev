@@ -51,7 +51,7 @@ function breadcrumbs(): Field {
     },
     hooks: {
       afterRead: [
-        // The breadcrumbs are generated in the getVirtualFields collection hook
+        // The breadcrumbs are generated in the setVirtualFields collection hook
       ],
     },
   }

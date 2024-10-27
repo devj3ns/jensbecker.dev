@@ -3,7 +3,7 @@ import { slugField } from '../fields/slug'
 import { parentField } from '@/fields/parent'
 import pathField from '@/fields/path'
 import breadcrumbs from '@/fields/breadcrumbs'
-import { setVirtualFields } from '@/hooks/setVirtualFields'
+import { setVirtualFieldsAfterChange, setVirtualFieldsBeforeRead } from '@/hooks/setVirtualFields'
 import { previewButtonField } from '@/fields/preview'
 import { CollectionGroups } from '@/shared/CollectionGroups'
 
@@ -28,7 +28,10 @@ const Projects: CollectionConfig = {
     drafts: true,
   },
   hooks: {
-    beforeRead: [setVirtualFields({ parentCollection: 'pages', parentField: 'parent' })],
+    beforeRead: [setVirtualFieldsBeforeRead({ parentCollection: 'pages', parentField: 'parent' })],
+    afterChange: [
+      setVirtualFieldsAfterChange({ parentCollection: 'pages', parentField: 'parent' }),
+    ],
   },
   fields: [
     // Sidebar page related fields:

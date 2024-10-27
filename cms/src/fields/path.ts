@@ -19,7 +19,7 @@ function pathField(): Field {
     },
     hooks: {
       afterRead: [
-        // The path is generated in the getVirtualFields collection hook
+        // The path is generated in the setVirtualFields collection hook
       ],
     },
   }

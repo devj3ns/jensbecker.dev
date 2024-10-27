@@ -1,7 +1,7 @@
-import { CollectionBeforeReadHook } from 'payload'
+import { CollectionAfterChangeHook, CollectionBeforeReadHook } from 'payload'
 import { Config } from '../payload-types'
 import { SeoMetadata } from '../payload-types'
-import { getBreadcrumbsForAllLocales } from './utils/getBreadcrumbs'
+import { getBreadcrumbsForAllLocales, getBreadcrumbsForLocale } from './utils/getBreadcrumbs'
 import { pathFromBreadcrumbs } from './utils/pathFromBreadcrumbs'
 import { Breadcrumb } from '@/utils/types/breadcrumb'
 import { locales } from '@/utils/types/locales'
@@ -22,13 +22,15 @@ type VirtualFielsConfig = {
 }
 
 /**
- * Returns a [CollectionBeforeReadHook] that sets the values for all virtual fields.
+ * Returns a `CollectionBeforeReadHook` that sets the values for all virtual fields.
+ *
+ * A "before read" hook is used, because it is fired before localized fields are flattened which is necessary for generating the alternate paths.
  */
-export function setVirtualFields({
+export function setVirtualFieldsBeforeRead({
   parentCollection = 'pages',
   parentField = 'parent',
 }: VirtualFielsConfig): CollectionBeforeReadHook {
-  const setVirtualFieldsHook: CollectionBeforeReadHook = async ({ doc, req, collection }) => {
+  const setVirtualFieldsHook: CollectionBeforeReadHook = async ({ doc, req }) => {
     const breadcrumbs = await getBreadcrumbsForAllLocales({
       req,
       parentField,
@@ -80,6 +82,55 @@ export function setVirtualFields({
           alternatePaths,
         },
       }
+    }
+  }
+
+  return setVirtualFieldsHook
+}
+
+/**
+ * Returns a `CollectionAfterChangeHook` that sets the values for all virtual fields.
+ *
+ * This "after change" hook is needed to re-fill the virtual fields after a document is changed/saved in the admin panel.
+ */
+export function setVirtualFieldsAfterChange({
+  parentCollection = 'pages',
+  parentField = 'parent',
+}: VirtualFielsConfig): CollectionAfterChangeHook {
+  const setVirtualFieldsHook: CollectionAfterChangeHook = async ({ doc, req }) => {
+    // This type of hook is only called for one locale.
+    const locale = req.locale as Config['locale']
+
+    const breadcrumbs = await getBreadcrumbsForLocale({
+      req,
+      parentCollection,
+      parentField,
+      data: doc,
+      locale: locale,
+    })
+
+    const path = breadcrumbs.at(-1)!.path
+
+    checkPath(path)
+    checkBreadcrumbs(locale, breadcrumbs)
+
+    return {
+      ...doc,
+      path: path,
+      breadcrumbs: breadcrumbs,
+
+      meta: {
+        ...doc.meta,
+        alternatePaths: [
+          // Because this type of hook is only called for one locale, the alternatePaths field cannot be fully generated here.
+          // But because this hook is only used for filling the virtual fields in the admin panel after a document is changed/saved, this is not a problem.
+          // To not trigger a validation issue when publishing the document, partially set the alternatePaths field:
+          {
+            hreflang: locale,
+            path: path,
+          },
+        ],
+      },
     }
   }
 
