@@ -1,3 +1,4 @@
+import { CollectionGroups } from '@/shared/CollectionGroups'
 import { CollectionConfig } from 'payload'
 
 const Testimonials: CollectionConfig = {
@@ -15,6 +16,7 @@ const Testimonials: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'author', 'project'],
+    group: CollectionGroups.ContentCollections,
   },
   versions: {
     drafts: true,

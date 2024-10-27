@@ -9,6 +9,7 @@ import { RichTextBlock } from '@/blocks/RichTextBlock'
 import { ServicesBlock } from '@/blocks/ServicesBlock'
 import { TestimonialsBlock } from '@/blocks/TestimonialsBlock'
 import { linkFields } from '@/fields/link'
+import { CollectionGroups } from '@/shared/CollectionGroups'
 
 const Page: CollectionConfig = {
   slug: 'pages',
@@ -25,6 +26,7 @@ const Page: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'path'],
+    group: CollectionGroups.PagesCollections,
   },
   versions: {
     drafts: true,

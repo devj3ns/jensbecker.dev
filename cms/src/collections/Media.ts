@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { afterDeleteHook, beforeChangeHook } from '../hooks/cloudinary'
+import { CollectionGroups } from '@/shared/CollectionGroups'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -15,6 +16,7 @@ export const Media: CollectionConfig = {
   },
   admin: {
     listSearchableFields: ['filename', 'alt'],
+    group: CollectionGroups.MediaCollections,
   },
   disableDuplicate: true,
   access: {

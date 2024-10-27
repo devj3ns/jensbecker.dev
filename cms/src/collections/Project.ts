@@ -5,6 +5,7 @@ import pathField from '@/fields/path'
 import breadcrumbs from '@/fields/breadcrumbs'
 import { setVirtualFields } from '@/hooks/setVirtualFields'
 import { previewButtonField } from '@/fields/preview'
+import { CollectionGroups } from '@/shared/CollectionGroups'
 
 const Projects: CollectionConfig = {
   slug: 'projects',
@@ -21,6 +22,7 @@ const Projects: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
     defaultColumns: ['title', 'slug', 'path'],
+    group: CollectionGroups.PagesCollections,
   },
   versions: {
     drafts: true,

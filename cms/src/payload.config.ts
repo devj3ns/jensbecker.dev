@@ -52,7 +52,7 @@ export default buildConfig({
     supportedLanguages: { en, de },
   },
   globals: [Header, Footer],
-  collections: [Users, Page, Project, Testimonials, Media, Redirects],
+  collections: [Page, Project, Testimonials, Media, Redirects, Users],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

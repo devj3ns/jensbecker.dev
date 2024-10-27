@@ -1,3 +1,4 @@
+import { CollectionGroups } from '@/shared/CollectionGroups'
 import type { CollectionConfig } from 'payload'
 
 export const Users: CollectionConfig = {
@@ -14,6 +15,7 @@ export const Users: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'email',
+    group: CollectionGroups.SystemCollections,
   },
   auth: true,
   fields: [

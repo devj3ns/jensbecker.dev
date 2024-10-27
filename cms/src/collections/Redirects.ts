@@ -1,3 +1,4 @@
+import { CollectionGroups } from '@/shared/CollectionGroups'
 import { AdminPanelError } from '@/utils/AdminPanelError'
 import { CollectionBeforeValidateHook, CollectionConfig } from 'payload'
 
@@ -65,6 +66,7 @@ const Redirects: CollectionConfig = {
   admin: {
     defaultColumns: ['sourcePath', 'destinationPath', 'permanent'],
     listSearchableFields: ['sourcePath', 'destinationPath'],
+    group: CollectionGroups.SystemCollections,
   },
   access: {
     read: () => true,
