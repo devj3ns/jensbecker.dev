@@ -15,6 +15,7 @@ export const Media: CollectionConfig = {
     },
   },
   admin: {
+    defaultColumns: ['filename', 'alt', 'createdAt'],
     listSearchableFields: ['filename', 'alt'],
     group: CollectionGroups.MediaCollections,
   },

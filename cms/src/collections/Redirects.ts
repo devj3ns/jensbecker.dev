@@ -64,7 +64,7 @@ const Redirects: CollectionConfig = {
     },
   },
   admin: {
-    defaultColumns: ['sourcePath', 'destinationPath', 'permanent'],
+    defaultColumns: ['sourcePath', 'destinationPath', 'permanent', 'createdAt'],
     listSearchableFields: ['sourcePath', 'destinationPath'],
     group: CollectionGroups.SystemCollections,
   },

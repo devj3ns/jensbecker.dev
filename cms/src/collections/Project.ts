@@ -21,7 +21,7 @@ const Projects: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'slug', 'path'],
+    defaultColumns: ['title', 'path', 'updatedAt', 'status'],
     group: CollectionGroups.PagesCollections,
   },
   versions: {

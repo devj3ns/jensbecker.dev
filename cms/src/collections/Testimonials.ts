@@ -15,7 +15,7 @@ const Testimonials: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'author', 'project'],
+    defaultColumns: ['title', 'author', 'project', 'updatedAt', 'status'],
     group: CollectionGroups.ContentCollections,
   },
   versions: {
