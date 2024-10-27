@@ -24,23 +24,30 @@ export const setVirtualFieldsBeforeRead: CollectionBeforeReadHook = async ({
 
   const paths: Record<Config['locale'], string> = locales.reduce(
     (acc, locale) => {
-      acc[locale] = breadcrumbs[locale].at(-1)!.path
+      // If the slug is not set for this locale, exclude the path to not generate a 404 path
+      if (doc.slug[locale]) {
+        acc[locale] = breadcrumbs[locale].at(-1)!.path
+      }
+
       return acc
     },
     {} as Record<Config['locale'], string>,
   )
 
-  const alternatePaths: SeoMetadata['alternatePaths'] = locales.map((locale) => ({
-    hreflang: locale,
-    path: paths[locale],
-  }))
+  const alternatePaths: SeoMetadata['alternatePaths'] = Object.entries(paths).map(
+    ([locale, path]) => ({
+      hreflang: locale,
+      path,
+    }),
+  )
 
   // @ts-expect-error
   if (req.locale === 'all') {
-    for (const locale of locales) {
-      checkPath(paths[locale])
-      checkBreadcrumbs(locale, breadcrumbs[locale])
-    }
+    Object.values(paths).forEach(checkPath)
+
+    Object.entries(paths).forEach(([locale, _]) =>
+      checkBreadcrumbs(locale as Config['locale'], breadcrumbs[locale as Config['locale']]),
+    )
 
     return {
       ...doc,
