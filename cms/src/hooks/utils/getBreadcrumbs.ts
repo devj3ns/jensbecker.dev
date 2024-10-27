@@ -1,24 +1,26 @@
-import { PayloadRequest } from 'payload'
+import { PayloadRequest, SanitizedCollectionConfig } from 'payload'
 import { Config } from '../../payload-types'
 import { pathFromBreadcrumbs } from '@/hooks/utils/pathFromBreadcrumbs'
 import getParents from '@/hooks/utils/getParents'
 import { Breadcrumb } from '@/utils/types/breadcrumb'
 import { locales } from '@/utils/types/locales'
+import { CollectionConfigAttributes } from '@/shared/CollectionConfigAttributes'
 
 /** Returns the breadcrumbs to the given document for a specific locale. */
 export async function getBreadcrumbsForLocale({
   req,
-  parentField,
-  parentCollection,
   data,
   locale,
+  collection,
 }: {
   req: PayloadRequest
-  parentField: string
-  parentCollection: string
   data: any
   locale: Config['locale']
+  collection: SanitizedCollectionConfig
 }): Promise<Breadcrumb[]> {
+  const { breadcrumbLabelField, parentField, parentCollection } =
+    collection.custom as CollectionConfigAttributes
+
   var parentBreadcrumbs = []
 
   const parents = await getParents(req, locale, parentField, parentCollection, data, [])
@@ -30,7 +32,7 @@ export async function getBreadcrumbsForLocale({
       // @ts-ignore
       path: doc.path as string,
       // @ts-ignore
-      label: doc.title as string,
+      label: doc[breadcrumbLabelField] as string,
     }
   })
 
@@ -51,15 +53,16 @@ export async function getBreadcrumbsForLocale({
 /** Returns a list of breadcrumbs (containing all locales) to the given document. */
 export async function getBreadcrumbsForAllLocales({
   req,
-  parentField,
-  parentCollection,
   data,
+  collection,
 }: {
   req: PayloadRequest
-  parentField: string
-  parentCollection: string
   data: any
+  collection: SanitizedCollectionConfig
 }): Promise<Record<Config['locale'], Breadcrumb[]>> {
+  const { parentField, parentCollection, breadcrumbLabelField } =
+    collection.custom as CollectionConfigAttributes
+
   var parentBreadcrumbs: Record<Config['locale'], Breadcrumb[]> = locales.reduce(
     (acc, locale) => {
       acc[locale] = []
@@ -79,7 +82,7 @@ export async function getBreadcrumbsForAllLocales({
           // @ts-ignore
           path: doc.path[locale] as string,
           // @ts-ignore
-          label: (doc.shortTitle?.[locale] ?? doc.title[locale]) as string,
+          label: doc[breadcrumbLabelField][locale] as string,
         }
       })
       return acc

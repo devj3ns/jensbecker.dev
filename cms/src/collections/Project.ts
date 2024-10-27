@@ -6,6 +6,7 @@ import breadcrumbs from '@/fields/breadcrumbs'
 import { setVirtualFieldsAfterChange, setVirtualFieldsBeforeRead } from '@/hooks/setVirtualFields'
 import { previewButtonField } from '@/fields/preview'
 import { CollectionGroups } from '@/shared/CollectionGroups'
+import { CollectionConfigAttributes } from '@/shared/CollectionConfigAttributes'
 
 const Projects: CollectionConfig = {
   slug: 'projects',
@@ -28,11 +29,14 @@ const Projects: CollectionConfig = {
     drafts: true,
   },
   hooks: {
-    beforeRead: [setVirtualFieldsBeforeRead({ parentCollection: 'pages', parentField: 'parent' })],
-    afterChange: [
-      setVirtualFieldsAfterChange({ parentCollection: 'pages', parentField: 'parent' }),
-    ],
+    beforeRead: [setVirtualFieldsBeforeRead],
+    afterChange: [setVirtualFieldsAfterChange],
   },
+  custom: {
+    parentCollection: 'pages',
+    parentField: 'parent',
+    breadcrumbLabelField: 'title',
+  } satisfies CollectionConfigAttributes,
   fields: [
     // Sidebar page related fields:
     previewButtonField(),

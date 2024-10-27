@@ -10,6 +10,7 @@ import { TestimonialsBlock } from '@/blocks/TestimonialsBlock'
 import { linkFields } from '@/fields/link'
 import { CollectionGroups } from '@/shared/CollectionGroups'
 import { setVirtualFieldsAfterChange, setVirtualFieldsBeforeRead } from '@/hooks/setVirtualFields'
+import { CollectionConfigAttributes } from '@/shared/CollectionConfigAttributes'
 
 const Page: CollectionConfig = {
   slug: 'pages',
@@ -32,11 +33,14 @@ const Page: CollectionConfig = {
     drafts: true,
   },
   hooks: {
-    beforeRead: [setVirtualFieldsBeforeRead({ parentCollection: 'pages', parentField: 'parent' })],
-    afterChange: [
-      setVirtualFieldsAfterChange({ parentCollection: 'pages', parentField: 'parent' }),
-    ],
+    beforeRead: [setVirtualFieldsBeforeRead],
+    afterChange: [setVirtualFieldsAfterChange],
   },
+  custom: {
+    parentCollection: 'pages',
+    parentField: 'parent',
+    breadcrumbLabelField: 'title',
+  } satisfies CollectionConfigAttributes,
   fields: [
     previewButtonField(),
     slugField(),
