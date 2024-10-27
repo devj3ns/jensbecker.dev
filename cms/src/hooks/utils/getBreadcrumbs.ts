@@ -21,33 +21,21 @@ export async function getBreadcrumbsForLocale({
   const { breadcrumbLabelField, parentField, parentCollection } =
     collection.custom as CollectionConfigAttributes
 
-  var parentBreadcrumbs = []
-
   const parents = await getParents(req, locale, parentField, parentCollection, data, [])
+  const parentBreadcrumbs = parents.map((doc: any) =>
+    docToBreadcrumb(doc, breadcrumbLabelField, locale),
+  )
 
-  parentBreadcrumbs = parents.map((doc) => {
-    return {
-      // @ts-ignore
-      slug: doc.slug as string,
-      // @ts-ignore
-      path: doc.path as string,
-      // @ts-ignore
-      label: doc[breadcrumbLabelField] as string,
-    }
-  })
+  const doc = {
+    ...data,
+    path: pathFromBreadcrumbs({
+      locale,
+      breadcrumbs: parentBreadcrumbs,
+      additionalSlug: data.slug,
+    }),
+  }
 
-  return [
-    ...parentBreadcrumbs,
-    {
-      slug: data.slug,
-      path: pathFromBreadcrumbs({
-        locale: locale,
-        breadcrumbs: parentBreadcrumbs,
-        additionalSlug: data.slug,
-      }),
-      label: data.title,
-    },
-  ]
+  return [...parentBreadcrumbs, docToBreadcrumb(doc, breadcrumbLabelField, locale)]
 }
 
 /** Returns a list of breadcrumbs (containing all locales) to the given document. */
@@ -63,57 +51,41 @@ export async function getBreadcrumbsForAllLocales({
   const { parentField, parentCollection, breadcrumbLabelField } =
     collection.custom as CollectionConfigAttributes
 
-  var parentBreadcrumbs: Record<Config['locale'], Breadcrumb[]> = locales.reduce(
-    (acc, locale) => {
-      acc[locale] = []
-      return acc
-    },
-    {} as Record<Config['locale'], Breadcrumb[]>,
-  )
-
   const parents = await getParents(req, 'all', parentField, parentCollection, data, [])
 
-  parentBreadcrumbs = locales.reduce(
+  const breadcrumbs = locales.reduce(
     (acc, locale) => {
-      acc[locale] = parents.map((doc) => {
-        return {
-          // @ts-ignore
-          slug: doc.slug[locale] as string,
-          // @ts-ignore
-          path: doc.path[locale] as string,
-          // @ts-ignore
-          label: doc[breadcrumbLabelField][locale] as string,
-        }
-      })
+      const parentBreadcrumbs = parents.map((doc) =>
+        docToBreadcrumb(doc, breadcrumbLabelField, locale),
+      )
+
+      const doc = {
+        ...data,
+        path: pathFromBreadcrumbs({
+          locale,
+          breadcrumbs: parentBreadcrumbs,
+          additionalSlug: data.slug[locale],
+        }),
+      }
+
+      acc[locale] = [...parentBreadcrumbs, docToBreadcrumb(doc, breadcrumbLabelField, locale)]
       return acc
     },
     {} as Record<Config['locale'], Breadcrumb[]>,
   )
 
+  return breadcrumbs
+}
+
+/** Converts a localized or unlocalized document to a breadcrumb. */
+function docToBreadcrumb(
+  doc: any,
+  breadcrumbLabelField: string,
+  locale: Config['locale'],
+): Breadcrumb {
   return {
-    de: [
-      ...parentBreadcrumbs.de,
-      {
-        slug: data.slug.de,
-        path: pathFromBreadcrumbs({
-          locale: 'de',
-          breadcrumbs: parentBreadcrumbs.de,
-          additionalSlug: data.slug.de,
-        }),
-        label: data.shortTitle?.de ?? data.title.de,
-      },
-    ],
-    en: [
-      ...parentBreadcrumbs.en,
-      {
-        slug: data.slug.en,
-        path: pathFromBreadcrumbs({
-          locale: 'en',
-          breadcrumbs: parentBreadcrumbs.en,
-          additionalSlug: data.slug.en,
-        }),
-        label: data.shortTitle?.en ?? data.title.en,
-      },
-    ],
+    slug: typeof doc.slug === 'string' ? doc.slug : doc.slug?.[locale],
+    path: typeof doc.path === 'string' ? doc.path : doc.path?.[locale],
+    label: doc[breadcrumbLabelField]?.[locale] ?? doc[breadcrumbLabelField],
   }
 }
