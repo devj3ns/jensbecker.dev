@@ -17,6 +17,14 @@ export const slugField: Slug = (fallbackField = 'title', overrides = {}) =>
       localized: true,
       admin: {
         position: 'sidebar',
+        components: {
+          Field: {
+            clientProps: {
+              fallbackField: fallbackField,
+            },
+            path: '/fields/components/SlugFieldComponent',
+          },
+        },
       },
       hooks: {
         beforeValidate: [validateSlug(fallbackField)],

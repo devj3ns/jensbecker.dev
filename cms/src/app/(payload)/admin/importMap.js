@@ -1,4 +1,5 @@
 import { default as default_986044d31dc746c7e910e20ee9732226 } from 'src/fields/components/PreviewButtonComponent'
+import { default as default_950792f1328b4b4550303ce32cf173e9 } from 'src/fields/components/SlugFieldComponent'
 import { RichTextCell as RichTextCell_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { RichTextField as RichTextField_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { getGenerateComponentMap as getGenerateComponentMap_ec38dd6bee95fe7974552968355b33ae } from '@payloadcms/richtext-lexical/generateComponentMap'
@@ -31,6 +32,7 @@ import { default as default_1b8d860059dbed4b3a90b2af97375475 } from 'src/fields/
 
 export const importMap = {
   "/fields/components/PreviewButtonComponent#default": default_986044d31dc746c7e910e20ee9732226,
+  "/fields/components/SlugFieldComponent#default": default_950792f1328b4b4550303ce32cf173e9,
   "@payloadcms/richtext-lexical/client#RichTextCell": RichTextCell_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#RichTextField": RichTextField_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/generateComponentMap#getGenerateComponentMap": getGenerateComponentMap_ec38dd6bee95fe7974552968355b33ae,
