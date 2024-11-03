@@ -71,29 +71,42 @@ export default buildConfig({
       generateTitle: ({ doc }) => `${doc.title} - ${process.env.PAYLOAD_PUBLIC_SITE_NAME}`,
       generateURL: ({ doc }) => getPageUrl({ path: doc.path })!,
       interfaceName: 'SeoMetadata',
-      fields: [alternatePaths()],
-      fieldOverrides: {
-        title: {
-          required: true,
-          label: {
-            de: 'Titel',
-            en: 'Title',
-          },
-        },
-        description: {
-          required: true,
-          label: {
-            de: 'Beschreibung',
-            en: 'Description',
-          },
-        },
-        image: {
-          label: {
-            de: 'Bild',
-            en: 'Image',
-          },
-        },
-      },
+      fields: ({ defaultFields }) => [
+        ...defaultFields.map((field) => {
+          if ('name' in field) {
+            if (field.name === 'title') {
+              return {
+                ...field,
+                required: true,
+                label: {
+                  de: 'Titel',
+                  en: 'Title',
+                },
+              }
+            } else if (field.name === 'description') {
+              return {
+                ...field,
+                required: true,
+                label: {
+                  de: 'Beschreibung',
+                  en: 'Description',
+                },
+              }
+            } else if (field.name === 'image') {
+              return {
+                ...field,
+                label: {
+                  de: 'Bild',
+                  en: 'Image',
+                },
+              }
+            }
+          }
+
+          return field
+        }),
+        alternatePaths(),
+      ],
     }),
   ],
 })
