@@ -46,6 +46,7 @@ export default buildConfig({
       // TODO: add favicon
     },
     avatar: 'default',
+    dateFormat: "dd. MMM yyyy HH:mm 'Uhr'",
   },
   i18n: {
     fallbackLanguage: 'de',
