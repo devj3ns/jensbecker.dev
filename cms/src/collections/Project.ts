@@ -25,6 +25,7 @@ const Projects: CollectionConfig = createPageCollectionConfig({
   page: {
     parentCollection: 'pages',
     parentField: 'parent',
+    sharedParentDocument: true,
   },
   fields: [
     // Sidebar fields:

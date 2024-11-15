@@ -29,6 +29,9 @@ function parent(pageConfig: PageCollectionConfigAttributes): Field {
     },
     admin: {
       position: 'sidebar',
+      components: {
+        Field: '/plugins/payload-pages/components/Parent',
+      },
     },
   }
 }

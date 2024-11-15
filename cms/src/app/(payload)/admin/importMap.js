@@ -1,5 +1,6 @@
 import { default as default_952e4f2b1459a95849a598ebb2c25479 } from 'src/plugins/payload-pages/components/PreviewButton'
 import { default as default_3dc9decf7df79cce55a69734a15080ec } from 'src/plugins/payload-pages/components/Slug'
+import { default as default_d254cc209ab47a35c52115576361a1fb } from 'src/plugins/payload-pages/components/Parent'
 import { default as default_d31e7281b0bd568908b329cc29dce7a1 } from 'src/plugins/payload-pages/components/Path'
 import { RscEntryLexicalCell as RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
 import { RscEntryLexicalField as RscEntryLexicalField_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
@@ -33,6 +34,7 @@ import { default as default_1b8d860059dbed4b3a90b2af97375475 } from 'src/fields/
 export const importMap = {
   "/plugins/payload-pages/components/PreviewButton#default": default_952e4f2b1459a95849a598ebb2c25479,
   "/plugins/payload-pages/components/Slug#default": default_3dc9decf7df79cce55a69734a15080ec,
+  "/plugins/payload-pages/components/Parent#default": default_d254cc209ab47a35c52115576361a1fb,
   "/plugins/payload-pages/components/Path#default": default_d31e7281b0bd568908b329cc29dce7a1,
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalCell": RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e,
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalField": RscEntryLexicalField_44fe37237e0ebf4470c9990d8cb7b07e,
