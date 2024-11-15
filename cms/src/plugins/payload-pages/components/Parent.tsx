@@ -3,7 +3,7 @@
 import { RelationshipField, useConfig, useDocumentInfo, useField } from '@payloadcms/ui'
 import { RelationshipFieldClientComponent, SanitizedCollectionConfig } from 'payload'
 import { asPageCollectionConfigOrThrow } from '../PageCollectionConfig'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 // TODO: migrate this component to be a server component which useses the local api to fetch the shared parent document
 
@@ -25,6 +25,7 @@ export const ParentField: RelationshipFieldClientComponent = ({ field, path }) =
   const sharedParentDocument = sharedParentDocumentRaw!
 
   const { value, setValue } = useField<string>({ path: path! })
+  const [readOnly, setReadOnly] = useState(sharedParentDocument)
 
   useEffect(() => {
     onInit()
@@ -35,16 +36,20 @@ export const ParentField: RelationshipFieldClientComponent = ({ field, path }) =
     // Only fetch if field has no value, which means that this either
     // 1. is the first item in the collection, then getCollectionWideParent() will return null
     // 2. is a new item, then getCollectionWideParent() will return the shared parent value
-    if (!value && sharedParentDocument) {
+    if (sharedParentDocument && !value) {
       const parentValue = await getSharedParentDocument({ collection: collectionSlug! })
 
       if (parentValue) {
         setValue(parentValue)
+        setReadOnly(true)
+      } else {
+        // When the collection is empty and this is the first document being created, the parent field must be editable
+        setReadOnly(false)
       }
     }
   }
 
-  return <RelationshipField path={path} field={field} />
+  return <RelationshipField path={path} field={field} readOnly={readOnly} />
 }
 
 export default ParentField
