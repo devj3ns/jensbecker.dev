@@ -89,7 +89,7 @@ export interface UserAuthOperations {
 export interface Page {
   id: number;
   slug: string;
-  parent?: (number | null) | Page;
+  parent: number | Page;
   path: string;
   breadcrumbs: Breadcrumbs;
   title: string;
@@ -212,7 +212,7 @@ export interface Media {
 export interface Project {
   id: number;
   slug: string;
-  parent?: (number | null) | Page;
+  parent: number | Page;
   path: string;
   breadcrumbs: Breadcrumbs;
   startDate: string;

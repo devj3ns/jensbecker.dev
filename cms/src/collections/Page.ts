@@ -1,18 +1,12 @@
 import { CollectionConfig } from 'payload'
-import { slugField } from '../fields/slug'
-import { parentField } from '@/fields/parent'
-import pathField from '@/fields/path'
-import breadcrumbs from '@/fields/breadcrumbs'
-import { previewButtonField } from '@/fields/preview'
 import { RichTextBlock } from '@/blocks/RichTextBlock'
 import { ServicesBlock } from '@/blocks/ServicesBlock'
 import { TestimonialsBlock } from '@/blocks/TestimonialsBlock'
 import { linkFields } from '@/fields/link'
 import { CollectionGroups } from '@/shared/CollectionGroups'
-import { setVirtualFieldsAfterChange, setVirtualFieldsBeforeRead } from '@/hooks/setVirtualFields'
-import { CollectionConfigAttributes } from '@/shared/CollectionConfigAttributes'
+import { createPageCollectionConfig } from '@/plugins/payload-pages/PageCollectionConfig'
 
-const Page: CollectionConfig = {
+const Page: CollectionConfig = createPageCollectionConfig({
   slug: 'pages',
   labels: {
     singular: {
@@ -32,21 +26,11 @@ const Page: CollectionConfig = {
   versions: {
     drafts: true,
   },
-  hooks: {
-    beforeRead: [setVirtualFieldsBeforeRead],
-    afterChange: [setVirtualFieldsAfterChange],
-  },
-  custom: {
+  page: {
     parentCollection: 'pages',
     parentField: 'parent',
-    breadcrumbLabelField: 'title',
-  } satisfies CollectionConfigAttributes,
+  },
   fields: [
-    previewButtonField(),
-    slugField(),
-    parentField(),
-    pathField(),
-    breadcrumbs(),
     {
       name: 'title',
       type: 'text',
@@ -127,6 +111,6 @@ const Page: CollectionConfig = {
       ],
     },
   ],
-}
+})
 
 export default Page

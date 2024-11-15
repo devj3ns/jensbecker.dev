@@ -4,14 +4,7 @@ import { asPageCollectionConfigOrThrow } from '../PageCollectionConfig'
 import { getBreadcrumbsForAllLocales, getBreadcrumbsForLocale } from '../utils/getBreadcrumbs'
 import { validatePath } from '../utils/validatePath'
 import { validateBreadcrumbs } from '../utils/validateBreadcrumbs'
-
-// TODO: this can be removed once the types are generated
-type PageSeoMetadata = {
-  alternatePaths: {
-    hreflang: Locale
-    path: string
-  }[]
-}
+import { SeoMetadata } from '@/payload-types'
 
 /**
  * A [CollectionBeforeReadHook] that sets the values for all virtual fields before a document is read.
@@ -57,7 +50,7 @@ export const setVirtualFieldsBeforeRead: CollectionBeforeReadHook = async ({
     {} as Record<Locale, string>,
   )
 
-  const alternatePaths: PageSeoMetadata['alternatePaths'] = Object.entries(paths).map(
+  const alternatePaths: SeoMetadata['alternatePaths'] = Object.entries(paths).map(
     ([locale, path]) => ({
       hreflang: locale as Locale,
       path,

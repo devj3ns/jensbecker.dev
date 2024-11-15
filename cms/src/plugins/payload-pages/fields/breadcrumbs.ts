@@ -14,6 +14,7 @@ export type Breadcrumb = {
 function breadcrumbs(): Field {
   return {
     name: 'breadcrumbs',
+    interfaceName: 'Breadcrumbs',
     type: 'array',
     required: true,
     virtual: true,

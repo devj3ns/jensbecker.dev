@@ -1,14 +1,8 @@
 import { CollectionConfig } from 'payload'
-import { slugField } from '../fields/slug'
-import { parentField } from '@/fields/parent'
-import pathField from '@/fields/path'
-import breadcrumbs from '@/fields/breadcrumbs'
-import { setVirtualFieldsAfterChange, setVirtualFieldsBeforeRead } from '@/hooks/setVirtualFields'
-import { previewButtonField } from '@/fields/preview'
 import { CollectionGroups } from '@/shared/CollectionGroups'
-import { CollectionConfigAttributes } from '@/shared/CollectionConfigAttributes'
+import { createPageCollectionConfig } from '@/plugins/payload-pages/PageCollectionConfig'
 
-const Projects: CollectionConfig = {
+const Projects: CollectionConfig = createPageCollectionConfig({
   slug: 'projects',
   labels: {
     singular: {
@@ -28,24 +22,12 @@ const Projects: CollectionConfig = {
   versions: {
     drafts: true,
   },
-  hooks: {
-    beforeRead: [setVirtualFieldsBeforeRead],
-    afterChange: [setVirtualFieldsAfterChange],
-  },
-  custom: {
+  page: {
     parentCollection: 'pages',
     parentField: 'parent',
-    breadcrumbLabelField: 'title',
-  } satisfies CollectionConfigAttributes,
+  },
   fields: [
-    // Sidebar page related fields:
-    previewButtonField(),
-    slugField(),
-    parentField(),
-    pathField(),
-    breadcrumbs(),
-
-    // Sidebar document related fields:
+    // Sidebar fields:
     {
       name: 'startDate',
       type: 'date',
@@ -157,6 +139,6 @@ const Projects: CollectionConfig = {
       },
     },
   ],
-}
+})
 
 export default Projects

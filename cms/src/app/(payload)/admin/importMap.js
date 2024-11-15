@@ -1,5 +1,6 @@
-import { default as default_986044d31dc746c7e910e20ee9732226 } from 'src/fields/components/PreviewButtonComponent'
-import { default as default_950792f1328b4b4550303ce32cf173e9 } from 'src/fields/components/SlugFieldComponent'
+import { default as default_952e4f2b1459a95849a598ebb2c25479 } from 'src/plugins/payload-pages/components/PreviewButton'
+import { default as default_3dc9decf7df79cce55a69734a15080ec } from 'src/plugins/payload-pages/components/Slug'
+import { default as default_d31e7281b0bd568908b329cc29dce7a1 } from 'src/plugins/payload-pages/components/Path'
 import { RscEntryLexicalCell as RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
 import { RscEntryLexicalField as RscEntryLexicalField_44fe37237e0ebf4470c9990d8cb7b07e } from '@payloadcms/richtext-lexical/rsc'
 import { InlineToolbarFeatureClient as InlineToolbarFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
@@ -30,8 +31,9 @@ import { PreviewComponent as PreviewComponent_a8a977ebc872c5d5ea7ee689724c0860 }
 import { default as default_1b8d860059dbed4b3a90b2af97375475 } from 'src/fields/components/CopyAuthorNameToTitleField'
 
 export const importMap = {
-  "/fields/components/PreviewButtonComponent#default": default_986044d31dc746c7e910e20ee9732226,
-  "/fields/components/SlugFieldComponent#default": default_950792f1328b4b4550303ce32cf173e9,
+  "/plugins/payload-pages/components/PreviewButton#default": default_952e4f2b1459a95849a598ebb2c25479,
+  "/plugins/payload-pages/components/Slug#default": default_3dc9decf7df79cce55a69734a15080ec,
+  "/plugins/payload-pages/components/Path#default": default_d31e7281b0bd568908b329cc29dce7a1,
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalCell": RscEntryLexicalCell_44fe37237e0ebf4470c9990d8cb7b07e,
   "@payloadcms/richtext-lexical/rsc#RscEntryLexicalField": RscEntryLexicalField_44fe37237e0ebf4470c9990d8cb7b07e,
   "@payloadcms/richtext-lexical/client#InlineToolbarFeatureClient": InlineToolbarFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
