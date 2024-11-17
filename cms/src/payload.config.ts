@@ -18,6 +18,7 @@ import Testimonials from './collections/Testimonials'
 import Header from './globals/header'
 import Footer from './globals/footer'
 import Redirects from './collections/Redirects'
+import { generateDescription } from './utils/ai/generateDescription'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -71,6 +72,7 @@ export default buildConfig({
       uploadsCollection: 'media',
       generateTitle: ({ doc }) => `${doc.title} - ${process.env.PAYLOAD_PUBLIC_SITE_NAME}`,
       generateURL: ({ doc }) => getPageUrl({ path: doc.path })!,
+      generateDescription: generateDescription,
       interfaceName: 'SeoMetadata',
       fields: ({ defaultFields }) => [
         ...defaultFields.map((field) => {
