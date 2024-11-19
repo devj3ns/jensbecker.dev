@@ -1,8 +1,7 @@
-import type { CollectionConfig } from 'payload'
-import { afterDeleteHook, beforeChangeHook } from '../hooks/cloudinary'
 import { CollectionGroups } from '@/shared/CollectionGroups'
+import createMediaCollection from '@/plugins/payload-cloudinary/collections/Media'
 
-export const Media: CollectionConfig = {
+export const Media = createMediaCollection({
   slug: 'media',
   labels: {
     singular: {
@@ -14,69 +13,9 @@ export const Media: CollectionConfig = {
       en: 'Media',
     },
   },
-  admin: {
-    defaultColumns: ['filename', 'alt', 'createdAt'],
-    listSearchableFields: ['filename', 'alt'],
-    group: CollectionGroups.MediaCollections,
-  },
-  disableDuplicate: true,
-  access: {
-    read: () => true,
-  },
-  hooks: {
-    beforeChange: [beforeChangeHook],
-    afterDelete: [afterDeleteHook],
-  },
-  fields: [
-    {
-      name: 'alt',
-      type: 'text',
-      localized: true,
-      required: true,
-    },
-    {
-      // This field is needed to delete and update cloudinary files.
-      name: 'cloudinaryPublicId',
-      type: 'text',
-      required: true,
-      access: {
-        create: () => false,
-        update: () => false,
-      },
-      admin: {
-        position: 'sidebar',
-        readOnly: true,
-        condition: (data) => Boolean(data?.cloudinaryPublicId),
-      },
-    },
-    {
-      name: 'cloudinaryURL',
-      label: 'Cloudinary URL',
-      type: 'text',
-      required: true,
-      access: {
-        create: () => false,
-        update: () => false,
-      },
-      admin: {
-        position: 'sidebar',
-        readOnly: true,
-        condition: (data) => Boolean(data?.cloudinaryURL),
-      },
-    },
-  ],
-  upload: {
-    mimeTypes: ['image/*'],
-    disableLocalStorage: true,
-    crop: false,
-    adminThumbnail: ({ doc }) => {
-      const cloudinaryCloudName = process.env.CLOUDINARY_CLOUD_NAME
-
-      if (!cloudinaryCloudName) {
-        throw new Error('CLOUDINARY_CLOUD_NAME ENV variable not set')
-      }
-
-      return `https://res.cloudinary.com/${cloudinaryCloudName}/image/upload/w_300,h_300,c_fill/f_auto,q_auto,dpr_auto/${doc.cloudinaryPublicId}`
+  overrides: {
+    admin: {
+      group: CollectionGroups.MediaCollections,
     },
   },
-}
+})

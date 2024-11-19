@@ -1,4 +1,4 @@
-import type { CollectionBeforeChangeHook, CollectionAfterDeleteHook, PayloadRequest } from 'payload'
+import type { PayloadRequest } from 'payload'
 import { v2 as cloudinary, UploadApiOptions, UploadApiResponse, UploadStream } from 'cloudinary'
 import { Readable } from 'stream'
 
@@ -12,7 +12,7 @@ const cloudinaryFolder = process.env.CLOUDINARY_FOLDER
 
 type File = NonNullable<PayloadRequest['file']>
 
-const streamUpload = (file: File, id?: string): Promise<UploadApiResponse> => {
+export const streamUpload = (file: File, id?: string): Promise<UploadApiResponse> => {
   const readStream = Readable.from(file.data)
 
   if (!cloudinaryFolder) {
@@ -38,31 +38,3 @@ const streamUpload = (file: File, id?: string): Promise<UploadApiResponse> => {
     readStream.pipe(stream)
   })
 }
-
-const beforeChangeHook: CollectionBeforeChangeHook = async ({ data, req, operation }) => {
-  if (operation === 'create') {
-    if (req.file) {
-      const result = await streamUpload(req.file, data.cloudinaryPublicId)
-
-      return {
-        ...data,
-        cloudinaryPublicId: result.public_id,
-        cloudinaryURL: result.secure_url,
-      }
-    } else {
-      console.error('File not found')
-      return data
-    }
-  }
-
-  return data
-}
-
-const afterDeleteHook: CollectionAfterDeleteHook = async ({ doc }) => {
-  await cloudinary.uploader.destroy(doc.cloudinaryPublicId, (error: any, result: any) => {
-    console.error(result, error)
-  })
-  return doc
-}
-
-export { streamUpload, beforeChangeHook, afterDeleteHook }
