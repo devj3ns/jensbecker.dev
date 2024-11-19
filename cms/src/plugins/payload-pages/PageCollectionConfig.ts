@@ -65,7 +65,7 @@ export const createPageCollectionConfig = (config: PageCollectionConfig): PageCo
     },
     fields: [
       previewButton(),
-      slug(pageConfig),
+      slug({ redirectWarning: true }),
       parent(pageConfig),
       path(),
       breadcrumbs(),

@@ -4,96 +4,103 @@ import { useEffect, useState } from 'react'
 import { formatSlug, liveFormatSlug } from '../hooks/validateSlug'
 import type { TextFieldClientComponent } from 'payload'
 
-export const SlugField: TextFieldClientComponent = ({ field, path }) => {
-  const { initialData, title, hasPublishedDoc, id } = useDocumentInfo()
-  const initialSlug = initialData?.[path!]
-  const { value: slug, setValue: setSlug } = useField<string>({ path: path })
-  const [showSyncButtonTooltip, setShowSyncButtonTooltip] = useState(false)
+export const SlugField: TextFieldClientComponent =
+  // @ts-ignore
+  ({ field, path, redirectWarning }) => {
+    const { initialData, title, hasPublishedDoc, id } = useDocumentInfo()
+    const initialSlug = initialData?.[path!]
+    const { value: slug, setValue: setSlug } = useField<string>({ path: path })
+    const [showSyncButtonTooltip, setShowSyncButtonTooltip] = useState(false)
 
-  useEffect(() => {
-    // Only update the slug when editing the title when the document is not published to avoid
-    // the creation of a redirection due to the slug change
-    if (!hasPublishedDoc) {
-      // Payload automatically sets the title to "[Untitled]" when the document is created and to id when the title field
-      // for an existing document is empty. In this cases, and when the title is not set, clear the slug.
-      if (!title || title === id || title === '[Untitled]') {
-        setSlug(undefined)
-      } else {
-        setSlug(formatSlug(title))
+    // TODO: use the redirectNecessary function to determine if a redirect is necessary
+
+    useEffect(() => {
+      // Only update the slug when editing the title when the document is not published to avoid
+      // the creation of a redirection due to the slug change
+      if (!hasPublishedDoc) {
+        // Payload automatically sets the title to "[Untitled]" when the document is created and to id when the title field
+        // for an existing document is empty. In this cases, and when the title is not set, clear the slug.
+        if (!title || title === id || title === '[Untitled]') {
+          setSlug(undefined)
+        } else {
+          setSlug(formatSlug(title))
+        }
       }
-    }
 
-    // Only the title should trigger this effect
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [title])
+      // Only the title should trigger this effect
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [title])
 
-  // TextField component could not be used here, because it does not support the onChange event
-  return (
-    <>
-      <div className="field-type slug-field-component">
-        <FieldLabel
-          htmlFor={`field-${path}`}
-          label={field.label}
-          required={field.required}
-          localized={field.localized}
-        />
-
-        <div style={{ position: 'relative' }}>
-          <TextInput
-            value={slug}
-            path={path!}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              setSlug(liveFormatSlug(e.target.value))
-            }}
+    // TextField component could not be used here, because it does not support the onChange event
+    return (
+      <>
+        <div className="field-type slug-field-component">
+          <FieldLabel
+            htmlFor={`field-${path}`}
+            label={field.label}
+            required={field.required}
+            localized={field.localized}
           />
-          {formatSlug(title) !== slug && (
-            <div
-              style={{
-                position: 'absolute',
-                right: '8px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-              }}
-            >
-              <>
-                <Tooltip show={showSyncButtonTooltip}>Sync slug with title</Tooltip>
 
-                <button
-                  type="button"
-                  onClick={() => setSlug(formatSlug(title))}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    padding: 0,
-                    cursor: 'pointer',
-                    color: 'var(--theme-elevation-500)',
-                    transition: 'color 0.2s',
-                    transform: 'scale(0.5)',
-                  }}
-                  onMouseEnter={(_) => setShowSyncButtonTooltip(true)}
-                  onMouseLeave={(_) => setShowSyncButtonTooltip(false)}
-                >
-                  <RefreshIcon />
-                </button>
-              </>
+          <div style={{ position: 'relative' }}>
+            <TextInput
+              value={slug}
+              path={path!}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                setSlug(liveFormatSlug(e.target.value))
+              }}
+            />
+            {formatSlug(title) !== slug && (
+              <div
+                style={{
+                  position: 'absolute',
+                  right: '8px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                }}
+              >
+                <>
+                  <Tooltip show={showSyncButtonTooltip}>Sync slug with title</Tooltip>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSlug(formatSlug(title))
+                      setShowSyncButtonTooltip(false)
+                    }}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      padding: 0,
+                      cursor: 'pointer',
+                      color: 'var(--theme-elevation-500)',
+                      transition: 'color 0.2s',
+                      transform: 'scale(0.5)',
+                    }}
+                    onMouseEnter={(_) => setShowSyncButtonTooltip(true)}
+                    onMouseLeave={(_) => setShowSyncButtonTooltip(false)}
+                  >
+                    <RefreshIcon />
+                  </button>
+                </>
+              </div>
+            )}
+          </div>
+
+          {redirectWarning && initialSlug !== slug && hasPublishedDoc && (
+            <div style={{ marginTop: '0.5rem' }}>
+              <Banner type="info" icon={<InfoIcon />} alignIcon="left">
+                <div style={{ marginLeft: '0.5rem' }}>
+                  The slug was changed from <code>{initialSlug}</code> to <code>{slug}</code>. This
+                  will automatically create a redirection from the old to the new page path.
+                </div>
+              </Banner>
             </div>
           )}
         </div>
-
-        {initialSlug !== slug && hasPublishedDoc && (
-          <div style={{ marginTop: '0.5rem' }}>
-            <Banner type="info" icon={<InfoIcon />} alignIcon="left">
-              <div style={{ marginLeft: '0.5rem' }}>
-                The slug was changed from <code>{initialSlug}</code> to <code>{slug}</code>. This
-                will automatically create a redirection.
-              </div>
-            </Banner>
-          </div>
-        )}
-      </div>
-    </>
-  )
-}
+      </>
+    )
+  }
 
 export default SlugField
 

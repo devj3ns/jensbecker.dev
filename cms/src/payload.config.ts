@@ -17,7 +17,7 @@ import { getPageUrl } from './plugins/payload-pages/utils/getPageUrl'
 import Testimonials from './collections/Testimonials'
 import Header from './globals/header'
 import Footer from './globals/footer'
-import Redirects from './collections/Redirects'
+import {Redirects} from './collections/Redirects'
 import { generateDescription } from './utils/ai/generateDescription'
 
 const filename = fileURLToPath(import.meta.url)
