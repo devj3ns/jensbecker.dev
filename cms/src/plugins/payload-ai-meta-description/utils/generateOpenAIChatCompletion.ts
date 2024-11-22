@@ -1,9 +1,16 @@
 import OpenAI from 'openai'
 
 /** Calls OpenAI and returns the text response. */
-export async function generateText(body: OpenAI.Chat.ChatCompletionCreateParams) {
+export async function generateOpenAIChatCompletion(
+  body: OpenAI.Chat.ChatCompletionCreateParams,
+  openAIKey: string,
+) {
+  if (!openAIKey) {
+    throw new Error('No OPENAI_API_KEY provided')
+  }
+
   const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: openAIKey,
   })
 
   const chatCompletion = (await openai.chat.completions.create(body, {

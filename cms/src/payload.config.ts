@@ -17,11 +17,32 @@ import { getPageUrl } from './plugins/payload-pages/utils/getPageUrl'
 import Testimonials from './collections/Testimonials'
 import Header from './globals/header'
 import Footer from './globals/footer'
-import {Redirects} from './collections/Redirects'
-import { generateDescription } from './utils/ai/generateDescription'
+import { Redirects } from './collections/Redirects'
+import { AiMetaDescriptionGenerator } from './plugins/payload-ai-meta-description/AiMetaDescriptionGenerator'
+import { lexicalToPlainText } from './plugins/payload-ai-meta-description/utils/lexicalToPlainText'
+import { Page as PageType, Project as ProjectType } from './payload-types'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+
+const aiMetaDescriptionGenerator = new AiMetaDescriptionGenerator({
+  openAIKey: process.env.OPENAI_API_KEY!,
+  websiteContext: {
+    topic: 'Software Developer for mobile, web-apps and websites',
+  },
+  collectionContentTransformer: {
+    pages: async (doc: PageType) => ({
+      title: doc.title,
+      subTitle: doc.hero.subtitle,
+    }),
+    projects: async (doc: ProjectType) => ({
+      title: doc.title,
+      excerpt: doc.excerpt,
+      tags: doc.tags?.join(', '),
+      body: (await lexicalToPlainText(doc.body)) ?? '',
+    }),
+  },
+})
 
 export default buildConfig({
   localization: {
@@ -72,7 +93,7 @@ export default buildConfig({
       uploadsCollection: 'media',
       generateTitle: ({ doc }) => `${doc.title} - ${process.env.PAYLOAD_PUBLIC_SITE_NAME}`,
       generateURL: ({ doc }) => getPageUrl({ path: doc.path })!,
-      generateDescription: generateDescription,
+      generateDescription: aiMetaDescriptionGenerator.generateDescription,
       interfaceName: 'SeoMetadata',
       fields: ({ defaultFields }) => [
         ...defaultFields.map((field) => {
