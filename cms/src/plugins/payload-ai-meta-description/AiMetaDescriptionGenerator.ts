@@ -47,11 +47,15 @@ export class AiMetaDescriptionGenerator {
 
     const content = await this.transformDocContent(doc, collectionConfig.slug)
 
+    const keywords = doc.meta.keywords?.map(
+      (keywordArrayItem: { keyword: string }) => keywordArrayItem.keyword,
+    )
+
     return await generateMetaDescription({
       pageContext: {
         type: collectionConfig.slug,
         title: doc.title,
-        keywords: doc.keywords, // TODO: add keywords to the doc?
+        keywords: keywords,
       },
       websiteContext: this.websiteContext,
       content: JSON.stringify(content),

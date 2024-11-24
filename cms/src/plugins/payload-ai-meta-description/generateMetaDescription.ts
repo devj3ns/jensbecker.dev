@@ -32,14 +32,15 @@ export const generateMetaDescription = async ({
         **Page Context**:
         - Page Title: ${pageContext.title}
         - Page Type: ${pageContext.type}
-        - Page Keywords: ${pageContext.keywords?.join(', ')}
+        - Focus Keyword: ${pageContext.keywords.at(0) ?? 'N/A'}
+        - Page Keywords: ${pageContext.keywords ? pageContext.keywords.slice(1).join(', ') : 'N/A'}
         
         **Richtlinien**:
         
         - Schreibe eine prägnante und ansprechende Zusammenfassung des Seiteninhalts.
         - Die Beschreibung soll den Nutzer anregen, die Seite zu besuchen.
-        - Integriere den Seitentitle wenn möglich am Anfang der Beschreibung.
-        - Integriere die Keywords natürlich in den Text.
+        - Das Focus Keyword muss in der Beschreibung enthalten sein.
+        - Integriere die Keywords wenn möglich natürlich in den Text.
         - Behalte einen professionellen und informativen Ton bei. Verwende eine neutrale Sprache.
         - Vermeide direkte Ansprachen wie "Entdecken Sie" oder "Erfahren Sie".
         - Halte die Länge auf maximal ${lengthLimit} Zeichen.
