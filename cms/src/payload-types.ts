@@ -175,6 +175,10 @@ export interface TestimonialsBlock {
  * via the `definition` "SeoMetadata".
  */
 export interface SeoMetadata {
+  keywords: {
+    keyword: string;
+    id?: string | null;
+  }[];
   title: string;
   description: string;
   image?: (number | null) | Media;
@@ -439,6 +443,12 @@ export interface PagesSelect<T extends boolean = true> {
   meta?:
     | T
     | {
+        keywords?:
+          | T
+          | {
+              keyword?: T;
+              id?: T;
+            };
         overview?: T;
         title?: T;
         description?: T;
@@ -484,6 +494,12 @@ export interface ProjectsSelect<T extends boolean = true> {
   meta?:
     | T
     | {
+        keywords?:
+          | T
+          | {
+              keyword?: T;
+              id?: T;
+            };
         overview?: T;
         title?: T;
         description?: T;

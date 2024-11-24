@@ -21,6 +21,7 @@ import { Redirects } from './collections/Redirects'
 import { AiMetaDescriptionGenerator } from './plugins/payload-ai-meta-description/AiMetaDescriptionGenerator'
 import { lexicalToPlainText } from './plugins/payload-ai-meta-description/utils/lexicalToPlainText'
 import { Page as PageType, Project as ProjectType } from './payload-types'
+import { seoFields } from './plugins/payload-ai-meta-description/seoFields'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -96,6 +97,7 @@ export default buildConfig({
       generateDescription: aiMetaDescriptionGenerator.generateDescription,
       interfaceName: 'SeoMetadata',
       fields: ({ defaultFields }) => [
+        ...seoFields(),
         ...defaultFields.map((field) => {
           if ('name' in field) {
             if (field.name === 'title') {
