@@ -16,7 +16,8 @@ export const generateMetaDescription = async ({
   websiteContext: WebsiteContext
   openAIKey: string
 }): Promise<string> => {
-  const lengthLimit = 150
+  // the real max value is 150, but this leaves a bit more room for the inaccuracies of the LLM
+  const lengthLimit = 140
 
   const body: OpenAI.Chat.ChatCompletionCreateParams = {
     model: 'gpt-4o',
@@ -45,6 +46,9 @@ export const generateMetaDescription = async ({
         - Vermeide direkte Ansprachen wie "Entdecken Sie" oder "Erfahren Sie".
         - Halte die Länge auf maximal ${lengthLimit} Zeichen.
         - Schreibe in der Sprache, die durch den ISO-2-Code "${locale}" angegeben ist.
+
+        WICHTIG: Nimm dein Ergebnis und zähle die verwendeten Zeichen (inkl. Leerzeichen). Falls die Beschreibung mehr als ${lengthLimit} Zeichen beträgt, passe die Beschreibung an, sodass alle Richtlinien erfüllt sind.
+        Gebe die Anzahl der Zeichen nicht mit aus.
         
         Der Seiteninhalt wird im nächsten Schritt bereitgestellt.`,
       },
