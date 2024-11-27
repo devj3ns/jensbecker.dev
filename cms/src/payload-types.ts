@@ -376,7 +376,6 @@ export interface PayloadMigration {
  * via the `definition` "pages_select".
  */
 export interface PagesSelect<T extends boolean = true> {
-  previewButton?: T;
   slug?: T;
   parent?: T;
   path?: T;
@@ -449,11 +448,9 @@ export interface PagesSelect<T extends boolean = true> {
               keyword?: T;
               id?: T;
             };
-        overview?: T;
         title?: T;
         description?: T;
         image?: T;
-        preview?: T;
         alternatePaths?:
           | T
           | {
@@ -471,7 +468,6 @@ export interface PagesSelect<T extends boolean = true> {
  * via the `definition` "projects_select".
  */
 export interface ProjectsSelect<T extends boolean = true> {
-  previewButton?: T;
   slug?: T;
   parent?: T;
   path?: T;
@@ -500,11 +496,9 @@ export interface ProjectsSelect<T extends boolean = true> {
               keyword?: T;
               id?: T;
             };
-        overview?: T;
         title?: T;
         description?: T;
         image?: T;
-        preview?: T;
         alternatePaths?:
           | T
           | {
