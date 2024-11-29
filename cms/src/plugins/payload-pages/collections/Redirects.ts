@@ -7,18 +7,16 @@ import { validateRedirect } from '../hooks/validateRedirect'
 // TODO: also store the destination page inside a relationship field
 
 const createRedirectsCollection = ({
+  labels,
+  access,
   overrides = {
     admin: {},
-    access: {},
-    hooks: {},
-    labels: {},
   },
 }: {
+  labels?: CollectionConfig['labels']
+  access?: CollectionConfig['access']
   overrides: {
     admin?: CollectionConfig['admin']
-    access?: CollectionConfig['access']
-    hooks?: CollectionConfig['hooks']
-    labels?: CollectionConfig['labels']
   }
 }): CollectionConfig => ({
   slug: 'redirects',
@@ -27,15 +25,10 @@ const createRedirectsCollection = ({
     listSearchableFields: ['sourcePath', 'destinationPath'],
     ...overrides.admin,
   },
-  labels: {
-    ...overrides.labels,
-  },
-  access: {
-    ...overrides.access,
-  },
+  labels: labels ?? {},
+  access: access ?? {},
   hooks: {
     beforeValidate: [validateRedirect],
-    ...overrides.hooks,
   },
   fields: [
     {

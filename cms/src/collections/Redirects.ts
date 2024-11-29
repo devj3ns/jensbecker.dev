@@ -6,15 +6,15 @@ export const Redirects = createRedirectsCollection({
     admin: {
       group: CollectionGroups.SystemCollections,
     },
-    labels: {
-      singular: {
-        de: 'Weiterleitung',
-        en: 'Redirect',
-      },
-      plural: {
-        de: 'Weiterleitungen',
-        en: 'Redirects',
-      },
+  },
+  labels: {
+    singular: {
+      de: 'Weiterleitung',
+      en: 'Redirect',
+    },
+    plural: {
+      de: 'Weiterleitungen',
+      en: 'Redirects',
     },
   },
 })

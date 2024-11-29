@@ -33,6 +33,13 @@ export type PageCollectionConfigAttributes = {
    * Defaults to `admin.useAsTitle`.
    **/
   breadcrumbLabelField?: string
+
+  /**
+   * Name of the field to use as fallback for the slug field.
+   *
+   * Defaults to `title`.
+   */
+  slugFallbackField?: string
 }
 
 /**
@@ -49,7 +56,8 @@ export const createPageCollectionConfig = (config: PageCollectionConfig): PageCo
     ...config.page,
     breadcrumbLabelField: titleField,
     sharedParentDocument: config.page.sharedParentDocument ?? false,
-  }
+    slugFallbackField: config.page.slugFallbackField ?? 'title',
+  } as PageCollectionConfigAttributes
 
   return {
     ...config,
@@ -65,7 +73,7 @@ export const createPageCollectionConfig = (config: PageCollectionConfig): PageCo
     },
     fields: [
       previewButton(),
-      slug({ redirectWarning: true }),
+      slug({ redirectWarning: true, fallbackField: pageConfig.slugFallbackField }),
       parent(pageConfig),
       path(),
       breadcrumbs(),

@@ -6,8 +6,9 @@ import type { TextFieldClientComponent } from 'payload'
 
 export const SlugField: TextFieldClientComponent =
   // @ts-ignore
-  ({ field, path, redirectWarning }) => {
-    const { initialData, title, hasPublishedDoc, id } = useDocumentInfo()
+  ({ field, path, redirectWarning, fallbackField = 'title' }) => {
+    const { value: title } = useField<string>({ path: fallbackField })
+    const { initialData, hasPublishedDoc, id } = useDocumentInfo()
     const initialSlug = initialData?.[path!]
     const { value: slug, setValue: setSlug } = useField<string>({ path: path })
     const [showSyncButtonTooltip, setShowSyncButtonTooltip] = useState(false)
@@ -50,7 +51,7 @@ export const SlugField: TextFieldClientComponent =
                 setSlug(liveFormatSlug(e.target.value))
               }}
             />
-            {formatSlug(title) !== slug && (
+            {title && formatSlug(title) !== slug && (
               <div
                 style={{
                   position: 'absolute',
@@ -60,7 +61,7 @@ export const SlugField: TextFieldClientComponent =
                 }}
               >
                 <>
-                  <Tooltip show={showSyncButtonTooltip}>Sync slug with title</Tooltip>
+                  <Tooltip show={showSyncButtonTooltip}>Sync slug with {fallbackField}</Tooltip>
 
                   <button
                     type="button"

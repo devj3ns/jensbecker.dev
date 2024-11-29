@@ -4,7 +4,13 @@ import { validateSlug } from '../hooks/validateSlug'
 
 // Note: make sure this field can be used separately from the PagesCollectionConfig (e.g. a non page collection needs a slug field as well)
 
-function slug({ redirectWarning }: { redirectWarning: boolean }): Field {
+function slug({
+  redirectWarning,
+  fallbackField = 'title',
+}: {
+  redirectWarning: boolean
+  fallbackField?: string
+}): Field {
   return {
     name: 'slug',
     type: 'text',
@@ -15,13 +21,14 @@ function slug({ redirectWarning }: { redirectWarning: boolean }): Field {
           path: '/plugins/payload-pages/components/Slug',
           clientProps: {
             redirectWarning: redirectWarning,
+            fallbackField: fallbackField,
           },
         },
       },
     },
     hooks: {
       beforeDuplicate: [beforeDuplicateSlug],
-      beforeValidate: [validateSlug],
+      beforeValidate: [validateSlug(fallbackField)],
     },
     unique: true,
     index: true,

@@ -37,30 +37,30 @@ export const liveFormatSlug = (val: string): string =>
     // place trim at the end to replace inner whitespaces with hyphens:
     .trim() // Remove whitespace from both sides of a string
 
-/** Hook which sets the slug based on a fallback field if it is empty or the provided slug has an invalid format. */
-export const validateSlug: FieldHook = ({ operation, value, originalDoc, data }) => {
-  const fallbackField = 'title'
-
-  if (operation === 'update' && !value) {
-    // The value could be undefined even though the document has a slug set, when
-    // other fields of the document are updated via the local API.
-    // To prevent unintended slug changes in this case, get the slug from the original document.
-    value = originalDoc.slug
-  }
-
-  // field has value, use formatted value
-  if (typeof value === 'string' && value !== '') {
-    return formatSlug(value)
-  }
-
-  // field has no value, use formatted fallback
-  if (operation === 'create' || operation === 'update') {
-    const fallbackFieldValue = data?.[fallbackField] || originalDoc?.[fallbackField]
-
-    if (fallbackFieldValue && typeof fallbackFieldValue === 'string') {
-      return formatSlug(fallbackFieldValue)
+/** Function which returns a hook which sets the slug based on a fallback field if it is empty or the provided slug has an invalid format. */
+export const validateSlug = (fallbackField: string): FieldHook => {
+  return ({ operation, value, originalDoc, data }) => {
+    if (operation === 'update' && !value) {
+      // The value could be undefined even though the document has a slug set, when
+      // other fields of the document are updated via the local API.
+      // To prevent unintended slug changes in this case, get the slug from the original document.
+      value = originalDoc.slug
     }
-  }
 
-  return value
+    // field has value, use formatted value
+    if (typeof value === 'string' && value !== '') {
+      return formatSlug(value)
+    }
+
+    // field has no value, use formatted fallback
+    if (operation === 'create' || operation === 'update') {
+      const fallbackFieldValue = data?.[fallbackField] || originalDoc?.[fallbackField]
+
+      if (fallbackFieldValue && typeof fallbackFieldValue === 'string') {
+        return formatSlug(fallbackFieldValue)
+      }
+    }
+
+    return value
+  }
 }
