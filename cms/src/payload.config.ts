@@ -4,7 +4,7 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { de } from '@payloadcms/translations/languages/de'
 import { en } from '@payloadcms/translations/languages/en'
 import path from 'path'
-import { buildConfig } from 'payload'
+import { buildConfig, SanitizedConfig } from 'payload'
 import sharp from 'sharp'
 import { fileURLToPath } from 'url'
 
@@ -18,10 +18,12 @@ import Testimonials from './collections/Testimonials'
 import Header from './globals/header'
 import Footer from './globals/footer'
 import { Redirects } from './collections/Redirects'
-import { AiMetaDescriptionGenerator } from './plugins/payload-ai-meta-description/AiMetaDescriptionGenerator'
-import { lexicalToPlainText } from './plugins/payload-ai-meta-description/utils/lexicalToPlainText'
 import { Page as PageType, Project as ProjectType } from './payload-types'
-import { seoFields } from './plugins/payload-ai-meta-description/seoFields'
+import {
+  seoFields,
+  lexicalToPlainText,
+  AiMetaDescriptionGenerator,
+} from '@jhb.software/payload-plugin-seo'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -40,7 +42,8 @@ const aiMetaDescriptionGenerator = new AiMetaDescriptionGenerator({
       title: doc.title,
       excerpt: doc.excerpt,
       tags: doc.tags?.join(', '),
-      body: (await lexicalToPlainText(doc.body)) ?? '',
+      // TODO: pass config
+      body: (await lexicalToPlainText(doc.body, {} as SanitizedConfig)) ?? '',
     }),
   },
 })

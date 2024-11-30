@@ -24,8 +24,8 @@ import { StrikethroughFeatureClient as StrikethroughFeatureClient_e70f5e05f09f93
 import { UnderlineFeatureClient as UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { BoldFeatureClient as BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
 import { ItalicFeatureClient as ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864 } from '@payloadcms/richtext-lexical/client'
-import { default as default_7dea59a12927059d6361ff08ece520d9 } from 'src/plugins/payload-ai-meta-description/components/KeywordsFieldLabel'
-import { default as default_3beb9eefb045076fa3799e02c12fdee6 } from 'src/plugins/payload-ai-meta-description/components/KeywordsFieldRowLabel'
+import { KeywordsFieldLabel as KeywordsFieldLabel_7dade4180b4cecc9f6ea5a7b2bc76b93 } from '@jhb.software/payload-plugin-seo/client'
+import { KeywordsFieldRowLabel as KeywordsFieldRowLabel_7dade4180b4cecc9f6ea5a7b2bc76b93 } from '@jhb.software/payload-plugin-seo/client'
 import { OverviewComponent as OverviewComponent_a8a977ebc872c5d5ea7ee689724c0860 } from '@payloadcms/plugin-seo/client'
 import { MetaTitleComponent as MetaTitleComponent_a8a977ebc872c5d5ea7ee689724c0860 } from '@payloadcms/plugin-seo/client'
 import { MetaDescriptionComponent as MetaDescriptionComponent_a8a977ebc872c5d5ea7ee689724c0860 } from '@payloadcms/plugin-seo/client'
@@ -60,8 +60,8 @@ export const importMap = {
   "@payloadcms/richtext-lexical/client#UnderlineFeatureClient": UnderlineFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#BoldFeatureClient": BoldFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
   "@payloadcms/richtext-lexical/client#ItalicFeatureClient": ItalicFeatureClient_e70f5e05f09f93e00b997edb1ef0c864,
-  "/plugins/payload-ai-meta-description/components/KeywordsFieldLabel#default": default_7dea59a12927059d6361ff08ece520d9,
-  "/plugins/payload-ai-meta-description/components/KeywordsFieldRowLabel#default": default_3beb9eefb045076fa3799e02c12fdee6,
+  "@jhb.software/payload-plugin-seo/client#KeywordsFieldLabel": KeywordsFieldLabel_7dade4180b4cecc9f6ea5a7b2bc76b93,
+  "@jhb.software/payload-plugin-seo/client#KeywordsFieldRowLabel": KeywordsFieldRowLabel_7dade4180b4cecc9f6ea5a7b2bc76b93,
   "@payloadcms/plugin-seo/client#OverviewComponent": OverviewComponent_a8a977ebc872c5d5ea7ee689724c0860,
   "@payloadcms/plugin-seo/client#MetaTitleComponent": MetaTitleComponent_a8a977ebc872c5d5ea7ee689724c0860,
   "@payloadcms/plugin-seo/client#MetaDescriptionComponent": MetaDescriptionComponent_a8a977ebc872c5d5ea7ee689724c0860,
