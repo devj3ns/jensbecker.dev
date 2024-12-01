@@ -12,9 +12,15 @@ importers:
 
   .:
     dependencies:
-      '@jhb.software/payload-plugin-seo':
-        specifier: ^0.1.10
-        version: 0.1.10(h5zkwzryfgk4cwwzpvwghege3a)
+      '@jhb.software/payload-cloudinary-plugin':
+        specifier: ^0.1.0
+        version: 0.1.0(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))
+      '@jhb.software/payload-pages-plugin':
+        specifier: ^0.1.4
+        version: 0.1.4(@payloadcms/ui@3.2.1(monaco-editor@0.52.0)(next@15.0.1(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4))(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)(typescript@5.6.3))(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))
+      '@jhb.software/payload-seo-plugin':
+        specifier: ^0.1.2
+        version: 0.1.2(h5zkwzryfgk4cwwzpvwghege3a)
       '@payloadcms/db-vercel-postgres':
         specifier: ^3.2.1
         version: 3.2.1(@neondatabase/serverless@0.9.5)(@types/pg@8.11.6)(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)
@@ -822,8 +828,19 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@jhb.software/payload-plugin-seo@0.1.10':
-    resolution: {integrity: sha512-D8rgXb+jnaI9zGBBa7vNcrwANd/7HqFYU4+pIz8CSH4wcSNZwV4ml4FGZYkiOgiMmxZtT1diRYsGlBg/nEQKaA==}
+  '@jhb.software/payload-cloudinary-plugin@0.1.0':
+    resolution: {integrity: sha512-/6VzfcUKK8ypgqpSJTn0JmKBX0HsfdnGpZN4g63dbzr9IXaLbBda+JexgZJAnF1t3FagHcGURMbxRWRPooRoeA==}
+    peerDependencies:
+      payload: ^3.2.2
+
+  '@jhb.software/payload-pages-plugin@0.1.4':
+    resolution: {integrity: sha512-VIcK9fNCgZWStyqqGQzKD+4jQ/VFiUx7foCzf5koEwm5qu06HXyg7Gc+6hihHTCsPhTITMtb2oShJxDEf3KnlQ==}
+    peerDependencies:
+      '@payloadcms/ui': ^3.2.2
+      payload: ^3.2.2
+
+  '@jhb.software/payload-seo-plugin@0.1.2':
+    resolution: {integrity: sha512-U/Tk6rKTNyDgk0zLfeyxpKtDr4eHF1cH4gkGyK1JL9lH8TOVUt4lU6Dsu8vJvP169uoPSkshOEPWq5JpJETh4Q==}
     peerDependencies:
       '@payloadcms/plugin-seo': ^3.2.2
       '@payloadcms/richtext-lexical': ^3.2.2
@@ -3831,7 +3848,18 @@ snapshots:
   '@img/sharp-win32-x64@0.33.5':
     optional: true
 
-  '@jhb.software/payload-plugin-seo@0.1.10(h5zkwzryfgk4cwwzpvwghege3a)':
+  '@jhb.software/payload-cloudinary-plugin@0.1.0(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))':
+    dependencies:
+      cloudinary: 2.5.1
+      payload: 3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5)
+
+  '@jhb.software/payload-pages-plugin@0.1.4(@payloadcms/ui@3.2.1(monaco-editor@0.52.0)(next@15.0.1(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4))(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)(typescript@5.6.3))(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))':
+    dependencies:
+      '@payloadcms/ui': 3.2.1(monaco-editor@0.52.0)(next@15.0.1(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4))(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)(typescript@5.6.3)
+      payload: 3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5)
+      react: 18.3.1
+
+  '@jhb.software/payload-seo-plugin@0.1.2(h5zkwzryfgk4cwwzpvwghege3a)':
     dependencies:
       '@payloadcms/plugin-seo': 3.2.1(monaco-editor@0.52.0)(next@15.0.1(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(sass@1.77.4))(payload@3.2.1(bufferutil@4.0.8)(graphql@16.9.0)(monaco-editor@0.52.0)(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(typescript@5.6.3)(utf-8-validate@6.0.5))(react-dom@19.0.0-rc-65a56d0e-20241020(react@19.0.0-rc-65a56d0e-20241020))(react@19.0.0-rc-65a56d0e-20241020)(types-react@19.0.0-rc.1)(typescript@5.6.3)
       '@payloadcms/richtext-lexical': 3.2.1(kbnxhvmsvml4v5b5p3vr4gama4)

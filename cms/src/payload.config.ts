@@ -12,18 +12,17 @@ import { Media } from './collections/Media'
 import Page from './collections/Page'
 import Project from './collections/Project'
 import { Users } from './collections/Users'
-import alternatePaths from './plugins/payload-pages/fields/alternatePaths'
-import { getPageUrl } from './plugins/payload-pages/utils/getPageUrl'
+import { alternatePathsField, getPageUrl } from '@jhb.software/payload-pages-plugin'
 import Testimonials from './collections/Testimonials'
 import Header from './globals/header'
 import Footer from './globals/footer'
 import { Redirects } from './collections/Redirects'
 import { Page as PageType, Project as ProjectType } from './payload-types'
 import {
-  seoFields,
+  keywordsField,
   lexicalToPlainText,
   AiMetaDescriptionGenerator,
-} from '@jhb.software/payload-plugin-seo'
+} from '@jhb.software/payload-seo-plugin'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -68,7 +67,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     meta: {
-      titleSuffix: ` - ${process.env.PAYLOAD_PUBLIC_SITE_NAME} CMS`,
+      titleSuffix: ` - ${process.env.NEXT_PUBLIC_SITE_NAME} CMS`,
       // TODO: add favicon
     },
     avatar: 'default',
@@ -95,12 +94,12 @@ export default buildConfig({
     seoPlugin({
       collections: ['pages', 'projects'],
       uploadsCollection: 'media',
-      generateTitle: ({ doc }) => `${doc.title} - ${process.env.PAYLOAD_PUBLIC_SITE_NAME}`,
+      generateTitle: ({ doc }) => `${doc.title} - ${process.env.NEXT_PUBLIC_SITE_NAME}`,
       generateURL: ({ doc }) => getPageUrl({ path: doc.path })!,
       generateDescription: aiMetaDescriptionGenerator.generateDescription,
       interfaceName: 'SeoMetadata',
       fields: ({ defaultFields }) => [
-        ...seoFields(),
+        keywordsField(),
         ...defaultFields.map((field) => {
           if ('name' in field) {
             if (field.name === 'title') {
@@ -134,7 +133,7 @@ export default buildConfig({
 
           return field
         }),
-        alternatePaths(),
+        alternatePathsField(),
       ],
     }),
   ],

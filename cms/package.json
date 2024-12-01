@@ -15,7 +15,9 @@
     "start": "cross-env NODE_OPTIONS=--no-deprecation next start"
   },
   "dependencies": {
-    "@jhb.software/payload-plugin-seo": "^0.1.10",
+    "@jhb.software/payload-seo-plugin": "^0.1.2",
+    "@jhb.software/payload-pages-plugin": "^0.1.4",
+    "@jhb.software/payload-cloudinary-plugin": "^0.1.0",
     "@payloadcms/db-vercel-postgres": "^3.2.1",
     "@payloadcms/next": "^3.2.1",
     "@payloadcms/plugin-seo": "^3.2.1",

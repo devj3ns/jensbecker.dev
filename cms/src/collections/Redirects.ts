@@ -1,7 +1,7 @@
-import createRedirectsCollection from '@/plugins/payload-pages/collections/Redirects'
+import { createRedirectsCollectionConfig } from '@jhb.software/payload-pages-plugin'
 import { CollectionGroups } from '@/shared/CollectionGroups'
 
-export const Redirects = createRedirectsCollection({
+export const Redirects = createRedirectsCollectionConfig({
   overrides: {
     admin: {
       group: CollectionGroups.SystemCollections,

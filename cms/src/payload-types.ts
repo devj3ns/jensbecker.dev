@@ -273,7 +273,7 @@ export interface Redirect {
   id: number;
   sourcePath: string;
   destinationPath: string;
-  permanent: boolean;
+  type: 'permanent' | 'temporary';
   reason?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -558,7 +558,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface RedirectsSelect<T extends boolean = true> {
   sourcePath?: T;
   destinationPath?: T;
-  permanent?: T;
+  type?: T;
   reason?: T;
   updatedAt?: T;
   createdAt?: T;

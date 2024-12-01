@@ -4,7 +4,7 @@ import { ServicesBlock } from '@/blocks/ServicesBlock'
 import { TestimonialsBlock } from '@/blocks/TestimonialsBlock'
 import { linkFields } from '@/fields/link'
 import { CollectionGroups } from '@/shared/CollectionGroups'
-import { createPageCollectionConfig } from '@/plugins/payload-pages/PageCollectionConfig'
+import { createPageCollectionConfig } from '@jhb.software/payload-pages-plugin'
 
 const Page: CollectionConfig = createPageCollectionConfig({
   slug: 'pages',

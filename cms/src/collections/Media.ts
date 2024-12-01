@@ -1,7 +1,7 @@
 import { CollectionGroups } from '@/shared/CollectionGroups'
-import createMediaCollection from '@/plugins/payload-cloudinary/collections/Media'
+import { createMediaCollectionConfig } from '@jhb.software/payload-cloudinary-plugin'
 
-export const Media = createMediaCollection({
+export const Media = createMediaCollectionConfig({
   slug: 'media',
   labels: {
     singular: {
