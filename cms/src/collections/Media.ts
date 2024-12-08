@@ -13,9 +13,19 @@ export const Media = createMediaCollectionConfig({
       en: 'Media',
     },
   },
-  overrides: {
-    admin: {
-      group: CollectionGroups.MediaCollections,
-    },
+  admin: {
+    group: CollectionGroups.MediaCollections,
   },
+  fields: [
+    {
+      name: 'alt',
+      label: {
+        de: 'Alternativer Text',
+        en: 'Alternative Text',
+      },
+      type: 'text',
+      required: true,
+      localized: true,
+    },
+  ],
 })

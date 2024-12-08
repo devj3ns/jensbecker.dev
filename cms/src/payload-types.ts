@@ -179,14 +179,9 @@ export interface SeoMetadata {
     keyword: string;
     id?: string | null;
   }[];
-  title: string;
-  description: string;
+  title?: string | null;
+  description?: string | null;
   image?: (number | null) | Media;
-  alternatePaths: {
-    hreflang: string;
-    path: string;
-    id?: string | null;
-  }[];
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -194,9 +189,9 @@ export interface SeoMetadata {
  */
 export interface Media {
   id: number;
-  alt: string;
   cloudinaryPublicId?: string | null;
   cloudinaryURL?: string | null;
+  alt: string;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -451,13 +446,6 @@ export interface PagesSelect<T extends boolean = true> {
         title?: T;
         description?: T;
         image?: T;
-        alternatePaths?:
-          | T
-          | {
-              hreflang?: T;
-              path?: T;
-              id?: T;
-            };
       };
   updatedAt?: T;
   createdAt?: T;
@@ -499,13 +487,6 @@ export interface ProjectsSelect<T extends boolean = true> {
         title?: T;
         description?: T;
         image?: T;
-        alternatePaths?:
-          | T
-          | {
-              hreflang?: T;
-              path?: T;
-              id?: T;
-            };
       };
   updatedAt?: T;
   createdAt?: T;
@@ -536,9 +517,9 @@ export interface TestimonialsSelect<T extends boolean = true> {
  * via the `definition` "media_select".
  */
 export interface MediaSelect<T extends boolean = true> {
-  alt?: T;
   cloudinaryPublicId?: T;
   cloudinaryURL?: T;
+  alt?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
