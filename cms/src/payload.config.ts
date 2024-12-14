@@ -28,6 +28,8 @@ import {
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+const siteName = 'JHB Software'
+
 export default buildConfig({
   localization: {
     locales: [
@@ -48,7 +50,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     meta: {
-      titleSuffix: ` - ${process.env.NEXT_PUBLIC_SITE_NAME} CMS`,
+      titleSuffix: ` - ${siteName} CMS`,
       // TODO: add favicon
     },
     avatar: 'default',
@@ -95,8 +97,7 @@ export default buildConfig({
       // Payload official seo plugin config:
       collections: ['pages', 'projects'],
       uploadsCollection: 'media',
-      generateTitle: ({ doc }: { doc: any }) =>
-        `${doc.title} - ${process.env.NEXT_PUBLIC_SITE_NAME}`,
+      generateTitle: ({ doc }: { doc: any }) => `${doc.title} - ${siteName}`,
       generateURL: ({ doc }: { doc: any }) => getPageUrl({ path: doc.path })!,
       interfaceName: 'SeoMetadata',
       fields: ({ defaultFields }: { defaultFields: any }) => [
