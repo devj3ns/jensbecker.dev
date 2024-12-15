@@ -20,7 +20,7 @@ const Page: CollectionConfig = createPageCollectionConfig({
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'path', 'updatedAt', 'status'],
+    defaultColumns: ['title', 'path', 'status', 'updatedAt'],
     group: CollectionGroups.PagesCollections,
   },
   versions: {
@@ -29,6 +29,7 @@ const Page: CollectionConfig = createPageCollectionConfig({
   page: {
     parentCollection: 'pages',
     parentField: 'parent',
+    isRootCollection: true,
   },
   fields: [
     {
@@ -68,6 +69,11 @@ const Page: CollectionConfig = createPageCollectionConfig({
         {
           name: 'links',
           type: 'array',
+          admin: {
+            components: {
+              RowLabel: '/fields/components/LinkRowTitle',
+            },
+          },
           fields: linkFields({ relationTo: ['pages'] }),
         },
       ],
@@ -76,8 +82,23 @@ const Page: CollectionConfig = createPageCollectionConfig({
       name: 'sections',
       type: 'array',
       label: {
-        de: 'Abschnitte',
-        en: 'Sections',
+        de: 'Inhalts Abschnitte',
+        en: 'Content Sections',
+      },
+      labels: {
+        singular: {
+          de: 'Abschnitt',
+          en: 'Section',
+        },
+        plural: {
+          de: 'Abschnitte',
+          en: 'Sections',
+        },
+      },
+      admin: {
+        components: {
+          RowLabel: '/fields/components/SectionRowTitle',
+        },
       },
       fields: [
         {

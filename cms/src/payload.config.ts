@@ -24,6 +24,7 @@ import {
   alternatePathsField,
   getPageUrl,
 } from '@jhb.software/payload-pages-plugin'
+import { customTranslations } from './shared/customTranslations'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -59,6 +60,7 @@ export default buildConfig({
   i18n: {
     fallbackLanguage: 'de',
     supportedLanguages: { en, de },
+    translations: customTranslations,
   },
   globals: [Header, Footer],
   collections: [Page, Project, Testimonials, Media, Redirects, Users],
